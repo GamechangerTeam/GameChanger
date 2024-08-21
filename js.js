@@ -1,7 +1,9 @@
 const homePageSwiper = new Swiper("#homePageSwiper", {
-  // grabCursor: true,
   effect: "creative",
   allowTouchMove: false,
+  speed: 500,
+  // autoHeight: true,
+
   navigation: {
     nextEl: ".toMainPage",
     prevEl: ".toHomePage",
@@ -20,9 +22,11 @@ const homePageSwiper = new Swiper("#homePageSwiper", {
 const mainSwiper = new Swiper("#mainSwiper", {
   direction: "vertical",
   freeMode: true,
+  speed: 500,
   mousewheel: true,
+  // autoHeight: true,
   breakpoints: {
-    769: {
+    1200: {
       freeMode: false,
     },
   },
@@ -31,6 +35,9 @@ const mainSwiper = new Swiper("#mainSwiper", {
 const painBlockSwiper = new Swiper("#painBlockSwiper", {
   direction: "horizontal",
   slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+  },
   breakpoints: {
     769: {
       direction: "vertical",
@@ -111,8 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
   openConsultationPage.forEach((btn) => {
     btn.addEventListener("click", () => {
       consultationPage.classList.toggle("active");
-      consultationPage.style.opacity = "1";
-      consultationPage.style.visibility = "visible";
     });
   });
   hideConsultationPage.forEach((btn) => {
@@ -125,3 +130,4 @@ document.addEventListener("DOMContentLoaded", function () {
     preloader.style.display = "none";
   });
 });
+
