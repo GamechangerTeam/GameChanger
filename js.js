@@ -19,17 +19,25 @@ const homePageSwiper = new Swiper("#homePageSwiper", {
 
 const mainSwiper = new Swiper("#mainSwiper", {
   direction: "vertical",
-  freeMode: false,
-  allowTouchMove: false,
+  freeMode: true,
   mousewheel: true,
   breakpoints: {
-    767: { // Используем max-width 767px для срабатывания при разрешении меньше 768px
-      mousewheel: false,
-      freeMode: true,
+    769: {
+      freeMode: false,
     },
   },
 });
 
+const painBlockSwiper = new Swiper("#painBlockSwiper", {
+  direction: "horizontal",
+  slidesPerView: 1,
+  breakpoints: {
+    769: {
+      direction: "vertical",
+      slidesPerView: 3,
+    },
+  },
+});
 
 const mainInfo = [
   {

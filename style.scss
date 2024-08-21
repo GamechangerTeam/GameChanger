@@ -1,4 +1,3 @@
-
 @mixin pc {
   @media (max-width: 1200px) {
     @content;
@@ -63,6 +62,10 @@ button {
   color: #f5f5f5;
   -webkit-tap-highlight-color: transparent;
   background-color: transparent;
+  transition: .3s;
+  &:active {
+    scale: 0.95;
+  }
 }
 
 img {
@@ -99,6 +102,10 @@ h5,
   z-index: -1;
 }
 
+.hide_on_mobile {
+  display: none !important;
+}
+
 #homePageSwiper {
   height: 100dvh;
   overflow-y: auto;
@@ -123,6 +130,7 @@ h5,
     display: grid;
     position: relative;
     grid-template-rows: 1fr 1fr;
+    height: auto;
   }
 
   &-background-text {
@@ -208,7 +216,7 @@ h5,
       }
 
       button {
-        padding: 12px 0;
+        padding: 12px;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -222,8 +230,12 @@ h5,
           scale: 0.95;
         }
         @include mobile() {
-          padding: 16px 0px;
+          padding: 16px;
           font-size: 16px;
+        }
+        @media (max-width: 350px) {
+          font-size: 14px;
+          padding: 16px 10px;
         }
       }
       &--free-consultation {
@@ -287,9 +299,6 @@ h5,
     @include tablet {
       // grid-template-columns: 1fr 1fr 1fr;s
       gap: 16px;
-    }
-
-    @include mobile {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -360,14 +369,23 @@ h5,
   background-color: black;
   height: 100%;
 
-  .container {
+  @include tablet() {
+    .swiper-slide {
+      height: auto !important;
+    }
+  }
+
+  .hero .container {
+    height: 100%;
     display: grid;
     grid-template: auto 0.4fr / repeat(2, 1fr);
     gap: 20px;
-    column-gap: 100px;
+    column-gap: 50px;
     align-items: center;
     @include tablet() {
-      grid-template: repeat(3, 1fr) / 1fr;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
   }
 
@@ -377,10 +395,9 @@ h5,
     gap: 20px;
     h1 {
       font-size: 2.5rem;
-    }
-
-    p {
-      // width: 80%;
+      @include laptop() {
+        font-size: 1.9rem;
+      }
     }
   }
 
@@ -402,6 +419,10 @@ h5,
     gap: 20px;
     align-items: center;
     height: 55px;
+    @include mobile() {
+      flex-direction: column;
+      height: auto;
+    }
     button {
       height: 100%;
       width: 100%;
@@ -411,6 +432,10 @@ h5,
       gap: 10px;
       font-weight: 600;
       font-size: 1rem;
+      padding: 0 10px;
+      @include mobile() {
+        padding: 16px 48px;
+      }
       &:first-child {
         @include greenBtn;
       }
@@ -422,22 +447,46 @@ h5,
 
   &__graph-img {
     max-width: 400px;
+    height: auto;
     margin-left: auto;
+    @include tablet() {
+      max-width: 100%;
+      margin: auto;
+    }
   }
 
   &__statistics {
     grid-column-start: 2 span;
-    @include tablet() {
-      grid-column-start: auto;
-    }
+
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+    @include tablet() {
+      grid-column-start: auto;
+    }
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
     &__card {
       display: flex;
       flex-direction: column;
+      width: fit-content;
       padding: 0 10px;
+      @include laptop() {
+        align-items: center;
+      }
+      @include mobile() {
+        align-items: flex-start;
+      }
+
       span {
+        @include laptop() {
+          text-align: center;
+        }
+        @include mobile() {
+          text-align: left;
+        }
         &:first-child {
           font-size: 6.25rem;
           font-weight: 600;
@@ -445,22 +494,110 @@ h5,
             font-size: 5.25rem;
           }
           @include laptop() {
-            font-size: 4.20rem;
+            font-size: 4.2rem;
+          }
+          @include tablet() {
+            font-size: 3rem;
+          }
+          @include mobile() {
+            font-size: 64px;
           }
         }
         &:last-child {
-          opacity: .6;
+          opacity: 0.6;
           color: white;
           font-size: 1.25rem;
           font-weight: 400;
         }
       }
-
     }
     &--vertical-line {
       width: 2px;
-      background-color: #FFFFFF47;
+      background-color: #ffffff47;
       display: block;
+      @include mobile() {
+        width: 100%;
+        height: 1px;
+      }
+    }
+  }
+}
+
+.pain-block {
+  background-color: #eaeaea;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: 5% 70% 10%;
+  color: black;
+  @include tablet() {
+    height: auto;
+  }
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .container {
+    border: none;
+  }
+
+  .swiper {
+    height: 100%;
+  }
+
+  &__card {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 100%;
+    gap: 30px;
+    img {
+      height: 90%;
+      aspect-ratio: 1 /1;
+    }
+  }
+  &__pain {
+    border: 1px solid #ce0000;
+    border-radius: 20px;
+    padding: 1.5rem;
+    font-weight: 500;
+    background-color: #ce000010;
+  }
+  &__header {
+    padding: 12px 24px;
+    border-radius: 12px;
+    color: #f5f5f5;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ce0000;
+    margin-bottom: 20px;
+  }
+
+  &__solution {
+    background-color: #05a9050a;
+    border: 1px solid #05a90533;
+    padding: 12px 24px;
+    border-radius: 20px;
+    .pain-block__header {
+      border: none;
+      border-bottom: 1px solid #04d404;
+      color: #04d404;
+      background-color: transparent;
+      border-radius: 0;
+      padding: 12px 0;
+    }
+  }
+  &__btns {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto 1fr 1fr;
+    height: auto;
+    img {
+      opacity: 0;
+      visibility: hidden;
+      height: 50px;
+      width: 180px;
     }
   }
 }
