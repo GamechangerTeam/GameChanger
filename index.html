@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="js.js" defer></script>
+  </head>
+
+  <body>
+    <div class="swiper" id="homePageSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="homepage">
+            <div class="container">
+              <div class="homepage__header">
+                <div class="homepage-background-text">
+                  <span>GAMECHANGER</span>
+                </div>
+                <div class="homepage__header-logo-wrapper">
+                  <img
+                    src="https://static.tildacdn.com/tild3863-6637-4737-a136-333237346336/Logo_-_preloader.png"
+                    alt="preloader"
+                    class="homepage__header-preloader"
+                    id="logo_preloader"
+                  />
+                  <video
+                    autoplay
+                    muted
+                    playsinline
+                    loop
+                    class="homepage__header-video"
+                    id="video"
+                  >
+                    <source
+                      src="https://dl.dropbox.com/scl/fi/e83xkaz17u5sxz5wgunb1/Logo-animated.mp4?rlkey=0uauqncvbselkgfc3yyk4vcti&st=d3qiontx&dl=0"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                <div>
+                  <h1>Интеграция 1с, Битрикс24, AMOСРМ</h1>
+                  <p>Мы не просто создаём системы. Мы достигаем результатов.</p>
+                </div>
+                <div class="homepage__header-btns">
+                  <button
+                    class="homepage__header-btns--free-consultation open_consultation"
+                  >
+                    Бесплатная консультация
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.958"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.0078 1.14843C14.7501 1.09352 16.8673 2.2029 18.3594 4.47655C18.9179 5.43336 19.2304 6.46461 19.2969 7.5703C19.4506 7.724 19.6069 7.88029 19.7656 8.03905C19.8254 8.14297 19.8723 8.25238 19.9063 8.36718C19.9375 9.32029 19.9375 10.2734 19.9063 11.2266C19.6629 11.9288 19.1707 12.2022 18.4297 12.0469C18.3305 12.0208 18.2368 11.9817 18.1484 11.9297C17.2528 12.5171 16.2684 12.853 15.1953 12.9375C15.0448 12.9938 14.9198 13.0875 14.8203 13.2187C14.7165 13.2677 14.6071 13.2989 14.4922 13.3125C14.1641 13.3438 13.8359 13.3438 13.5078 13.3125C12.9094 13.1547 12.7297 12.7875 12.9688 12.2109C13.0596 12.0888 13.1768 12.0028 13.3203 11.9531C13.7735 11.9218 14.2265 11.9218 14.6797 11.9531C14.8138 11.9967 14.9232 12.0748 15.0078 12.1875C15.9746 12.1451 16.8652 11.8638 17.6797 11.3437C17.6456 11.2782 17.6222 11.2078 17.6094 11.1328C17.5781 10.2578 17.5781 9.38282 17.6094 8.5078C17.6698 8.15882 17.8495 7.89322 18.1484 7.71093C18.1105 6.14277 17.5168 4.82244 16.3672 3.74999C14.5118 2.19075 12.4493 1.847 10.1797 2.71874C8.28669 3.62813 7.15386 5.12033 6.78125 7.1953C6.74258 7.36925 6.75036 7.54114 6.80469 7.71093C7.10361 7.89322 7.28333 8.15882 7.34375 8.5078C7.37502 9.38282 7.37502 10.2578 7.34375 11.1328C7.04952 12.0024 6.46358 12.2758 5.58594 11.9531C5.29808 11.7904 5.1184 11.5482 5.04688 11.2266C5.01562 10.2734 5.01562 9.32029 5.04688 8.36718C5.08084 8.25238 5.12772 8.14297 5.1875 8.03905C5.34627 7.88029 5.50255 7.724 5.65625 7.5703C5.97434 4.51873 7.57592 2.47967 10.4609 1.45311C10.9753 1.31116 11.4909 1.20959 12.0078 1.14843Z"
+                        fill="black"
+                      />
+                      <path
+                        opacity="0.99"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.383 3.30469C14.7337 3.30513 16.2259 4.43013 16.8595 6.67969C17.1867 8.31066 16.9836 9.87314 16.2502 11.3672C15.9603 11.4956 15.6557 11.5737 15.3361 11.6016C15.0577 11.4646 14.7609 11.3787 14.4455 11.3438C14.0373 11.3085 13.631 11.3241 13.2267 11.3906C12.4495 11.6872 12.1604 12.2419 12.3595 13.0547C12.5618 13.5229 12.9134 13.7963 13.4142 13.875C13.8534 13.9102 14.2908 13.9024 14.7267 13.8516C14.588 14.3363 14.713 14.7348 15.1017 15.0469C15.6594 15.3881 16.2531 15.6537 16.883 15.8438C17.848 16.2479 18.7543 16.7479 19.6017 17.3438C20.7302 18.2237 21.0975 19.3565 20.7033 20.7422C20.4885 21.1486 20.1838 21.4689 19.7892 21.7031C19.23 22.0146 18.6362 22.2333 18.008 22.3594C16.1723 22.6943 14.3207 22.8427 12.4533 22.8047C10.632 22.8481 8.82728 22.6997 7.03923 22.3594C6.35795 22.2105 5.71731 21.9605 5.11736 21.6094C4.08952 20.8079 3.83171 19.8001 4.34392 18.5859C4.56213 18.1799 4.85119 17.8283 5.21111 17.5312C6.60025 16.524 8.10025 15.7115 9.71111 15.0938C10.2864 14.7428 10.4505 14.2507 10.2033 13.6172C9.56195 12.8037 9.01511 11.9287 8.56267 10.9922C7.87248 9.3255 7.81 7.638 8.37517 5.92969C9.17064 4.23672 10.5066 3.36172 12.383 3.30469Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </button>
+                  <button class="homepage__header-btns--contact-us">
+                    Связаться с нами
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.972"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M11.1797 2.41417C13.9214 2.21134 16.1168 3.19572 17.7656 5.3673C18.3638 6.22788 18.7623 7.1732 18.9609 8.20324C19.6799 8.26183 20.383 8.40246 21.0703 8.62511C21.7104 8.9215 22.1089 9.41369 22.2656 10.1017C22.8255 12.9941 21.6458 14.3456 18.7266 14.1564C18.2584 13.9541 17.985 13.6025 17.9063 13.1017C17.9038 11.5847 17.8725 10.069 17.8125 8.5548C17.341 6.15058 15.9426 4.56463 13.6172 3.79699C10.8436 3.16399 8.63269 3.99993 6.98438 6.3048C6.56475 6.98542 6.2835 7.71981 6.14063 8.50792C6.08091 10.0379 6.04964 11.5692 6.04688 13.1017C5.89749 13.8136 5.46 14.1886 4.73438 14.2267C4.26737 14.177 3.80644 14.0911 3.35156 13.9689C2.47352 13.7627 1.91883 13.2236 1.6875 12.3517C1.65625 11.6017 1.65625 10.8517 1.6875 10.1017C1.84424 9.41369 2.24267 8.9215 2.88281 8.62511C3.57015 8.40246 4.27327 8.26183 4.99219 8.20324C5.78236 4.90502 7.84486 2.97532 11.1797 2.41417Z"
+                        fill="white"
+                      />
+                      <path
+                        opacity="0.985"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M11.2732 5.41416C13.7386 5.2284 15.5277 6.22838 16.6404 8.41416C17.3854 10.3477 17.1276 12.129 15.867 13.7579C16.0321 13.915 16.2118 14.0556 16.406 14.1798C16.7582 14.7312 16.6566 15.1765 16.1013 15.5157C14.5076 15.547 12.9138 15.547 11.3201 15.5157C9.18081 15.1265 7.76678 13.9 7.0779 11.836C6.56288 9.55247 7.22692 7.70091 9.07009 6.28135C9.7464 5.83341 10.4808 5.54433 11.2732 5.41416ZM9.91384 9.96104C9.79013 10.0458 9.68856 10.1552 9.60915 10.2892C9.52623 10.5998 9.62776 10.8263 9.91384 10.9688C10.2244 11.0518 10.451 10.9502 10.5935 10.6642C10.6475 10.1634 10.4209 9.92902 9.91384 9.96104ZM11.7888 9.96104C11.6651 10.0458 11.5636 10.1552 11.4842 10.2892C11.4012 10.5998 11.5028 10.8263 11.7888 10.9688C12.0994 11.0518 12.326 10.9502 12.4685 10.6642C12.5225 10.1634 12.2959 9.92902 11.7888 9.96104ZM13.6638 9.96104C13.5401 10.0458 13.4386 10.1552 13.3592 10.2892C13.2762 10.5998 13.3778 10.8263 13.6638 10.9688C13.9744 11.0518 14.201 10.9502 14.3435 10.6642C14.3975 10.1634 14.1709 9.92902 13.6638 9.96104Z"
+                        fill="white"
+                      />
+                      <path
+                        opacity="0.964"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.74241 15.1641C5.93634 15.1475 6.12384 15.1709 6.30491 15.2344C7.45827 16.7006 8.97388 17.4584 10.8518 17.5078C11.428 17.4302 12.0061 17.4067 12.5862 17.4375C13.582 17.7802 13.9961 18.4755 13.8284 19.5235C13.4857 20.5193 12.7904 20.9334 11.7424 20.7657C10.7384 20.4218 10.3321 19.7265 10.5237 18.6797C8.63052 18.5651 7.0446 17.8151 5.76585 16.4297C5.63821 16.2864 5.52885 16.1302 5.43773 15.961C5.33404 15.6101 5.43557 15.3445 5.74241 15.1641Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="homepage__main">
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="оптовая торговля">
+                    <img
+                      src="https://static.tildacdn.com/tild3865-3665-4865-a364-363235643563/opto_market.svg"
+                      alt="оптовая торговля иконка svg"
+                    />
+                    Оптовая торговля
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="розничная торговля">
+                    <img
+                      src="https://static.tildacdn.com/tild3835-3966-4639-b238-393333643939/roznotsa_market.svg"
+                      alt="розничная торговля иконка svg"
+                    />
+                    Розничная торговля
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="строительство">
+                    <img
+                      src="https://static.tildacdn.com/tild6138-6431-4664-b839-626166383437/building.svg"
+                      alt="строительство иконка svg"
+                    />
+                    Строительство
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="производство">
+                    <img
+                      src="https://static.tildacdn.com/tild3164-3534-4635-b265-663663396433/production.svg"
+                      alt="производство иконка svg"
+                    />
+                    Производство
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="медицина">
+                    <img
+                      src="https://static.tildacdn.com/tild3066-6534-4065-b564-366639336233/selling_house.svg"
+                      alt="медицина иконка svg"
+                    />
+                    Медицина
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="продажа недвижимости">
+                    <img
+                      src="https://static.tildacdn.com/tild6465-3265-4133-a438-633165303231/selling_house.svg"
+                      alt="продажа недвижимости иконка svg"
+                    />
+                    Продажа недвижимости
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="образование">
+                    <img
+                      src="https://static.tildacdn.com/tild3462-3532-4032-b030-633065303336/education.svg"
+                      alt="образование иконка svg"
+                    />
+                    Образование
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+                <div class="homepage__main__card">
+                  <button class="toMainPage" data-name="автосервис">
+                    <img
+                      src="https://static.tildacdn.com/tild6634-6236-4365-a663-613636333439/autoservice.svg"
+                      alt="автосервис иконка svg"
+                    />
+                    Автосервис
+                  </button>
+                  <span class="gradient-border"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <main class="swiper main-block" id="mainSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="container">
+                  <div class="main-block__main-info">
+                    <button class="main-block__back-btn toHomePage">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.996"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.79683 0.984277C7.97199 0.96578 8.13868 0.991824 8.29683 1.0624C10.5132 2.77216 12.7267 4.48571 14.9375 6.20303C15.0974 6.53556 15.0192 6.79078 14.7031 6.96865C14.297 6.98428 13.8907 6.9895 13.4843 6.98428C13.4896 9.25512 13.4843 11.526 13.4687 13.7968C13.3072 14.4166 12.9166 14.8072 12.2968 14.9687C11.2968 14.9895 10.2968 14.9895 9.29683 14.9687C9.15621 14.9114 9.05724 14.8124 8.99996 14.6718C8.98955 13.7759 8.97911 12.8801 8.96871 11.9843C8.91315 11.3818 8.58502 11.0589 7.98433 11.0155C7.38365 11.0589 7.05552 11.3818 6.99996 11.9843C6.98955 12.8801 6.97911 13.7759 6.96871 14.6718C6.91143 14.8124 6.81246 14.9114 6.67183 14.9687C5.67183 14.9895 4.67183 14.9895 3.67183 14.9687C3.05204 14.8072 2.66142 14.4166 2.49996 13.7968C2.48433 11.526 2.47912 9.25512 2.48433 6.98428C2.08836 6.9895 1.69253 6.98428 1.29683 6.96865C1.01614 6.82887 0.91718 6.6049 0.999958 6.29678C1.02079 6.25512 1.04162 6.21343 1.06246 6.17178C3.2953 4.42306 5.54008 2.6939 7.79683 0.984277Z"
+                          fill="white"
+                        />
+                      </svg>
+                      На главную
+                    </button>
+                    <h1>
+                      Увеличьте <br />
+                      производительность. <br />
+                      Снижайте затраты.
+                    </h1>
+                    <p>
+                      Используйте платформу, которая вывела более 10 миллионов
+                      компаний на новый уровень.
+                    </p>
+                    <div class="main-block__btns">
+                      <button>Попробовать бесплатно</button>
+                      <button>
+                        Посмотреть цены
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="10"
+                            cy="10"
+                            r="10"
+                            fill="white"
+                            fill-opacity="0.04"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M8.03903 6.37204C8.20175 6.20932 8.46557 6.20932 8.62829 6.37204L11.9616 9.70537C12.1243 9.86809 12.1243 10.1319 11.9616 10.2946L8.62829 13.628C8.46557 13.7907 8.20175 13.7907 8.03903 13.628C7.87631 13.4652 7.87631 13.2014 8.03903 13.0387L11.0777 10L8.03903 6.96129C7.87631 6.79858 7.87631 6.53476 8.03903 6.37204Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <img
+                    src="https://static.tildacdn.com/tild3564-3135-4763-a438-346432656261/graph.svg"
+                    alt="graph svg"
+                    class="main-block__graph-img"
+                  />
+                  <div class="main-block__statistics">
+                    <div class="main-block__statistics__card">
+                      <span>10 млн</span>
+                      <span>организаций всего мира</span>
+                    </div>
+                    <span class="main-block__statistics--vertical-line"></span>
+                    <div class="main-block__statistics__card">
+                      <span>100% </span>
+                      <span>увеличение эффективности</span>
+                    </div>
+                    <span class="main-block__statistics--vertical-line"></span>
+                    <div class="main-block__statistics__card">
+                      <span>35% </span>
+                      <span>компаний по СНГ</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <section class="container">
+                  <h2>herllo</h2>
+                  <p>asdasd</p>
+                </section>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <section class="consultation">
+      <div class="container">
+        <div>
+          <button class="consultation__back-btn hide_consultation">
+            Вернуться
+          </button>
+          <script data-b24-form="inline/78/3xq1o2" data-skip-moving="true">
+            (function (w, d, u) {
+              var s = d.createElement("script");
+              s.async = true;
+              s.src = u + "?" + ((Date.now() / 180000) | 0);
+              var h = d.getElementsByTagName("script")[0];
+              h.parentNode.insertBefore(s, h);
+            })(
+              window,
+              document,
+              "https://cdn-ru.bitrix24.ru/b27952962/crm/form/loader_78.js"
+            );
+          </script>
+        </div>
+        <div>
+          <video
+            autoplay
+            muted
+            playsinline
+            loop
+            class="consultation__"
+            id="video"
+          >
+            <source
+              src="https://dl.dropbox.com/scl/fi/e83xkaz17u5sxz5wgunb1/Logo-animated.mp4?rlkey=0uauqncvbselkgfc3yyk4vcti&st=d3qiontx&dl=0"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
