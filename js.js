@@ -131,3 +131,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Находим блок #mainSwiper
+  const mainSwiper = document.querySelector("#mainSwiper");
+  
+  if (window.innerWidth < 1200) {
+    // Находим все элементы с классом replace
+    const replaceElements = mainSwiper.querySelectorAll(".replace");
+
+    // Находим блок #placeForMobileContent
+    const placeForMobileContent = document.querySelector("#placeForMobileContent");
+
+    // Перемещаем элементы в #placeForMobileContent
+    replaceElements.forEach(function(element) {
+      placeForMobileContent.appendChild(element);
+    });
+
+    // Удаляем блок #mainSwiper
+    mainSwiper.remove();
+  }
+});
