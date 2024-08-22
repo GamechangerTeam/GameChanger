@@ -58,7 +58,7 @@ $grayGradient: linear-gradient(to bottom, #ffffff33 10%, #ffffff10 80%);
   height: 100%;
   border-radius: 10px;
   background: $color;
-  z-index: -1;
+  z-index: 0;
   transition: 0.3s;
 }
 
@@ -145,14 +145,31 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 1.75rem;
+  // @include tablet() {
+  //   font-size: 2rem;
+  // }
+  // @include mobile() {
+  //   font-size: 1.5rem;
+  // }
+}
+
+#placeForMobileContent {
+  display: none;
+  @include pc() {
+    display: block;
+  }
+}
+
 .container {
   padding: 20px;
   margin: auto;
   max-width: 1200px;
   width: 100%;
   height: 100%;
-  border: 1px solid #0f0f0f;
-  border-radius: 20px;
+  // border: 1px solid #0f0f0f;
+  // border-radius: 20px;
 }
 
 html,
@@ -166,22 +183,25 @@ body {
   height: 100%;
 }
 
-
-
 #homePageSwiper {
   overflow-y: auto;
   .swiper-wrapper {
     .swiper-slide {
       overflow-y: auto;
     }
+    .bordered_slide {
+      padding: 10px;
+      height: 100dvh;
+    }
   }
 }
 
 .homepage {
-  height: 100dvh;
+  height: 100%;
   width: 100%;
-  padding: 10px;
   overflow-y: auto;
+  border: 1px solid #0f0f0f;
+  border-radius: 20px;
   @include tablet() {
     height: 100%;
   }
@@ -560,31 +580,9 @@ body {
   }
 }
 
-.pain-block {
-  background-color: #eaeaea;
-  color: black;
-  padding-bottom: 10px;
+@mixin slider() {
   @include tablet() {
-    // height: auto;
-  }
-  h2 {
-    text-align: center;
-  }
-  .container {
-    border: none;
-    // height: 100%;
-    display: grid;
-    padding: 0 10px;
-    grid-template-rows: auto auto 50px;
-    @include tablet() {
-      gap: 20px;
-    }
-  }
-  .swiper {
-    width: 100% !important;
-    @include tablet() {
-      padding-bottom: 20px;
-    }
+    padding-bottom: 20px;
   }
   .swiper-pagination {
     display: none;
@@ -593,10 +591,8 @@ body {
     @include tablet() {
       display: block;
       align-items: center;
-      // justify-content: center;
     }
   }
-
   .swiper-pagination-bullet {
     width: 20px;
     height: 2px;
@@ -607,6 +603,30 @@ body {
       width: 40px;
       background-color: black;
     }
+  }
+}
+
+.pain-block {
+  background-color: #eaeaea;
+  color: black;
+  padding-bottom: 10px;
+  @include tablet() {
+  }
+  h2 {
+    text-align: center;
+  }
+  .container {
+    border: none;
+    display: grid;
+    padding: 0 10px;
+    grid-template-rows: auto auto 50px;
+    @include tablet() {
+      gap: 20px;
+    }
+  }
+
+  .swiper {
+    @include slider();
   }
 
   &__card {
@@ -718,6 +738,7 @@ body {
       font-size: 1rem;
       color: black;
       padding: 0 10px;
+      z-index: 1;
       &:last-child {
         background: $greenGradient;
         color: #eaeaea;
@@ -726,13 +747,183 @@ body {
   }
 }
 
+.possibilities-block {
+  background-color: #eaeaea;
+  color: black;
+  h2 {
+    margin-bottom: 30px;
+  }
+  .swiper {
+    @include slider();
+  }
 
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 0;
+  }
 
-#placeForMobileContent {
-  display: none;
-  @include pc() {
-    display: block;
+  &__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #c2c2c2;
+    padding: 10px 0;
+    &:nth-last-child(1) {
+      border: none;
+      @include tablet() {
+        border-bottom: 1px solid #c2c2c2;
+      }
+    }
+    @include pc {
+      height: auto !important;
+    }
+
+    @include tablet() {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    h3 {
+      font-weight: 500;
+    }
+    @include tablet() {
+      display: block;
+      width: 100%;
+      svg {
+        width: 40px;
+        height: 40px;
+        display: inline;
+        float: right;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__main {
+    font-size: 14px;
   }
 }
+.implementation-block {
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
 
+  h2 {
+    text-align: center;
+  }
 
+  .swiper-wrapper {
+    height: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto ;
+    justify-items: center;
+    // justify-content: center;
+    // align-items: center;
+    column-gap: 100px;
+    row-gap: 70px;
+  }
+
+  .gradient-container {
+    height: 250px !important;
+    overflow: visible !important;
+
+    &:nth-child(1) {
+      grid-area: 1/1;
+      justify-self: end;
+      align-self: flex-end;
+    }
+
+    &:nth-child(2) {
+      grid-area: 2/1/2/3;
+      width: 50%;
+      transform: translateX(-10%);
+      &::before {
+        transform: scale(1, -1);
+        top: -50%;
+      }
+    }
+
+    &:nth-child(3) {
+      align-self: flex-end;
+      grid-area: 1/2;
+    }
+
+    &:nth-child(4) {
+      grid-column-start: 1.5 span;
+      grid-area: 2/2/2/4 !important;
+      width: 50%;
+      transform: translateX(10%);
+
+      &::before {
+        transform: scale(1, -1);
+        top: -50%;
+      }
+    }
+
+    &:nth-child(5) {
+      align-self: flex-end;
+      grid-area: 1/3;
+    }
+
+    &::before {
+      content: "";
+      background-image: url("https://static.tildacdn.com/tild3733-3064-4738-b664-623465386261/arrow-gradient.svg");
+      width: 80px;
+      height: 200px;
+      position: absolute;
+      top: 50%;
+      left: -85px;
+      z-index: -1;
+    }
+  }
+
+  &__card {
+    background-color: #0f0f0f;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1
+    ;
+
+    .gradient-border {
+      @include gradient_border($grayGradient);
+    }
+  }
+
+  &__number {
+    width: 3.75rem;
+    height: 3.75rem;
+    display: grid;
+    place-items: center;
+    background-color: #181818;
+    border: 1px solid #ffffff29;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    font-weight: 900;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

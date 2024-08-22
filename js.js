@@ -46,6 +46,37 @@ const painBlockSwiper = new Swiper("#painBlockSwiper", {
   },
 });
 
+const possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
+  direction: "horizontal",
+  slidesPerView: 1,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  breakpoints: {
+    769: {
+      direction: "vertical",
+      slidesPerView: 4,
+    },
+  },
+});
+
+const implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
+  direction: "horizontal",
+  slidesPerView: 1,
+  // spaceBetween: 30,
+  autoHeight: true,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  breakpoints: {
+    769: {
+      direction: "vertical",
+      slidesPerView: 5,
+    },
+  },
+});
+
 const mainInfo = [
   {
     name: "оптовая торговля",
