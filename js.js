@@ -1,3 +1,7 @@
+const nice = window.innerWidth
+
+
+
 const homePageSwiper = new Swiper("#homePageSwiper", {
   effect: "creative",
   allowTouchMove: false,
@@ -22,6 +26,7 @@ const homePageSwiper = new Swiper("#homePageSwiper", {
 let mainSwiper;
 let painBlockSwiper;
 let possibilitiesBlockSwiper;
+let implementationBlockSwiper;
 
 function initSwipersOnPc() {
   if (window.innerWidth >= 1200) {
@@ -30,10 +35,9 @@ function initSwipersOnPc() {
       // freeMode: true,
       speed: 500,
       mousewheel: true,
-      // allowTouchMove: false,
+      allowTouchMove: false,
     });
   } else if (window.innerWidth < 1200 && mainSwiper) {
-
     mainSwiper.destroy(true, true);
     mainSwiper = undefined;
   }
@@ -45,7 +49,7 @@ function initSwipersOnTablet() {
       direction: "horizontal",
       slidesPerView: 1,
       spaceBetween: 30,
-      
+
       pagination: {
         el: ".swiper-pagination",
       },
@@ -56,51 +60,57 @@ function initSwipersOnTablet() {
         },
       },
     });
-
-    possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
-      direction: "horizontal",
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
   } else if (
     window.innerWidth > 768 &&
     (painBlockSwiper, possibilitiesBlockSwiper)
   ) {
     painBlockSwiper.destroy(true, true);
     painBlockSwiper = undefined;
+  }
+}
+
+function initSwipersOnMobile() {
+  if (window.innerWidth <= 525) {
+    possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
+      direction: "horizontal",
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+      
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+     implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
+      direction: "horizontal",
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  } else if (window.innerWidth > 525 && possibilitiesBlockSwiper && implementationBlockSwiper) {
     possibilitiesBlockSwiper.destroy(true, true);
     possibilitiesBlockSwiper = undefined;
+    implementationBlockSwiper.destroy(true, true);
+    implementationBlockSwiper = undefined;
   }
 }
 
 initSwipersOnPc();
 initSwipersOnTablet();
+initSwipersOnMobile();
 
 // Инициализация при изменении размера окна
 window.addEventListener("resize", () => {
   initSwipersOnPc;
   initSwipersOnTablet;
+  initSwipersOnMobile;
+  // console.log(nice,)
+  // location.reload();
 });
 
-const implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
-  direction: "horizontal",
-  slidesPerView: 1,
-  // spaceBetween: 30,
-  autoHeight: true,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  breakpoints: {
-    769: {
-      direction: "vertical",
-      slidesPerView: 5,
-    },
-  },
-});
+
 
 const mainInfo = [
   {
@@ -173,6 +183,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   openConsultationPage.forEach((btn) => {
     btn.addEventListener("click", () => {
+      btn.disabled = true
+
+      setTimeout(() => {
+        btn.disabled = false
+      
+      }, 500);
       consultationPage.classList.toggle("active");
     });
   });
