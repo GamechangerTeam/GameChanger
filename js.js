@@ -19,46 +19,71 @@ const homePageSwiper = new Swiper("#homePageSwiper", {
   },
 });
 
-const mainSwiper = new Swiper("#mainSwiper", {
-  direction: "vertical",
-  freeMode: true,
-  speed: 500,
-  mousewheel: true,
-  // autoHeight: true,
-  breakpoints: {
-    1200: {
-      freeMode: false,
-    },
-  },
-});
+let mainSwiper;
+let painBlockSwiper;
+let possibilitiesBlockSwiper;
 
-const painBlockSwiper = new Swiper("#painBlockSwiper", {
-  direction: "horizontal",
-  slidesPerView: 1,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  breakpoints: {
-    769: {
+function initSwipersOnPc() {
+  if (window.innerWidth >= 1200) {
+    mainSwiper = new Swiper("#mainSwiper", {
       direction: "vertical",
-      slidesPerView: 3,
-    },
-  },
-});
+      // freeMode: true,
+      speed: 500,
+      mousewheel: true,
+      // allowTouchMove: false,
+    });
+  } else if (window.innerWidth < 1200 && mainSwiper) {
 
-const possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
-  direction: "horizontal",
-  slidesPerView: 1,
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  breakpoints: {
-    769: {
-      direction: "vertical",
-      slidesPerView: 4,
-    },
-  },
+    mainSwiper.destroy(true, true);
+    mainSwiper = undefined;
+  }
+}
+
+function initSwipersOnTablet() {
+  if (window.innerWidth <= 768) {
+    painBlockSwiper = new Swiper("#painBlockSwiper", {
+      direction: "horizontal",
+      slidesPerView: 1,
+      spaceBetween: 30,
+      
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      breakpoints: {
+        769: {
+          direction: "vertical",
+          slidesPerView: 3,
+        },
+      },
+    });
+
+    possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
+      direction: "horizontal",
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  } else if (
+    window.innerWidth > 768 &&
+    (painBlockSwiper, possibilitiesBlockSwiper)
+  ) {
+    painBlockSwiper.destroy(true, true);
+    painBlockSwiper = undefined;
+    possibilitiesBlockSwiper.destroy(true, true);
+    possibilitiesBlockSwiper = undefined;
+  }
+}
+
+initSwipersOnPc();
+initSwipersOnTablet();
+
+// Инициализация при изменении размера окна
+window.addEventListener("resize", () => {
+  initSwipersOnPc;
+  initSwipersOnTablet;
 });
 
 const implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
@@ -162,25 +187,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Находим блок #mainSwiper
+//   const mainSwiper = document.querySelector("#mainSwiper");
 
+//   if (window.innerWidth < 1200) {
+//     // Находим все элементы с классом replace
+//     const replaceElements = mainSwiper.querySelectorAll(".replace");
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Находим блок #mainSwiper
-  const mainSwiper = document.querySelector("#mainSwiper");
-  
-  if (window.innerWidth < 1200) {
-    // Находим все элементы с классом replace
-    const replaceElements = mainSwiper.querySelectorAll(".replace");
+//     // Находим блок #placeForMobileContent
+//     const placeForMobileContent = document.querySelector(
+//       "#placeForMobileContent"
+//     );
 
-    // Находим блок #placeForMobileContent
-    const placeForMobileContent = document.querySelector("#placeForMobileContent");
+//     // Перемещаем элементы в #placeForMobileContent
+//     replaceElements.forEach(function (element) {
+//       placeForMobileContent.appendChild(element);
+//     });
 
-    // Перемещаем элементы в #placeForMobileContent
-    replaceElements.forEach(function(element) {
-      placeForMobileContent.appendChild(element);
-    });
-
-    // Удаляем блок #mainSwiper
-    mainSwiper.remove();
-  }
-});
+//     // Удаляем блок #mainSwiper
+//     mainSwiper.remove();
+//   }
+// });

@@ -24,6 +24,12 @@
   }
 }
 
+@mixin mobile-mid {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
 // ЦВЕТА
 $transparent_red: #e8dbdb;
 
@@ -79,6 +85,32 @@ $grayGradient: linear-gradient(to bottom, #ffffff33 10%, #ffffff10 80%);
 .hide_on_tablet {
   @include tablet() {
     display: none !important;
+  }
+}
+
+@mixin slider() {
+  @include tablet() {
+    padding-bottom: 20px;
+  }
+  .swiper-pagination {
+    display: none;
+    top: auto;
+    bottom: 0px;
+    @include tablet() {
+      display: block;
+      align-items: center;
+    }
+  }
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 2px;
+    color: #808080;
+    border-radius: 10px;
+    transition: 0.3s;
+    &-active {
+      width: 40px;
+      background-color: black;
+    }
   }
 }
 
@@ -170,6 +202,11 @@ h3 {
   height: 100%;
   // border: 1px solid #0f0f0f;
   // border-radius: 20px;
+  outline: 1px solid red;
+  border: 1px solid green;
+  @include tablet() {
+    padding: 10px;
+  }
 }
 
 html,
@@ -224,7 +261,7 @@ body {
     top: 20px;
     font-style: normal;
     font-weight: 900;
-    font-size: 140px;
+    font-size: 130px;
     text-align: center;
     background: linear-gradient(
       180deg,
@@ -237,16 +274,20 @@ body {
     opacity: 0.04;
     z-index: 0;
     @media (max-width: 1200px) {
-      font-size: 100px;
+      font-size: 96px;
     }
     @media (max-width: 850px) {
-      font-size: 60px;
+      font-size: 80px;
+    }
+
+    @media (max-width: 720px) {
+      font-size: 58px;
     }
     @include mobile() {
-      font-size: 50px;
+      font-size: 46px;
     }
     @media (max-width: 425px) {
-      font-size: 44px;
+      font-size: 40px;
     }
     @media (max-width: 375px) {
       font-size: 34px;
@@ -423,17 +464,26 @@ body {
 }
 
 .main-block {
-  background-color: black;
-
-  .replace {
-    height: 100dvh;
-    padding: 10px;
-    @include pc {
-      height: auto;
-    }
+  @include pc {
+    height: auto !important;
   }
 
-  .hero .container {
+  #main-block__swiper-wrapper {
+    flex-direction: column;
+  }
+
+  & > .swiper-slide {
+    height: 100vh !important;
+    @include pc {
+      height: auto !important;
+    }
+  }
+}
+
+.hero {
+  background-color: black;
+
+  .container {
     display: grid;
     grid-template: auto 0.4fr / repeat(2, 1fr);
     gap: 20px;
@@ -507,7 +557,7 @@ body {
     height: auto;
     margin-left: auto;
     @include tablet() {
-      max-width: 100%;
+      // max-width: 100%;
       margin: auto;
     }
   }
@@ -580,74 +630,63 @@ body {
   }
 }
 
-@mixin slider() {
-  @include tablet() {
-    padding-bottom: 20px;
-  }
-  .swiper-pagination {
-    display: none;
-    top: auto;
-    bottom: 0px;
-    @include tablet() {
-      display: block;
-      align-items: center;
-    }
-  }
-  .swiper-pagination-bullet {
-    width: 20px;
-    height: 2px;
-    color: #808080;
-    border-radius: 10px;
-    transition: 0.3s;
-    &-active {
-      width: 40px;
-      background-color: black;
-    }
-  }
-}
-
 .pain-block {
   background-color: #eaeaea;
   color: black;
-  padding-bottom: 10px;
-  @include tablet() {
-  }
+
   h2 {
     text-align: center;
   }
   .container {
-    border: none;
-    display: grid;
-    padding: 0 10px;
-    grid-template-rows: auto auto 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
     @include tablet() {
       gap: 20px;
+      padding: 10px 0
     }
   }
 
   .swiper {
     @include slider();
+    height: auto !important;
+    padding: 10px 0;
+    @include tablet() {
+      padding: 0 10px 20px;
+
+    }
+
+    &-wrapper {
+      @media (min-width: 769px) {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+    }
   }
 
   &__card {
-    padding: 15px;
     display: grid;
-    grid-template-columns: 10% 1fr 1fr;
-    height: 100%;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    height: auto !important;
+    gap: 50px;
     position: relative;
+    overflow: hidden !important;
+    font-size: 1rem;
 
     img {
-      height: 90%;
       aspect-ratio: 1 /1;
-      @include laptop() {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        height: 50px;
-      }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      height: 50px;
+      width: fit-content;
     }
 
     @include laptop() {
@@ -659,8 +698,12 @@ body {
 
     @include tablet() {
       gap: 20px;
-      font-size: 1rem;
       padding: 0;
+      font-size: 16px;
+    }
+    @include mobile-mid() {
+      display: flex;
+      flex-direction: column;
     }
   }
   &__pain {
@@ -669,7 +712,9 @@ body {
     padding: 1rem;
     font-weight: 500;
     background-color: #ce000010;
-    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   &__header {
     padding: 12px 24px;
@@ -680,13 +725,10 @@ body {
     align-items: center;
     gap: 10px;
     background-color: #ce0000;
-    margin-bottom: 20px;
     @include laptop() {
-      margin-bottom: 5px;
       padding: 6px 16px !important;
     }
     @include tablet() {
-      margin-bottom: 20px;
       padding: 12px 24px;
     }
   }
@@ -696,8 +738,10 @@ body {
     border: 1px solid #05a90533;
     font-weight: 500;
     padding: 1rem;
-
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     .pain-block__header {
       border: none;
       border-bottom: 1px solid #04d404;
@@ -709,16 +753,15 @@ body {
   }
   &__btns {
     display: grid;
-    gap: 30px;
-    grid-template-columns: 10% 1fr 1fr;
-    padding: 0 15px;
+    gap: 50px;
+    grid-template-columns:  1fr 1fr;
     @include laptop() {
-      grid-template-columns: 1fr 1fr;
       gap: 50px;
-      padding: 0 5px;
     }
     @include tablet() {
       gap: 20px;
+      padding: 0 10px;
+      grid-template: 1fr 1fr / 1fr;
     }
     .gradient-border {
       @include gradient_border($greenGradient);
@@ -735,9 +778,9 @@ body {
       justify-content: center;
       gap: 10px;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 16px;
       color: black;
-      padding: 0 10px;
+      padding: 14px 10px;
       z-index: 1;
       &:last-child {
         background: $greenGradient;
@@ -812,6 +855,7 @@ body {
     font-size: 14px;
   }
 }
+
 .implementation-block {
   .container {
     display: grid;
@@ -826,7 +870,7 @@ body {
     height: 100% !important;
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto ;
+    grid-template-rows: auto auto;
     justify-items: center;
     // justify-content: center;
     // align-items: center;
@@ -898,8 +942,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 1
-    ;
+    z-index: 1;
 
     .gradient-border {
       @include gradient_border($grayGradient);
