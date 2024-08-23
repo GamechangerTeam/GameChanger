@@ -918,11 +918,15 @@ body {
   }
 
   .gradient-container {
-    height: auto;
     overflow: visible !important;
+    height: 240px;
+    
+    @include pc {
+    height: 100%;
+    
+  }      
     
     @media (min-width: 769px) {
-      height: 240px;
 
       &:nth-child(1) {
         grid-area: 1/1;
