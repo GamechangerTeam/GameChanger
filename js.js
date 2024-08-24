@@ -148,7 +148,6 @@ const mainInfo = [
     ],
   },
 
-
   {
     name: "Розница",
     pains: ["", "", "", "", "", ""],
@@ -288,11 +287,81 @@ const mainInfo = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-  const video = document.getElementById("video");
-  const preloader = document.querySelector("#logo_preloader");
-  const openConsultationPage = document.querySelectorAll(".open_consultation");
-  const hideConsultationPage = document.querySelectorAll(".hide_consultation");
-  const consultationPage = document.querySelector(".consultation");
+  // ДОП. БЛОКИ СЛЕВА
+  // КОНСУЛЬТАЦИЯ
+  const open_ConsultationPage = document.querySelectorAll(".open_consultation");
+  const hide_ConsultationPage = document.querySelectorAll(".hide_consultation");
+  const consultation_Page = document.querySelector(".consultation");
+
+  open_ConsultationPage.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.disabled = false;
+      }, 500);
+
+      consultation_Page.style.visibility = "visible";
+      consultation_Page.style.opacity = "1";
+
+      consultation_Page.classList.toggle("active");
+    });
+  });
+  hide_ConsultationPage.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      consultation_Page.classList.toggle("active");
+    });
+  });
+
+  // ПОЛИТИКА КОНФ.
+  const hide_PrivacyPolicy = document.querySelectorAll(".hide_privacy-policy");
+  const open_PrivacyPolicy = document.querySelectorAll(".open_privacy-policy");
+  const privacyPolicy_Page = document.querySelector(".privacy-policy");
+
+  open_PrivacyPolicy.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.disabled = false;
+      }, 500);
+
+      privacyPolicy_Page.style.visibility = "visible";
+      privacyPolicy_Page.style.opacity = "1";
+
+      privacyPolicy_Page.classList.toggle("active");
+    });
+  });
+
+  hide_PrivacyPolicy.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      privacyPolicy_Page.classList.toggle("active");
+    });
+  });
+
+  //  ОБСЛУЖИВАНИЕ
+  const hide_service = document.querySelectorAll(".hide_service");
+  const open_service = document.querySelectorAll(".open_service");
+  const service_Page = document.querySelector(".service");
+
+  open_service.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.disabled = false;
+      }, 500);
+
+      service_Page.style.visibility = "visible";
+      service_Page.style.opacity = "1";
+
+      service_Page.classList.toggle("active");
+    });
+  });
+
+  hide_service.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      service_Page.classList.toggle("active");
+    });
+  });
+
   const homePage_cards = document.querySelector(".homepage__main");
   const painsText = document.querySelectorAll(".pain-block__main");
   const possibilitiesHead = document.querySelectorAll(
@@ -324,46 +393,54 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  openConsultationPage.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.disabled = true;
+  // ОТКРЫТИЕ ТАРИФА КАК ПОПАП
+  const tarifs_item = document.querySelectorAll(".item");
+  const tarifs_background = document.querySelector(".tarifs-block__background");
 
-      setTimeout(() => {
-        btn.disabled = false;
-      }, 500);
-      consultationPage.classList.toggle("active");
+  tarifs_item.forEach((item) => {
+    item.addEventListener("click", () => {
+      let parentBlockPosition = item.offsetTop;
+      let popup = item.querySelector(".item__wrapper");
+      let content = item.querySelector(".item__header").nextElementSibling;
+
+      if (!tarifs_background.classList.contains("active")) {
+        tarifs_background.classList.toggle("active"); //включаем темный фон
+        // поднимаем блок вверх
+        item.style.position = "static";
+        popup.style.top = `${parentBlockPosition}px`;
+        setTimeout(() => {
+          popup.classList.add("active");
+          popup.style.top = "20px";
+        }, 20);
+
+        // раскрываем блок
+        setTimeout(() => {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }, 300);
+      } else {
+        // раскрываем блок
+        content.style.maxHeight = null;
+        // опускаем блок вниз
+        setTimeout(() => {
+          popup.style.top = `${parentBlockPosition}px`;
+          tarifs_background.classList.toggle("active");
+        }, 300);
+
+        setTimeout(() => {
+          popup.classList.remove("active");
+        }, 600);
+
+      }
+
+      console.log(parentBlockPosition, content);
     });
   });
-  hideConsultationPage.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      consultationPage.classList.toggle("active");
-    });
-  });
+
+  // ЛОГИКА УДАЛЕНИЯ ПРЕЛОУДЕРА ПРИ ЗАГРУЗКЕ ВИДЕО
+  const video = document.getElementById("video");
+  const preloader = document.querySelector("#logo_preloader");
 
   video.addEventListener("canplaythrough", function () {
     preloader.style.display = "none";
   });
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Находим блок #mainSwiper
-//   const mainSwiper = document.querySelector("#mainSwiper");
-
-//   if (window.innerWidth < 1200) {
-//     // Находим все элементы с классом replace
-//     const replaceElements = mainSwiper.querySelectorAll(".replace");
-
-//     // Находим блок #placeForMobileContent
-//     const placeForMobileContent = document.querySelector(
-//       "#placeForMobileContent"
-//     );
-
-//     // Перемещаем элементы в #placeForMobileContent
-//     replaceElements.forEach(function (element) {
-//       placeForMobileContent.appendChild(element);
-//     });
-
-//     // Удаляем блок #mainSwiper
-//     mainSwiper.remove();
-//   }
-// });

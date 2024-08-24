@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     />
 
     <link rel="stylesheet" href="style.css" />
@@ -474,7 +474,6 @@
                     <div class="swiper-pagination"></div>
                   </div>
                   <div class="pain-block__btns">
-                    <!-- <div class="hide_on_laptop"></div> -->
                     <div class="gradient-container">
                       <button>
                         Посмотреть цены
@@ -549,7 +548,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide possibilities-block">
+              <div class="swiper-slide possibilities-block" id="lox">
                 <div class="container">
                   <h2>Возможности системы</h2>
                   <div class="swiper" id="possibilitiesBlockSwiper">
@@ -635,7 +634,9 @@
                               </linearGradient>
                             </defs>
                           </svg>
-                          <h3 class="possibilities-block__head">Привлечение новых клиентов</h3>
+                          <h3 class="possibilities-block__head">
+                            Привлечение новых клиентов
+                          </h3>
                         </div>
                         <p class="possibilities-block__main">
                           Автоматизированная система увеличивает конверсию до
@@ -713,7 +714,9 @@
                             </defs>
                           </svg>
 
-                          <h3 class="possibilities-block__head">Полный контроль</h3>
+                          <h3 class="possibilities-block__head">
+                            Полный контроль
+                          </h3>
                         </div>
                         <p class="possibilities-block__main">
                           Контакт-центр для интеграции всех источников заказов:
@@ -800,7 +803,9 @@
                             </defs>
                           </svg>
 
-                          <h3 class="possibilities-block__head">Прием заказов</h3>
+                          <h3 class="possibilities-block__head">
+                            Прием заказов
+                          </h3>
                         </div>
                         <p class="possibilities-block__main">
                           Сократите время обработки заявок до 2 минут:
@@ -865,7 +870,9 @@
                             </defs>
                           </svg>
 
-                          <h3 class="possibilities-block__head">Автоматическая генерация документов</h3>
+                          <h3 class="possibilities-block__head">
+                            Автоматическая генерация документов
+                          </h3>
                         </div>
                         <p class="possibilities-block__main">
                           Автоматическая генерация документов: Наша система
@@ -953,13 +960,128 @@
                     <div class="swiper-pagination"></div>
                   </div>
                   <div class="implementation-block__btns">
-                    <button>
-                  Политика конфиденциальности
+                    <button class="open_privacy-policy">
+                      Политика конфиденциальности
                     </button>
-                    <button>
-                    Обслуживание
-                    </button>
+                    <button class="open_service">Обслуживание</button>
                   </div>
+                </div>
+              </div>
+              <div class="swiper-slide tarifs-block">
+                <div class="container">
+                  <h2>Тарифы</h2>
+                  <ul class="tarifs-block__list">
+                    <li class="item">
+                      <div class="item__wrapper">
+                        <div class="item__header">
+                          <span class="item__header__number"> 1 </span>
+                          <div class="item__header__text">
+                            <h3>Контроль активных продаж</h3>
+                            <p>привлечение новых клиентов</p>
+                          </div>
+                          <span class="item__header__price">
+                            380&nbsp;000₸
+                          </span>
+                          <img
+                            class="plus-img"
+                            src="https://static.tildacdn.com/tild6237-3361-4132-a138-633931646562/plus.svg"
+                            alt="plus icon svg"
+                          />
+                        </div>
+                        <div class="item__main">
+                          <p>
+                            Вы получите инструмент, который поможет вам
+                            эффективно привлечь большое количество потенциальных
+                            клиентов за короткое время. Этот инструмент
+                            гарантирует выполнение задач сотрудниками и
+                            предоставляет результаты их работы в реальном
+                            времени.
+                          </p>
+                          <div class="item__main__advantages">
+                            <span>
+                            <img src="https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg" alt="confirm svg icon">
+                              <p>Вероятность довести клиента до заключения сделки возрастает до 80%</p>
+                          </span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item">
+                      <div class="item__wrapper">
+                        <div class="item__header">
+                          <span class="item__header__number"> 1 </span>
+                          <div class="item__header__text">
+                            <h3>Контроль активных продаж</h3>
+                            <p>привлечение новых клиентов</p>
+                          </div>
+                          <span class="item__header__price">
+                            380&nbsp;000₸
+                          </span>
+                          <img
+                            class="plus-img"
+                            src="https://static.tildacdn.com/tild6237-3361-4132-a138-633931646562/plus.svg"
+                            alt="plus icon svg"
+                          />
+                        </div>
+                        <div class="item__main">
+                          <p>
+                            Вы получите инструмент, который поможет вам
+                            эффективно привлечь большое количество потенциальных
+                            клиентов за короткое время. Этот инструмент
+                            гарантирует выполнение задач сотрудниками и
+                            предоставляет результаты их работы в реальном
+                            времени.
+                          </p>
+                          <div class="item__main__advantages">
+                            <span>
+                            <img src="https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg" alt="confirm svg icon">
+                              <p>Вероятность довести клиента до заключения сделки возрастает до 80%</p>
+                          </span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item">
+                      <div class="item__wrapper">
+                        <div class="item__header">
+                          <span class="item__header__number"> 1 </span>
+                          <div class="item__header__text">
+                            <h3>Контроль активных продаж</h3>
+                            <p>привлечение новых клиентов</p>
+                          </div>
+                          <span class="item__header__price">
+                            380&nbsp;000₸
+                          </span>
+                          <img
+                            class="plus-img"
+                            src="https://static.tildacdn.com/tild6237-3361-4132-a138-633931646562/plus.svg"
+                            alt="plus icon svg"
+                          />
+                        </div>
+                        <div class="item__main">
+                          <p>
+                            Вы получите инструмент, который поможет вам
+                            эффективно привлечь большое количество потенциальных
+                            клиентов за короткое время. Этот инструмент
+                            гарантирует выполнение задач сотрудниками и
+                            предоставляет результаты их работы в реальном
+                            времени.
+                          </p>
+                          <div class="item__main__advantages">
+                            <span>
+                            <img src="https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg" alt="confirm svg icon">
+                              <p>Вероятность довести клиента до заключения сделки возрастает до 80%</p>
+                          </span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                  <button class="open_consultation">
+                    Получить консультацию
+                  </button>
+                  <div class="tarifs-block__background"></div>
                 </div>
               </div>
             </div>
@@ -968,9 +1090,9 @@
       </div>
     </main>
 
-    <section class="consultation">
+    <section class="consultation slideIn_left">
       <div class="container">
-        <div>
+        <div class="consultation__form">
           <button class="consultation__back-btn hide_consultation">
             Вернуться
           </button>
@@ -1003,6 +1125,61 @@
             />
           </video>
         </div>
+      </div>
+    </section>
+
+    <section class="privacy-policy slideIn_left">
+      <div class="container">
+        <div class="privacy-policy__content">
+          <button class="hide_privacy-policy">Вернуться</button>
+          <div class="privacy-policy__number-wrapper">
+            <span class="privacy-policy__number">3</span>
+            <span>Конфиденциальность</span>
+          </div>
+          <h1>
+            Ваш бизнес в надежных руках. Вся информация, полученная в процессе
+            работы, останется строго конфиденциальной.
+          </h1>
+          <p>
+            В процессе предоставления услуг внедрения, Исполнитель признает, что
+            может стать обладателем конфиденциальной информации, относящейся к
+            технологиям, бизнес-процессам, стратегиям, идеям или другим аспектам
+            деятельности Заказчика. Исполнитель обязуется не раскрывать такую
+            информацию третьим лицам, а также не использовать ее для каких-либо
+            других целей, кроме оказания услуг Заказчика в рамках данного
+            договора. конфиденциальности остается в силе как во время срока
+            действия договора, так и после его завершения. Все материалы и
+            знания, полученные Исполнителем в ходе сотрудничества, являются
+            интеллектуальной собственностью Заказчика, и Исполнитель не имеет
+            права использовать их в личных целях или в интересах других проектов
+            или сторон.
+          </p>
+        </div>
+        <img
+          src="https://static.tildacdn.com/tild3462-3931-4864-a232-656635383836/dogovor.png"
+          alt="dogovor png"
+        />
+      </div>
+    </section>
+
+    <section class="service slideIn_left">
+      <div class="container">
+        <div class="service__content">
+          <button class="hide_service">Вернуться</button>
+          <h1>1 месяц обслуживания в подарок!</h1>
+          <p>
+            Приобретая интеграцию, вы получаете месяц обслуживания в подарок! В
+            течение этого месяца мы предоставляем полное сопровождение вашего
+            проекта, включая бесплатные изменения и реализацию всех ваших
+            пожеланий. Наша команда будет доступна для вас 24 часа в сутки, 7
+            дней в неделю, чтобы гарантировать безупречную работу и адаптацию
+            сервиса под ваши уникальные потребности
+          </p>
+        </div>
+        <img
+          src="https://static.tildacdn.com/tild3733-3734-4331-b963-363736333630/gift.png"
+          alt="gift png"
+        />
       </div>
     </section>
   </body>
