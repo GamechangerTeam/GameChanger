@@ -1401,7 +1401,6 @@ body {
           display: grid;
           place-items: center;
           background-color: $gray;
-
         }
 
         &__text {
@@ -1448,6 +1447,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        cursor: pointer;
 
         @include tablet() {
           padding: 0 16px;
@@ -1498,9 +1498,7 @@ body {
           border-radius: 20px;
           @include tablet() {
             padding: 16px;
-
           }
-
         }
 
         &__includes__content {
@@ -1537,11 +1535,147 @@ body {
     }
   }
 
-
   .open_consultation {
     @include greenBtn();
     padding: 12px 24px;
     font-weight: 600;
     font-size: 16px;
+  }
+}
+
+.cases-block {
+  height: 100dvh;
+  background-color: black;
+  @include pc {
+    height: 100%;
+  }
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-content: space-between;
+    gap: 10px;
+    @include pc {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @include mobile() {
+      padding: 10px 0;
+    }
+  }
+
+  .swiper {
+    @include slider();
+    @include mobile() {
+      padding: 0 10px 20px;
+    }
+    &-wrapper {
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      @include mobile() {
+        gap: 0;
+        flex-direction: row;
+        justify-content: unset;
+      }
+    }
+    &-pagination-bullet-active  {
+      background-color: white !important;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1.5rem;
+    background-color: $black;
+    border: 1px solid $border_gray;
+    border-radius: 20px;
+    height: fit-content;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+    p {
+      padding-left: 1rem;
+      border-left: 1px solid $border_gray;
+      font-size: 1rem;
+    }
+
+    @include tablet() {
+      grid-template: auto / 150px 1fr;
+
+      p {
+        grid-column-start: 2 span;
+        width: 100%;
+        padding-left: 0;
+        border: none;
+      }
+    }
+    @include mobile() {
+      grid-template: 150px auto auto / 1fr;
+      p {
+        grid-area: 3/1;
+      }
+    }
+  }
+
+  &__logo {
+    padding: 14px;
+    border-radius: 20px;
+    background-color: $gray;
+  }
+
+  &__gray-line {
+    height: 1px;
+    background-color: $border_gray;
+    width: 100%;
+    display: block;
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    span {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  &__btns {
+    display: flex;
+    gap: 10px;
+    @include mobile() {
+      padding: 0 10px;
+      flex-direction: column;
+    }
+    button {
+      width: 100%;
+      @include greenBtn();
+      padding: 12px 24px;
+    }
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $gray;
+      border: 1px solid $border_gray;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      padding: 12px 24px;
+    }
   }
 }

@@ -25,6 +25,7 @@ let mainSwiper;
 let painBlockSwiper;
 let possibilitiesBlockSwiper;
 let implementationBlockSwiper;
+let casesBlockSwiper
 
 function initSwipersOnPc() {
   if (window.innerWidth >= 1200) {
@@ -58,6 +59,7 @@ function initSwipersOnTablet() {
         },
       },
     });
+
   } else if (
     window.innerWidth > 768 &&
     (painBlockSwiper, possibilitiesBlockSwiper)
@@ -83,6 +85,15 @@ function initSwipersOnMobile() {
       direction: "horizontal",
       slidesPerView: 1,
       spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+    casesBlockSwiper = new Swiper("#casesBlockSwiper", {
+      direction: "horizontal",
+      slidesPerView: 1,
+      spaceBetween: 30,
+
       pagination: {
         el: ".swiper-pagination",
       },
