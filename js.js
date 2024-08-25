@@ -10,6 +10,11 @@ const homePageSwiper = new Swiper("#homePageSwiper", {
     nextEl: ".toMainPage",
     prevEl: ".toHomePage",
   },
+
+  hashNavigation: {
+    watchState: true,
+  },
+
   creativeEffect: {
     prev: {
       shadow: true,
@@ -21,20 +26,79 @@ const homePageSwiper = new Swiper("#homePageSwiper", {
   },
 });
 
+const toggler = document.querySelector(
+  ".modulesBlockSwiper-navigation__toggler"
+);
+
+const modulesBlockSwiper = new Swiper("#modulesBlockSwiper", {
+  speed: 500,
+  spaceBetween: 30,
+  slidesPerView: 1,
+  allowTouchMove: false,
+  // autoHeight: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    769: {
+      slidesPerView: 2,
+    },
+  },
+  on: {
+    slideChange: function () {
+      // Получаем активный слайд
+      if (this.activeIndex) {
+        toggler.style.left = "50%";
+      } else {
+        toggler.style.left = "0%";
+      }
+    },
+  },
+});
+
+const modulesCardSwiper = new Swiper("#modules-card-swiper1", {
+  speed: 500,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+const modulesCardSwiper2 = new Swiper("#modules-card-swiper2", {
+  speed: 500,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 let mainSwiper;
 let painBlockSwiper;
 let possibilitiesBlockSwiper;
 let implementationBlockSwiper;
-let casesBlockSwiper
+let casesBlockSwiper;
 
 function initSwipersOnPc() {
   if (window.innerWidth >= 1200) {
     mainSwiper = new Swiper("#mainSwiper", {
       direction: "vertical",
-      // freeMode: true,
       speed: 500,
       mousewheel: true,
       allowTouchMove: false,
+      hashNavigation: {
+        watchState: true,
+      },
     });
   } else if (window.innerWidth < 1200 && mainSwiper) {
     mainSwiper.destroy(true, true);
@@ -59,7 +123,6 @@ function initSwipersOnTablet() {
         },
       },
     });
-
   } else if (
     window.innerWidth > 768 &&
     (painBlockSwiper, possibilitiesBlockSwiper)
@@ -494,4 +557,29 @@ document.addEventListener("DOMContentLoaded", function () {
   video.addEventListener("canplaythrough", function () {
     preloader.style.display = "none";
   });
+
+  // ОТКРЫТИЕ КАРТОЧЕК В FAQ
+  const faq_list = document.querySelector(".faq__list");
+
+  faq_list.addEventListener('click', (e) => {
+    const card = e.target.closest(".faq__card")
+    if (card) {
+      const main = card.querySelector(".faq__main");
+      const icon = card.querySelector('.faq__icon')
+      if (main.style.maxHeight) {
+        main.style.maxHeight = null;
+        icon.classList.toggle("active")
+
+      } else {
+        main.style.maxHeight = main.scrollHeight + "px";
+        icon.classList.toggle("active")
+      }
+    }
+  })
+
+  // faq_card.forEach((card) => {
+  //   card.addEventListener("click", () => {
+      
+  //   });
+  // });
 });

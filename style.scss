@@ -39,13 +39,18 @@ $border_gray: #292929;
 // ВСПОМОГАТЕЛЬНЫЕ ЭЛЕМЕНТЫ
 
 $greenGradient: linear-gradient(to right, #04d404 4.77%, #026e02 94.98%);
-$grayGradient: linear-gradient(to bottom, #ffffff33 10%, #ffffff10 80%);
+$grayGradient: linear-gradient(
+  to bottom,
+  rgba(255, 255, 255, 0.32) 0%,
+  rgba(255, 255, 255, 0.0384) 100%
+);
 
 @mixin grayBtn {
   background-color: $black;
   border: 1px solid $gray;
   border-radius: 10px;
 }
+
 @mixin greenBtn {
   border: none;
   background: $greenGradient;
@@ -55,7 +60,7 @@ $grayGradient: linear-gradient(to bottom, #ffffff33 10%, #ffffff10 80%);
 .gradient-container {
   width: 100%;
   height: 100%;
-  padding: 2px;
+  padding: 1px;
   position: relative;
 }
 
@@ -133,6 +138,7 @@ $grayGradient: linear-gradient(to bottom, #ffffff33 10%, #ffffff10 80%);
   padding: 0;
   font-family: "Montserrat", sans-serif;
   margin: 0;
+  // scroll-behavior: smooth;
 }
 
 @include tablet {
@@ -224,8 +230,6 @@ h3 {
   height: 100%;
   // border: 1px solid #0f0f0f;
   // border-radius: 20px;
-  outline: 1px solid red;
-  border: 1px solid green;
   @include tablet() {
     padding: 10px;
   }
@@ -240,6 +244,9 @@ body {
 .swiper {
   width: 100%;
   height: 100%;
+  .swiper-slide {
+    scroll-behavior: smooth;
+  }
 }
 
 #homePageSwiper {
@@ -278,7 +285,6 @@ body {
   &-background-text {
     position: absolute;
     width: 100%;
-    background-color: red;
     left: 0;
     top: 20px;
     font-style: normal;
@@ -446,6 +452,12 @@ body {
       gap: 16px;
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+}
+
+.second-slide {
+  @media (min-width: 1200px) {
+    overflow-y: hidden !important;
   }
 }
 
@@ -1579,7 +1591,7 @@ body {
         justify-content: unset;
       }
     }
-    &-pagination-bullet-active  {
+    &-pagination-bullet-active {
       background-color: white !important;
     }
   }
@@ -1677,5 +1689,318 @@ body {
       color: white;
       padding: 12px 24px;
     }
+  }
+}
+
+.modules-block {
+  background-color: black;
+  // height: 100dvh;
+  padding: 10px;
+  .gradient-container {
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+  }
+  .container {
+    background-color: $black;
+    position: relative;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    justify-content: center;
+    height: auto;
+    height: calc(100dvh - 30px);
+    @include pc {
+      height: auto;
+    }
+    @include tablet {
+      grid-template-rows: auto 50px 1fr;
+    }
+    @include mobile() {
+      grid-template-rows: auto 40px 1fr;
+    }
+  }
+
+  #modulesBlockSwiper .gradient-border {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.024) 100%
+    );
+  }
+
+  #modules-block-pagination {
+    top: 0 !important;
+  }
+
+  .swiper {
+    @include slider();
+    // height: auto !important;
+    &-pagination {
+      display: block !important;
+      bottom: 20px !important;
+      &-bullet {
+        background: $greenGradient;
+      }
+    }
+  }
+
+  .modulesBlockSwiper-navigation {
+    position: relative;
+    top: 0;
+    border: 1px solid #04d404;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    width: 100%;
+    justify-self: center;
+    border-radius: 100px;
+    overflow: hidden;
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+    button {
+      position: static;
+      top: 0;
+      opacity: 1;
+      display: block;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      color: white;
+
+      svg {
+        width: 50%;
+      }
+      &::after {
+        display: none;
+      }
+    }
+
+    &__toggler {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background-color: #04d404;
+      border-radius: 100px;
+      top: 0;
+      left: 0%;
+      transition: 0.5s;
+    }
+  }
+
+  .modules-card-swiper {
+    background-color: $black;
+    border-radius: 10px;
+
+    &__card {
+      padding: 1.5rem;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 20px;
+    }
+
+    &__header {
+      display: grid;
+      grid-template: auto auto / 64px 1fr;
+      column-gap: 20px;
+      h3 {
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+
+    .gradient-container {
+      grid-area: 1/1;
+      grid-row-start: 2 span;
+    }
+
+    .gradient-border {
+    }
+
+    &__number {
+      display: grid;
+      place-items: center;
+      height: 64px;
+      background-color: $gray;
+      border-radius: 10px;
+      position: relative;
+      font-weight: 900;
+      font-size: 28px;
+    }
+
+    &__main {
+    }
+
+    &__price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #04d404;
+    }
+
+    &__img {
+      width: 50%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: auto;
+      bottom: 10px;
+      background: $greenGradient;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      @include tablet() {
+        display: none;
+      }
+      svg {
+        width: 50%;
+      }
+      &::after {
+        content: "";
+      }
+    }
+  }
+
+  a {
+    width: fit-content;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    justify-self: center;
+    border: 1px solid $border_gray;
+    border-radius: 10px;
+    padding: 12px 24px;
+    background-color: $gray;
+    @include pc() {
+      display: none;
+    }
+  }
+}
+
+.faq {
+  background-color: black;
+  @media (min-width: 1200px) {
+    min-height: 100vh;
+    height: auto;
+  }
+  .gradient-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    @media (min-width: 1200px) {
+      min-height: 100vh;
+      height: auto;
+    }
+  }
+
+  .container {
+    background-color: $black;
+    position: relative;
+    border-radius: 10px;
+    @media (min-width: 1200px) {
+      min-height: 100vh;
+      height: auto;
+    }
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+  a {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: fit-content;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    justify-self: center;
+    border: 1px solid $border_gray;
+    border-radius: 10px;
+    padding: 12px 24px;
+    background-color: $gray;
+    @include pc() {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__card {
+    background-color: $gray;
+    border: 1px solid $border_gray;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__header {
+    padding: 20px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    @include tablet() {
+      padding: 12px 16px;
+    }
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.5s;
+    &--vertical-line,
+    &--horizontal-line {
+      position: absolute;
+      background-color: black;
+      left: 50%;
+      top: 50%;
+      transition: 0.5s;
+      transform: translate(-50%, -50%);
+    }
+    &--vertical-line {
+      width: 1px;
+      height: 12px;
+    }
+    &--horizontal-line {
+      width: 12px;
+      height: 1px;
+    }
+    &.active {
+      rotate: 360deg;
+      background: $greenGradient;
+      .faq__icon--vertical-line {
+        width: 0px;
+        height: 0px;
+      }
+    }
+  }
+
+  &__main {
+    transition: 0.5s;
+    height: 100%;
+    max-height: 0;
+    padding: 0 24px;
+    @include tablet() {
+      padding: 0 16px;
+    }
+
+    p {
+      padding-left: 48px;
+      font-size: 1rem;
+    }
+  }
+  h3 {
+    font-size: 1.2rem;
   }
 }

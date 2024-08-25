@@ -2,7 +2,7 @@
 .gradient-container {
   width: 100%;
   height: 100%;
-  padding: 2px;
+  padding: 1px;
   position: relative;
 }
 
@@ -13,7 +13,7 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.062745098) 80%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.0384) 100%);
   z-index: 0;
   transition: 0.3s;
 }
@@ -131,8 +131,6 @@ h3 {
   max-width: 1200px;
   width: 100%;
   height: 100%;
-  outline: 1px solid red;
-  border: 1px solid green;
 }
 @media (max-width: 768px) {
   .container {
@@ -149,6 +147,9 @@ body {
 .swiper {
   width: 100%;
   height: 100%;
+}
+.swiper .swiper-slide {
+  scroll-behavior: smooth;
 }
 
 #homePageSwiper {
@@ -188,7 +189,6 @@ body {
 .homepage-background-text {
   position: absolute;
   width: 100%;
-  background-color: red;
   left: 0;
   top: 20px;
   font-style: normal;
@@ -370,6 +370,12 @@ body {
   .homepage__main {
     gap: 16px;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .second-slide {
+    overflow-y: hidden !important;
   }
 }
 
@@ -1299,7 +1305,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.062745098) 80%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.0384) 100%);
   z-index: 0;
   transition: 0.3s;
 }
@@ -1761,4 +1767,331 @@ body {
   text-decoration: none;
   color: white;
   padding: 12px 24px;
+}
+
+.modules-block {
+  background-color: black;
+  padding: 10px;
+}
+.modules-block .gradient-container {
+  max-width: 1200px;
+  margin: auto;
+  height: auto;
+}
+.modules-block .container {
+  background-color: #0f0f0f;
+  position: relative;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  justify-content: center;
+  height: auto;
+  height: calc(100dvh - 30px);
+}
+@media (max-width: 1200px) {
+  .modules-block .container {
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .modules-block .container {
+    grid-template-rows: auto 50px 1fr;
+  }
+}
+@media (max-width: 525px) {
+  .modules-block .container {
+    grid-template-rows: auto 40px 1fr;
+  }
+}
+.modules-block #modulesBlockSwiper .gradient-border {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.024) 100%);
+}
+.modules-block #modules-block-pagination {
+  top: 0 !important;
+}
+@media (max-width: 768px) {
+  .modules-block .swiper {
+    padding-bottom: 20px;
+  }
+}
+.modules-block .swiper .swiper-pagination {
+  display: none;
+  top: auto;
+  bottom: 0px;
+}
+@media (max-width: 768px) {
+  .modules-block .swiper .swiper-pagination {
+    display: block;
+    align-items: center;
+  }
+}
+.modules-block .swiper .swiper-pagination-bullet {
+  width: 20px;
+  height: 2px;
+  background-color: #808080;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.modules-block .swiper .swiper-pagination-bullet-active {
+  width: 40px;
+  background-color: black;
+}
+.modules-block .swiper-pagination {
+  display: block !important;
+  bottom: 20px !important;
+}
+.modules-block .swiper-pagination-bullet {
+  background: linear-gradient(to right, #04d404 4.77%, #026e02 94.98%);
+}
+.modules-block .modulesBlockSwiper-navigation {
+  position: relative;
+  top: 0;
+  border: 1px solid #04d404;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  width: 100%;
+  justify-self: center;
+  border-radius: 100px;
+  overflow: hidden;
+  display: none;
+}
+@media (max-width: 768px) {
+  .modules-block .modulesBlockSwiper-navigation {
+    display: flex;
+  }
+}
+.modules-block .modulesBlockSwiper-navigation button {
+  position: static;
+  top: 0;
+  opacity: 1;
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: white;
+}
+.modules-block .modulesBlockSwiper-navigation button svg {
+  width: 50%;
+}
+.modules-block .modulesBlockSwiper-navigation button::after {
+  display: none;
+}
+.modules-block .modulesBlockSwiper-navigation__toggler {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #04d404;
+  border-radius: 100px;
+  top: 0;
+  left: 0%;
+  transition: 0.5s;
+}
+.modules-block .modules-card-swiper {
+  background-color: #0f0f0f;
+  border-radius: 10px;
+}
+.modules-block .modules-card-swiper__card {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+}
+.modules-block .modules-card-swiper__header {
+  display: grid;
+  grid-template: auto auto/64px 1fr;
+  column-gap: 20px;
+}
+.modules-block .modules-card-swiper__header h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.modules-block .modules-card-swiper .gradient-container {
+  grid-area: 1/1;
+  grid-row-start: 2 span;
+}
+.modules-block .modules-card-swiper__number {
+  display: grid;
+  place-items: center;
+  height: 64px;
+  background-color: #141414;
+  border-radius: 10px;
+  position: relative;
+  font-weight: 900;
+  font-size: 28px;
+}
+.modules-block .modules-card-swiper__price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #04d404;
+}
+.modules-block .modules-card-swiper__img {
+  width: 50%;
+}
+.modules-block .modules-card-swiper .swiper-button-next,
+.modules-block .modules-card-swiper .swiper-button-prev {
+  top: auto;
+  bottom: 10px;
+  background: linear-gradient(to right, #04d404 4.77%, #026e02 94.98%);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 768px) {
+  .modules-block .modules-card-swiper .swiper-button-next,
+  .modules-block .modules-card-swiper .swiper-button-prev {
+    display: none;
+  }
+}
+.modules-block .modules-card-swiper .swiper-button-next svg,
+.modules-block .modules-card-swiper .swiper-button-prev svg {
+  width: 50%;
+}
+.modules-block .modules-card-swiper .swiper-button-next::after,
+.modules-block .modules-card-swiper .swiper-button-prev::after {
+  content: "";
+}
+.modules-block a {
+  width: fit-content;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  justify-self: center;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  padding: 12px 24px;
+  background-color: #141414;
+}
+@media (max-width: 1200px) {
+  .modules-block a {
+    display: none;
+  }
+}
+
+.faq {
+  background-color: black;
+}
+@media (min-width: 1200px) {
+  .faq {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+.faq .gradient-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+@media (min-width: 1200px) {
+  .faq .gradient-container {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+.faq .container {
+  background-color: #0f0f0f;
+  position: relative;
+  border-radius: 10px;
+}
+@media (min-width: 1200px) {
+  .faq .container {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+.faq h2 {
+  margin-bottom: 40px;
+}
+.faq a {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: fit-content;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  justify-self: center;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  padding: 12px 24px;
+  background-color: #141414;
+}
+@media (max-width: 1200px) {
+  .faq a {
+    display: none;
+  }
+}
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.faq__card {
+  background-color: #141414;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.faq__header {
+  padding: 20px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .faq__header {
+    padding: 12px 16px;
+  }
+}
+.faq__icon {
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.5s;
+}
+.faq__icon--vertical-line, .faq__icon--horizontal-line {
+  position: absolute;
+  background-color: black;
+  left: 50%;
+  top: 50%;
+  transition: 0.5s;
+  transform: translate(-50%, -50%);
+}
+.faq__icon--vertical-line {
+  width: 1px;
+  height: 12px;
+}
+.faq__icon--horizontal-line {
+  width: 12px;
+  height: 1px;
+}
+.faq__icon.active {
+  rotate: 360deg;
+  background: linear-gradient(to right, #04d404 4.77%, #026e02 94.98%);
+}
+.faq__icon.active .faq__icon--vertical-line {
+  width: 0px;
+  height: 0px;
+}
+.faq__main {
+  transition: 0.5s;
+  height: 100%;
+  max-height: 0;
+  padding: 0 24px;
+}
+@media (max-width: 768px) {
+  .faq__main {
+    padding: 0 16px;
+  }
+}
+.faq__main p {
+  padding-left: 48px;
+  font-size: 1rem;
+}
+.faq h3 {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=style.css.map */

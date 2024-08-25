@@ -35,7 +35,7 @@
   <body>
     <main class="swiper" id="homePageSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide bordered_slide">
+        <div class="swiper-slide bordered_slide" data-hash="home">
           <div class="homepage">
             <div class="container">
               <div class="homepage__header">
@@ -214,10 +214,10 @@
             </div>
           </div>
         </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide second-slide" data-hash="main" >
           <div class="swiper main-block" id="mainSwiper">
             <div class="swiper-wrapper" id="main-block__swiper-wrapper">
-              <div class="swiper-slide hero">
+              <div class="swiper-slide hero" data-hash="hero">
                 <div class="container">
                   <div class="hero__main-info">
                     <button class="hero__back-btn toHomePage">
@@ -300,7 +300,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide pain-block">
+              <div class="swiper-slide pain-block" data-hash="pains">
                 <div class="container">
                   <h2>Боли, которые мы решаем</h2>
                   <div class="swiper" id="painBlockSwiper">
@@ -559,7 +559,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide possibilities-block" id="lox">
+              <div class="swiper-slide possibilities-block" data-hash="possibilities">
                 <div class="container">
                   <h2>Возможности системы</h2>
                   <div class="swiper" id="possibilitiesBlockSwiper">
@@ -900,7 +900,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide implementation-block">
+              <div class="swiper-slide implementation-block" data-hash="implementation">
                 <div class="container">
                   <h2>Внедрение системы без головной боли</h2>
                   <div class="swiper" id="implementationBlockSwiper">
@@ -978,7 +978,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide tarifs-block">
+              <div class="swiper-slide tarifs-block" data-hash="tarifs">
                 <div class="container">
                   <h2>Тарифы</h2>
                   <ul class="tarifs-block__list">
@@ -1317,7 +1317,7 @@
                   <div class="tarifs-block__background"></div>
                 </div>
               </div>
-              <div class="swiper-slide cases-block">
+              <div class="swiper-slide cases-block" data-hash="cases">
                 <div class="container">
                   <h2>Наши кейсы</h2>
                   <div class="swiper" id="casesBlockSwiper">
@@ -1664,6 +1664,364 @@
                     >
                   </div>
                 </div>
+              </div>
+              <div class="swiper-slide modules-block" id="last" data-hash="modules">
+                <div class="gradient-container">
+                  <div class="gradient-border"></div>
+                  <div class="container">
+                    <h2>Модули</h2>
+                    <div class="modulesBlockSwiper-navigation">
+                      <div class="modulesBlockSwiper-navigation__toggler"></div>
+                      <button class="swiper-button-prev">Модули</button>
+                      <button class="swiper-button-next">Роботы</button>
+                    </div>
+                    <div class="swiper" id="modulesBlockSwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide gradient-container">
+                          <div class="gradient-border"></div>
+                          <div
+                            class="swiper modules-card-swiper"
+                            id="modules-card-swiper1"
+                          >
+                            <div class="swiper-wrapper">
+                              <div
+                                class="swiper-slide modules-card-swiper__card"
+                              >
+                                <div class="modules-card-swiper__header">
+                                  <div class="gradient-container">
+                                    <div class="gradient-border"></div>
+                                    <span class="modules-card-swiper__number"
+                                      >1</span
+                                    >
+                                  </div>
+                                  <h3>Складской модуль</h3>
+                                  <p>реализация 7 дней</p>
+                                </div>
+                                <div class="modules-card-swiper__main">
+                                  <span class="modules-card-swiper__price"
+                                    >50&nbsp;000₸</span
+                                  >
+                                  <p>
+                                    Этот модуль позволит вам отслеживать остатки
+                                    товаров по категориям на всех складах
+                                    одновременно. <br />
+                                    Кроме того, вы сможете изменять цены на все
+                                    товары сразу.
+                                  </p>
+                                </div>
+                                <img
+                                  class="modules-card-swiper__img"
+                                  src="https://static.tildacdn.com/tild3337-3762-4762-b862-356636613838/agile5.png"
+                                  alt="module image png"
+                                />
+                              </div>
+                              <div
+                                class="swiper-slide modules-card-swiper__card"
+                              >
+                                <div class="modules-card-swiper__header">
+                                  <span class="modules-card-swiper__number"
+                                    >1</span
+                                  >
+                                  <h3>Складской модуль</h3>
+                                  <p>реализация 7 дней</p>
+                                </div>
+                                <div class="modules-card-swiper__main">
+                                  <span class="modules-card-swiper__price"
+                                    >50&nbsp;000₸</span
+                                  >
+                                  <p>
+                                    Этот модуль позволит вам отслеживать остатки
+                                    товаров по категориям на всех складах
+                                    одновременно. <br />
+                                    Кроме того, вы сможете изменять цены на все
+                                    товары сразу.
+                                  </p>
+                                </div>
+                                <img
+                                  class="modules-card-swiper__img"
+                                  src="https://static.tildacdn.com/tild3337-3762-4762-b862-356636613838/agile5.png"
+                                  alt="module image png"
+                                />
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next">
+                              <svg
+                                width="12"
+                                height="10"
+                                viewBox="0 0 12 10"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M1.66699 5.00008H10.667M10.667 5.00008L7.33366 1.66675M10.667 5.00008L7.33366 8.33341"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                            <div class="swiper-button-prev">
+                              <svg
+                                width="12"
+                                height="10"
+                                viewBox="0 0 12 10"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M10.333 5.00008H1.33301M1.33301 5.00008L4.66634 1.66675M1.33301 5.00008L4.66634 8.33341"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide gradient-container">
+                          <div class="gradient-border"></div>
+                          <div
+                            class="swiper modules-card-swiper"
+                            id="modules-card-swiper1"
+                          >
+                            <div class="swiper-wrapper">
+                              <div
+                                class="swiper-slide modules-card-swiper__card"
+                              >
+                                <div class="modules-card-swiper__header">
+                                  <div class="gradient-container">
+                                    <div class="gradient-border"></div>
+                                    <span class="modules-card-swiper__number"
+                                      >1</span
+                                    >
+                                  </div>
+                                  <h3>Складской модуль</h3>
+                                  <p>реализация 7 дней</p>
+                                </div>
+                                <div class="modules-card-swiper__main">
+                                  <span class="modules-card-swiper__price"
+                                    >50&nbsp;000₸</span
+                                  >
+                                  <p>
+                                    Этот модуль позволит вам отслеживать остатки
+                                    товаров по категориям на всех складах
+                                    одновременно. <br />
+                                    Кроме того, вы сможете изменять цены на все
+                                    товары сразу.
+                                  </p>
+                                </div>
+                                <img
+                                  class="modules-card-swiper__img"
+                                  src="https://static.tildacdn.com/tild3337-3762-4762-b862-356636613838/agile5.png"
+                                  alt="module image png"
+                                />
+                              </div>
+                              <div
+                                class="swiper-slide modules-card-swiper__card"
+                              >
+                                <div class="modules-card-swiper__header">
+                                  <span class="modules-card-swiper__number"
+                                    >1</span
+                                  >
+                                  <h3>Складской модуль</h3>
+                                  <p>реализация 7 дней</p>
+                                </div>
+                                <div class="modules-card-swiper__main">
+                                  <span class="modules-card-swiper__price"
+                                    >50&nbsp;000₸</span
+                                  >
+                                  <p>
+                                    Этот модуль позволит вам отслеживать остатки
+                                    товаров по категориям на всех складах
+                                    одновременно. <br />
+                                    Кроме того, вы сможете изменять цены на все
+                                    товары сразу.
+                                  </p>
+                                </div>
+                                <img
+                                  class="modules-card-swiper__img"
+                                  src="https://static.tildacdn.com/tild3337-3762-4762-b862-356636613838/agile5.png"
+                                  alt="module image png"
+                                />
+                              </div>
+                            </div>
+                            <div class="swiper-button-next">
+                              <svg
+                                width="12"
+                                height="10"
+                                viewBox="0 0 12 10"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M1.66699 5.00008H10.667M10.667 5.00008L7.33366 1.66675M10.667 5.00008L7.33366 8.33341"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                            <div class="swiper-button-prev">
+                              <svg
+                                width="12"
+                                height="10"
+                                viewBox="0 0 12 10"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M10.333 5.00008H1.33301M1.33301 5.00008L4.66634 1.66675M1.33301 5.00008L4.66634 8.33341"
+                                  stroke="white"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="#faq">Перейти к часто задаваемым вопросам</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq" id="faq">
+            <div class="gradient-container">
+              <div class="gradient-border"></div>
+              <div class="container">
+                <a href="#last">Вернуться</a>
+                <h2>FAQ</h2>
+                <ul class="faq__list">
+                  <li class="faq__card">
+                    <div class="faq__header">
+                      <div class="faq__icon">
+                        <span class="faq__icon--vertical-line"></span>
+                        <span class="faq__icon--horizontal-line"></span>
+                      </div>
+                      <h3>Почему нужна CRM?</h3>
+                    </div>
+                    <div class="faq__main">
+                      <p>
+                        CRM помогает вам лучше управлять вашими клиентами и
+                        продажами независимо от сегмента бизнеса. Это упрощает
+                        процессы, экономит время и помогает увеличить доход. Мы
+                        же создадим систему, которая сделает Ваш бизнес проще и
+                        результативней.
+                        <br>
+                      </p>
+                      <br>
+                    </div>
+                  </li>
+                  <li class="faq__card">
+                    <div class="faq__header">
+                      <div class="faq__icon">
+                        <span class="faq__icon--vertical-line"></span>
+                        <span class="faq__icon--horizontal-line"></span>
+                      </div>
+                      <h3>Почему нужна CRM?</h3>
+                    </div>
+                    <div class="faq__main">
+                      <p>
+                        CRM помогает вам лучше управлять вашими клиентами и
+                        продажами независимо от сегмента бизнеса. Это упрощает
+                        процессы, экономит время и помогает увеличить доход. Мы
+                        же создадим систему, которая сделает Ваш бизнес проще и
+                        результативней.
+                        <br>
+                      </p>
+                      <br>
+                    </div>
+                  </li>
+                  <li class="faq__card">
+                    <div class="faq__header">
+                      <div class="faq__icon">
+                        <span class="faq__icon--vertical-line"></span>
+                        <span class="faq__icon--horizontal-line"></span>
+                      </div>
+                      <h3>Почему нужна CRM?</h3>
+                    </div>
+                    <div class="faq__main">
+                      <p>
+                        CRM помогает вам лучше управлять вашими клиентами и
+                        продажами независимо от сегмента бизнеса. Это упрощает
+                        процессы, экономит время и помогает увеличить доход. Мы
+                        же создадим систему, которая сделает Ваш бизнес проще и
+                        результативней.
+                        <br>
+                      </p>
+                      <br>
+                    </div>
+                  </li>
+                  <li class="faq__card">
+                    <div class="faq__header">
+                      <div class="faq__icon">
+                        <span class="faq__icon--vertical-line"></span>
+                        <span class="faq__icon--horizontal-line"></span>
+                      </div>
+                      <h3>Почему нужна CRM?</h3>
+                    </div>
+                    <div class="faq__main">
+                      <p>
+                        CRM помогает вам лучше управлять вашими клиентами и
+                        продажами независимо от сегмента бизнеса. Это упрощает
+                        процессы, экономит время и помогает увеличить доход. Мы
+                        же создадим систему, которая сделает Ваш бизнес проще и
+                        результативней.
+                        <br>
+                      </p>
+                      <br>
+                    </div>
+                  </li>
+                  <li class="faq__card">
+                    <div class="faq__header">
+                      <div class="faq__icon">
+                        <span class="faq__icon--vertical-line"></span>
+                        <span class="faq__icon--horizontal-line"></span>
+                      </div>
+                      <h3>Почему нужна CRM?</h3>
+                    </div>
+                    <div class="faq__main">
+                      <p>
+                        CRM помогает вам лучше управлять вашими клиентами и
+                        продажами независимо от сегмента бизнеса. Это упрощает
+                        процессы, экономит время и помогает увеличить доход. Мы
+                        же создадим систему, которая сделает Ваш бизнес проще и
+                        результативней.
+                        <br>
+                      </p>
+                      <br>
+                    </div>
+                  </li>
+                  <li class="faq__card">
+                    <div class="faq__header">
+                      <div class="faq__icon">
+                        <span class="faq__icon--vertical-line"></span>
+                        <span class="faq__icon--horizontal-line"></span>
+                      </div>
+                      <h3>Почему нужна CRM?</h3>
+                    </div>
+                    <div class="faq__main">
+                      <p>
+                        CRM помогает вам лучше управлять вашими клиентами и
+                        продажами независимо от сегмента бизнеса. Это упрощает
+                        процессы, экономит время и помогает увеличить доход. Мы
+                        же создадим систему, которая сделает Ваш бизнес проще и
+                        результативней.
+                        <br>
+                      </p>
+                      <br>
+                    </div>
+                  </li>
+
+                </ul>
               </div>
             </div>
           </div>
