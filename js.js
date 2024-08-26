@@ -1,200 +1,4 @@
-const nice = [window.innerWidth, window.innerHeight];
-
-const homePageSwiper = new Swiper("#homePageSwiper", {
-  effect: "creative",
-  allowTouchMove: false,
-  speed: 500,
-  // autoHeight: true,
-
-  navigation: {
-    nextEl: ".toMainPage",
-    prevEl: ".toHomePage",
-  },
-
-  hashNavigation: {
-    watchState: true,
-  },
-
-  creativeEffect: {
-    prev: {
-      shadow: true,
-      translate: ["-20%", 0, -1],
-    },
-    next: {
-      translate: ["100%", 0, 0],
-    },
-  },
-});
-
-const toggler = document.querySelector(
-  ".modulesBlockSwiper-navigation__toggler"
-);
-
-const modulesBlockSwiper = new Swiper("#modulesBlockSwiper", {
-  speed: 500,
-  spaceBetween: 30,
-  slidesPerView: 1,
-  allowTouchMove: false,
-  // autoHeight: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    769: {
-      slidesPerView: 2,
-    },
-  },
-  on: {
-    slideChange: function () {
-      // Получаем активный слайд
-      if (this.activeIndex) {
-        toggler.style.left = "50%";
-      } else {
-        toggler.style.left = "0%";
-      }
-    },
-  },
-});
-
-const modulesCardSwiper = new Swiper("#modules-card-swiper1", {
-  speed: 500,
-  grabCursor: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-const modulesCardSwiper2 = new Swiper("#modules-card-swiper2", {
-  speed: 500,
-  grabCursor: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-let mainSwiper;
-let painBlockSwiper;
-let possibilitiesBlockSwiper;
-let implementationBlockSwiper;
-let casesBlockSwiper;
-
-function initSwipersOnPc() {
-  if (window.innerWidth >= 1200) {
-    mainSwiper = new Swiper("#mainSwiper", {
-      direction: "vertical",
-      speed: 500,
-      mousewheel: true,
-      allowTouchMove: false,
-      hashNavigation: {
-        watchState: true,
-      },
-    });
-  } else if (window.innerWidth < 1200 && mainSwiper) {
-    mainSwiper.destroy(true, true);
-    mainSwiper = undefined;
-  }
-}
-
-function initSwipersOnTablet() {
-  if (window.innerWidth <= 768) {
-    painBlockSwiper = new Swiper("#painBlockSwiper", {
-      direction: "horizontal",
-      slidesPerView: 1,
-      spaceBetween: 30,
-
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      breakpoints: {
-        769: {
-          direction: "vertical",
-          slidesPerView: 3,
-        },
-      },
-    });
-  } else if (
-    window.innerWidth > 768 &&
-    (painBlockSwiper, possibilitiesBlockSwiper)
-  ) {
-    painBlockSwiper.destroy(true, true);
-    painBlockSwiper = undefined;
-  }
-}
-
-function initSwipersOnMobile() {
-  if (window.innerWidth <= 525) {
-    possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
-      direction: "horizontal",
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 30,
-
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-    implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
-      direction: "horizontal",
-      slidesPerView: 1,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-    casesBlockSwiper = new Swiper("#casesBlockSwiper", {
-      direction: "horizontal",
-      slidesPerView: 1,
-      spaceBetween: 30,
-
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-  } else if (
-    window.innerWidth > 525 &&
-    possibilitiesBlockSwiper &&
-    implementationBlockSwiper
-  ) {
-    possibilitiesBlockSwiper.destroy(true, true);
-    possibilitiesBlockSwiper = undefined;
-    implementationBlockSwiper.destroy(true, true);
-    implementationBlockSwiper = undefined;
-  }
-}
-
-initSwipersOnPc();
-initSwipersOnTablet();
-initSwipersOnMobile();
-
-// Инициализация при изменении размера окна
-window.addEventListener("resize", () => {
-  initSwipersOnPc;
-  initSwipersOnTablet;
-  initSwipersOnMobile;
-
-  // alert(`${nice[0]}, ${nice[1]}, ${window.innerWidth}, ${window.innerHeight}`)
-
-  // if (nice[0]  <= window.innerWidth) {
-  //   location.reload();
-
-  // }
-  // if (nice[0]  >= window.innerWidth) {
-  //   location.reload();
-
-  // }
-  // console.log(nice, window.innerWidth, window.innerHeight)
-});
+const firstWindwoSize = [window.innerWidth, window.innerHeight];
 
 const mainInfo = [
   {
@@ -376,12 +180,58 @@ const mainInfo = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
+  // ВИДЕО
+  const video = document.getElementById("video");
+  const preloader = document.querySelector("#logo_preloader");
+  // ТАРИФЫ
+  const toTarifsBtns = document.querySelectorAll(".to_tarifs-block");
+
   // ДОП. БЛОКИ СЛЕВА
   // КОНСУЛЬТАЦИЯ
   const open_ConsultationPage = document.querySelectorAll(".open_consultation");
   const hide_ConsultationPage = document.querySelectorAll(".hide_consultation");
   const consultation_Page = document.querySelector(".consultation");
 
+  // ПОЛИТИКА КОНФ.
+  const hide_PrivacyPolicy = document.querySelectorAll(".hide_privacy-policy");
+  const open_PrivacyPolicy = document.querySelectorAll(".open_privacy-policy");
+  const privacyPolicy_Page = document.querySelector(".privacy-policy");
+
+  //  ОБСЛУЖИВАНИЕ
+  const hide_service = document.querySelectorAll(".hide_service");
+  const open_service = document.querySelectorAll(".open_service");
+  const service_Page = document.querySelector(".service");
+
+  // КАРТОЧКИ ТАРИФА
+  const tarifs_item = document.querySelectorAll(".item");
+  const tarifs_background = document.querySelector(".tarifs-block__background");
+
+  // ПЕРЕКЛЮЧАТЕЛЬ СЛАЙДОВ НА БЛОКЕ МОДУЛЕЙ
+  const toggler = document.querySelector(
+    ".modulesBlockSwiper-navigation__toggler"
+  );
+
+  // FAQ
+  const faq_list = document.querySelector(".faq__list");
+
+  // ЛОГИКА УДАЛЕНИЯ ПРЕЛОУДЕРА ПРИ ЗАГРУЗКЕ ВИДЕО
+  video.addEventListener("canplaythrough", function () {
+    preloader.style.display = "none";
+  });
+
+  // ПЕРЕХОД К ТАРИФАМ
+  toTarifsBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      console.log(mainSwiper);
+      if (mainSwiper) {
+        mainSwiper.slideTo(4);
+      } else {
+        document.getElementById("tarifs-block").scrollIntoView();
+      }
+    });
+  });
+
+  // ОТКРЫТЬ КОНСУЛТАЦИЮ
   open_ConsultationPage.forEach((btn) => {
     btn.addEventListener("click", () => {
       btn.disabled = true;
@@ -395,17 +245,14 @@ document.addEventListener("DOMContentLoaded", function () {
       consultation_Page.classList.toggle("active");
     });
   });
+  // СКРЫТЬ КОНСУЛТАЦИЮ
   hide_ConsultationPage.forEach((btn) => {
     btn.addEventListener("click", () => {
       consultation_Page.classList.toggle("active");
     });
   });
 
-  // ПОЛИТИКА КОНФ.
-  const hide_PrivacyPolicy = document.querySelectorAll(".hide_privacy-policy");
-  const open_PrivacyPolicy = document.querySelectorAll(".open_privacy-policy");
-  const privacyPolicy_Page = document.querySelector(".privacy-policy");
-
+  // ОТКРЫТЬ ПОЛИТИКУ КОНФ.
   open_PrivacyPolicy.forEach((btn) => {
     btn.addEventListener("click", () => {
       btn.disabled = true;
@@ -420,17 +267,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ЗАКРФТЬ ПОЛИТИКУ КОНФ.
   hide_PrivacyPolicy.forEach((btn) => {
     btn.addEventListener("click", () => {
       privacyPolicy_Page.classList.toggle("active");
     });
   });
 
-  //  ОБСЛУЖИВАНИЕ
-  const hide_service = document.querySelectorAll(".hide_service");
-  const open_service = document.querySelectorAll(".open_service");
-  const service_Page = document.querySelector(".service");
-
+  // ОТКРЫТЬ ОБУСЛУЖИВАНИЕ
   open_service.forEach((btn) => {
     btn.addEventListener("click", () => {
       btn.disabled = true;
@@ -445,47 +289,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ЗАКРЫТЬ ОБУСЛУЖИВАНИЕ
   hide_service.forEach((btn) => {
     btn.addEventListener("click", () => {
       service_Page.classList.toggle("active");
     });
   });
 
-  const homePage_cards = document.querySelector(".homepage__main");
-  const painsText = document.querySelectorAll(".pain-block__main");
-  const possibilitiesHead = document.querySelectorAll(
-    ".possibilities-block__head"
-  );
-  const possibilitiesText = document.querySelectorAll(
-    ".possibilities-block__main"
-  );
-
-  homePage_cards.addEventListener("click", (e) => {
-    let btn = e.target.closest(".toMainPage");
-    if (btn) {
-      console.log("начало функции");
-
-      let btnId = btn.getAttribute("data-id");
-      let findedInfo = mainInfo[btnId];
-
-      painsText.forEach((text, i) => {
-        text.innerText = findedInfo.pains[i];
-      });
-      possibilitiesText.forEach((text, i) => {
-        text.innerText = findedInfo.possibilities[i];
-      });
-      possibilitiesHead.forEach((text, i) => {
-        text.innerText = findedInfo.possibilitiesHeader[i];
-      });
-
-      console.log(findedInfo);
-    }
-  });
-
   // ОТКРЫТИЕ ТАРИФА КАК ПОПАП
-  const tarifs_item = document.querySelectorAll(".item");
-  const tarifs_background = document.querySelector(".tarifs-block__background");
-
   // Функция для открытия блока
   function openPopup(item) {
     let parentBlockPosition = item.offsetTop;
@@ -550,36 +361,253 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ЛОГИКА УДАЛЕНИЯ ПРЕЛОУДЕРА ПРИ ЗАГРУЗКЕ ВИДЕО
-  const video = document.getElementById("video");
-  const preloader = document.querySelector("#logo_preloader");
-
-  video.addEventListener("canplaythrough", function () {
-    preloader.style.display = "none";
-  });
-
   // ОТКРЫТИЕ КАРТОЧЕК В FAQ
-  const faq_list = document.querySelector(".faq__list");
-
-  faq_list.addEventListener('click', (e) => {
-    const card = e.target.closest(".faq__card")
+  faq_list.addEventListener("click", (e) => {
+    const card = e.target.closest(".faq__card");
     if (card) {
       const main = card.querySelector(".faq__main");
-      const icon = card.querySelector('.faq__icon')
+      const icon = card.querySelector(".faq__icon");
       if (main.style.maxHeight) {
         main.style.maxHeight = null;
-        icon.classList.toggle("active")
-
+        icon.classList.toggle("active");
       } else {
         main.style.maxHeight = main.scrollHeight + "px";
-        icon.classList.toggle("active")
+        icon.classList.toggle("active");
       }
     }
-  })
+  });
 
-  // faq_card.forEach((card) => {
-  //   card.addEventListener("click", () => {
-      
-  //   });
-  // });
+  // СЛАЙДРЕЫ
+  // ГЛАВНЫЙ СЛАЙДЕР
+  const homePageSwiper = new Swiper("#homePageSwiper", {
+    effect: "creative",
+    allowTouchMove: false,
+    speed: 500,
+    // autoHeight: true,
+
+    navigation: {
+      nextEl: ".toMainPage",
+      prevEl: ".toHomePage",
+    },
+
+
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: ["-20%", 0, -1],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
+  });
+
+  // СЛАЙДЕРЫ НА БЛОКЕ МОДУЛЕЙ
+  const modulesBlockSwiper = new Swiper("#modulesBlockSwiper", {
+    speed: 500,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    allowTouchMove: false,
+    // autoHeight: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 2,
+      },
+    },
+    on: {
+      slideChange: function () {
+        // Получаем активный слайд
+        if (this.activeIndex) {
+          toggler.style.left = "50%";
+        } else {
+          toggler.style.left = "0%";
+        }
+      },
+    },
+  });
+
+  const modulesCardSwiper = new Swiper("#modules-card-swiper1", {
+    speed: 500,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  const modulesCardSwiper2 = new Swiper("#modules-card-swiper2", {
+    speed: 500,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // СЛАЙДЕРЫ КОТОРЫЕ НУЖНО БУДЕТ ВЫРУБИТЬ НА ОПРЕДЕЛЕННОМ РАЗРЕШЕНИИ
+  let mainSwiper;
+  let painBlockSwiper;
+  let possibilitiesBlockSwiper;
+  let implementationBlockSwiper;
+  let casesBlockSwiper;
+
+  // 1200PX
+  function initSwipersOnPc() {
+    if (window.innerWidth >= 1200) {
+      mainSwiper = new Swiper("#mainSwiper", {
+        direction: "vertical",
+        speed: 500,
+        mousewheel: true,
+        allowTouchMove: false,
+      });
+    } else if (window.innerWidth < 1200 && mainSwiper) {
+      mainSwiper.destroy(true, true);
+      mainSwiper = undefined;
+    }
+  }
+  // 768PX
+  function initSwipersOnTablet() {
+    if (window.innerWidth <= 768) {
+      painBlockSwiper = new Swiper("#painBlockSwiper", {
+        direction: "horizontal",
+        slidesPerView: 1,
+        spaceBetween: 30,
+
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+          769: {
+            direction: "vertical",
+            slidesPerView: 3,
+          },
+        },
+      });
+    } else if (
+      window.innerWidth > 768 &&
+      (painBlockSwiper, possibilitiesBlockSwiper)
+    ) {
+      painBlockSwiper.destroy(true, true);
+      painBlockSwiper = undefined;
+    }
+  }
+
+  // 525PX
+  function initSwipersOnMobile() {
+    if (window.innerWidth <= 525) {
+      possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
+        direction: "horizontal",
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+      implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
+        direction: "horizontal",
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+      casesBlockSwiper = new Swiper("#casesBlockSwiper", {
+        direction: "horizontal",
+        slidesPerView: 1,
+        spaceBetween: 30,
+
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    } else if (
+      window.innerWidth > 525 &&
+      possibilitiesBlockSwiper &&
+      implementationBlockSwiper
+    ) {
+      possibilitiesBlockSwiper.destroy(true, true);
+      possibilitiesBlockSwiper = undefined;
+      implementationBlockSwiper.destroy(true, true);
+      implementationBlockSwiper = undefined;
+    }
+  }
+
+  initSwipersOnPc();
+  initSwipersOnTablet();
+  initSwipersOnMobile();
+
+  // Инициализация при изменении размера окна
+  window.addEventListener("resize", () => {
+    initSwipersOnPc;
+    initSwipersOnTablet;
+    initSwipersOnMobile;
+
+    // alert(`${nice[0]}, ${nice[1]}, ${window.innerWidth}, ${window.innerHeight}`)
+
+    // if (nice[0]  <= window.innerWidth) {
+    //   location.reload();
+
+    // }
+    // if (nice[0]  >= window.innerWidth) {
+    //   location.reload();
+
+    // }
+    // console.log(nice, window.innerWidth, window.innerHeight)
+  });
+
+  // ЛОГИКА ПО ЗАМЕНЕ ТЕКСТА НА САЙТЕ
+  const homePage_cards = document.querySelector(".homepage__main");
+  const painsText = document.querySelectorAll(".pain-block__main");
+  const possibilitiesHead = document.querySelectorAll(
+    ".possibilities-block__head"
+  );
+  const possibilitiesText = document.querySelectorAll(
+    ".possibilities-block__main"
+  );
+
+  // ВКЛЮЧАЕМ ВИДЕО ПРИ ВОЗВАРЩЕНИИ НА ГЛАВНУЮ СТРАНИЦУ
+  homePageSwiper.on('navigationPrev', () => {
+    video.play()
+  });
+
+  homePage_cards.addEventListener("click", (e) => {
+    let btn = e.target.closest(".toMainPage");
+    if (btn) {
+      console.log("начало функции");
+      // ОСТАНАВЛИВАЕМ ВИДЕО
+      setTimeout(() => {
+        video.pause();
+        
+      }, 500);
+
+      let btnId = btn.getAttribute("data-id");
+      let findedInfo = mainInfo[btnId];
+
+      painsText.forEach((text, i) => {
+        text.innerText = findedInfo.pains[i];
+      });
+      possibilitiesText.forEach((text, i) => {
+        text.innerText = findedInfo.possibilities[i];
+      });
+      possibilitiesHead.forEach((text, i) => {
+        text.innerText = findedInfo.possibilitiesHeader[i];
+      });
+
+      console.log(findedInfo);
+    }
+  });
 });

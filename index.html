@@ -15,14 +15,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- FULLPAGE JS -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.28/fullpage.min.css"
     />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.28/fullpage.min.js"
       defer
-    ></script>
+    ></script> -->
     <!-- FONT -->
     <link
       rel="stylesheet"
@@ -35,7 +35,7 @@
   <body>
     <main class="swiper" id="homePageSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide bordered_slide" data-hash="home">
+        <div class="swiper-slide">
           <div class="homepage">
             <div class="container">
               <div class="homepage__header">
@@ -130,7 +130,7 @@
                 </div>
               </div>
               <div class="homepage__main">
-                <div class="homepage__main__card">
+                <div class="gradient-container">
                   <button class="toMainPage" data-id="0">
                     <img
                       src="https://static.tildacdn.com/tild3865-3665-4865-a364-363235643563/opto_market.svg"
@@ -140,7 +140,7 @@
                   </button>
                   <span class="gradient-border"></span>
                 </div>
-                <div class="homepage__main__card">
+                <div class="gradient-container">
                   <button class="toMainPage" data-id="1">
                     <img
                       src="https://static.tildacdn.com/tild3835-3966-4639-b238-393333643939/roznotsa_market.svg"
@@ -150,7 +150,9 @@
                   </button>
                   <span class="gradient-border"></span>
                 </div>
-                <div class="homepage__main__card">
+
+                <div class="gradient-container">
+                  <div class="gradient-border"></div>
                   <button class="toMainPage" data-id="2">
                     <img
                       src="https://static.tildacdn.com/tild6138-6431-4664-b839-626166383437/building.svg"
@@ -158,9 +160,9 @@
                     />
                     Строительство
                   </button>
-                  <span class="gradient-border"></span>
                 </div>
-                <div class="homepage__main__card">
+
+                <div class="gradient-container">
                   <button class="toMainPage" data-id="3">
                     <img
                       src="https://static.tildacdn.com/tild3164-3534-4635-b265-663663396433/production.svg"
@@ -170,7 +172,8 @@
                   </button>
                   <span class="gradient-border"></span>
                 </div>
-                <div class="homepage__main__card">
+
+                <div class="gradient-container">
                   <button class="toMainPage" data-id="4">
                     <img
                       src="https://static.tildacdn.com/tild3066-6534-4065-b564-366639336233/selling_house.svg"
@@ -180,7 +183,8 @@
                   </button>
                   <span class="gradient-border"></span>
                 </div>
-                <div class="homepage__main__card">
+
+                <div class="gradient-container">
                   <button class="toMainPage" data-id="5">
                     <img
                       src="https://static.tildacdn.com/tild6465-3265-4133-a438-633165303231/selling_house.svg"
@@ -190,7 +194,8 @@
                   </button>
                   <span class="gradient-border"></span>
                 </div>
-                <div class="homepage__main__card">
+
+                <div class="gradient-container">
                   <button class="toMainPage" data-id="6">
                     <img
                       src="https://static.tildacdn.com/tild3462-3532-4032-b030-633065303336/education.svg"
@@ -200,7 +205,8 @@
                   </button>
                   <span class="gradient-border"></span>
                 </div>
-                <div class="homepage__main__card">
+
+                <div class="gradient-container">
                   <button class="toMainPage" data-id="7">
                     <img
                       src="https://static.tildacdn.com/tild6634-6236-4365-a663-613636333439/autoservice.svg"
@@ -214,93 +220,96 @@
             </div>
           </div>
         </div>
-        <div class="swiper-slide second-slide" data-hash="main" >
+        <div class="swiper-slide second-slide">
           <div class="swiper main-block" id="mainSwiper">
             <div class="swiper-wrapper" id="main-block__swiper-wrapper">
-              <div class="swiper-slide hero" data-hash="hero">
-                <div class="container">
-                  <div class="hero__main-info">
-                    <button class="hero__back-btn toHomePage">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          opacity="0.996"
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M7.79683 0.984277C7.97199 0.96578 8.13868 0.991824 8.29683 1.0624C10.5132 2.77216 12.7267 4.48571 14.9375 6.20303C15.0974 6.53556 15.0192 6.79078 14.7031 6.96865C14.297 6.98428 13.8907 6.9895 13.4843 6.98428C13.4896 9.25512 13.4843 11.526 13.4687 13.7968C13.3072 14.4166 12.9166 14.8072 12.2968 14.9687C11.2968 14.9895 10.2968 14.9895 9.29683 14.9687C9.15621 14.9114 9.05724 14.8124 8.99996 14.6718C8.98955 13.7759 8.97911 12.8801 8.96871 11.9843C8.91315 11.3818 8.58502 11.0589 7.98433 11.0155C7.38365 11.0589 7.05552 11.3818 6.99996 11.9843C6.98955 12.8801 6.97911 13.7759 6.96871 14.6718C6.91143 14.8124 6.81246 14.9114 6.67183 14.9687C5.67183 14.9895 4.67183 14.9895 3.67183 14.9687C3.05204 14.8072 2.66142 14.4166 2.49996 13.7968C2.48433 11.526 2.47912 9.25512 2.48433 6.98428C2.08836 6.9895 1.69253 6.98428 1.29683 6.96865C1.01614 6.82887 0.91718 6.6049 0.999958 6.29678C1.02079 6.25512 1.04162 6.21343 1.06246 6.17178C3.2953 4.42306 5.54008 2.6939 7.79683 0.984277Z"
-                          fill="white"
-                        />
-                      </svg>
-                      На главную
-                    </button>
-                    <h1>
-                      Увеличьте <br class="hide_on_mobile" />
-                      производительность. <br />
-                      Снижайте затраты.
-                    </h1>
-                    <p>
-                      Используйте платформу, которая вывела более 10 миллионов
-                      компаний на новый уровень.
-                    </p>
-                    <div class="hero__btns">
-                      <button class="open_consultation">
-                        Попробовать бесплатно
-                      </button>
-                      <button>
-                        Посмотреть цены
+              <div class="swiper-slide hero">
+                <div class="gradient-container">
+                  <div class="container">
+                    <div class="hero__main-info">
+                      <button class="hero__back-btn toHomePage">
                         <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <circle
-                            cx="10"
-                            cy="10"
-                            r="10"
-                            fill="white"
-                            fill-opacity="0.04"
-                          />
                           <path
+                            opacity="0.996"
                             fill-rule="evenodd"
                             clip-rule="evenodd"
-                            d="M8.03903 6.37204C8.20175 6.20932 8.46557 6.20932 8.62829 6.37204L11.9616 9.70537C12.1243 9.86809 12.1243 10.1319 11.9616 10.2946L8.62829 13.628C8.46557 13.7907 8.20175 13.7907 8.03903 13.628C7.87631 13.4652 7.87631 13.2014 8.03903 13.0387L11.0777 10L8.03903 6.96129C7.87631 6.79858 7.87631 6.53476 8.03903 6.37204Z"
+                            d="M7.79683 0.984277C7.97199 0.96578 8.13868 0.991824 8.29683 1.0624C10.5132 2.77216 12.7267 4.48571 14.9375 6.20303C15.0974 6.53556 15.0192 6.79078 14.7031 6.96865C14.297 6.98428 13.8907 6.9895 13.4843 6.98428C13.4896 9.25512 13.4843 11.526 13.4687 13.7968C13.3072 14.4166 12.9166 14.8072 12.2968 14.9687C11.2968 14.9895 10.2968 14.9895 9.29683 14.9687C9.15621 14.9114 9.05724 14.8124 8.99996 14.6718C8.98955 13.7759 8.97911 12.8801 8.96871 11.9843C8.91315 11.3818 8.58502 11.0589 7.98433 11.0155C7.38365 11.0589 7.05552 11.3818 6.99996 11.9843C6.98955 12.8801 6.97911 13.7759 6.96871 14.6718C6.91143 14.8124 6.81246 14.9114 6.67183 14.9687C5.67183 14.9895 4.67183 14.9895 3.67183 14.9687C3.05204 14.8072 2.66142 14.4166 2.49996 13.7968C2.48433 11.526 2.47912 9.25512 2.48433 6.98428C2.08836 6.9895 1.69253 6.98428 1.29683 6.96865C1.01614 6.82887 0.91718 6.6049 0.999958 6.29678C1.02079 6.25512 1.04162 6.21343 1.06246 6.17178C3.2953 4.42306 5.54008 2.6939 7.79683 0.984277Z"
                             fill="white"
                           />
                         </svg>
+                        На главную
                       </button>
+                      <h1>
+                        Увеличьте <br class="hide_on_mobile" />
+                        производительность. <br />
+                        Снижайте затраты.
+                      </h1>
+                      <p>
+                        Используйте платформу, которая вывела более 10 миллионов
+                        компаний на новый уровень.
+                      </p>
+                      <div class="hero__btns">
+                        <button class="open_consultation">
+                          Попробовать бесплатно
+                        </button>
+                        <button class="to_tarifs-block">
+                          Посмотреть цены
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="10"
+                              cy="10"
+                              r="10"
+                              fill="white"
+                              fill-opacity="0.04"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M8.03903 6.37204C8.20175 6.20932 8.46557 6.20932 8.62829 6.37204L11.9616 9.70537C12.1243 9.86809 12.1243 10.1319 11.9616 10.2946L8.62829 13.628C8.46557 13.7907 8.20175 13.7907 8.03903 13.628C7.87631 13.4652 7.87631 13.2014 8.03903 13.0387L11.0777 10L8.03903 6.96129C7.87631 6.79858 7.87631 6.53476 8.03903 6.37204Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <img
+                      src="https://static.tildacdn.com/tild3564-3135-4763-a438-346432656261/graph.svg"
+                      alt="graph svg"
+                      class="hero__graph-img"
+                    />
+                    <div class="hero__statistics">
+                      <div class="hero__statistics__card">
+                        <span>10 млн</span>
+                        <span>организаций всего мира</span>
+                      </div>
+                      <span class="hero__statistics--vertical-line"></span>
+                      <div class="hero__statistics__card">
+                        <span>100% </span>
+                        <span>увеличение эффективности</span>
+                      </div>
+                      <span class="hero__statistics--vertical-line"></span>
+                      <div class="hero__statistics__card">
+                        <span>35% </span>
+                        <span>компаний по СНГ</span>
+                      </div>
                     </div>
                   </div>
-                  <img
-                    src="https://static.tildacdn.com/tild3564-3135-4763-a438-346432656261/graph.svg"
-                    alt="graph svg"
-                    class="hero__graph-img"
-                  />
-                  <div class="hero__statistics">
-                    <div class="hero__statistics__card">
-                      <span>10 млн</span>
-                      <span>организаций всего мира</span>
-                    </div>
-                    <span class="hero__statistics--vertical-line"></span>
-                    <div class="hero__statistics__card">
-                      <span>100% </span>
-                      <span>увеличение эффективности</span>
-                    </div>
-                    <span class="hero__statistics--vertical-line"></span>
-                    <div class="hero__statistics__card">
-                      <span>35% </span>
-                      <span>компаний по СНГ</span>
-                    </div>
-                  </div>
+                  <div class="gradient-border"></div>
                 </div>
               </div>
-              <div class="swiper-slide pain-block" data-hash="pains">
+              <div class="swiper-slide pain-block">
                 <div class="container">
                   <h2>Боли, которые мы решаем</h2>
                   <div class="swiper" id="painBlockSwiper">
@@ -311,7 +320,7 @@
                           alt="number svg"
                           class="hide_on_tablet"
                         />
-                        <div class="pain-block__pain">
+                        <div class="pain-block__item">
                           <div class="pain-block__header">
                             <svg
                               width="20"
@@ -336,7 +345,7 @@
                             продажам и упущенным возможностям для бизнеса.
                           </p>
                         </div>
-                        <div class="pain-block__solution">
+                        <div class="pain-block__item pain-block__item--right">
                           <div class="pain-block__header">
                             <svg
                               width="20"
@@ -350,8 +359,8 @@
                                 fill-rule="evenodd"
                                 clip-rule="evenodd"
                                 d="M9.14062 0C9.71355 0 10.2864 0 10.8594 0C14.776 0.489875 17.569 2.52113 19.2383 6.09375C19.6405 7.0775 19.8944 8.09313 20 9.14062C20 9.71355 20 10.2864 20 10.8594C19.5101 14.776 17.4789 17.569 13.9062 19.2383C12.9225 19.6405 11.9069 19.8944 10.8594 20C10.2864 20 9.71355 20 9.14062 20C5.22398 19.5101 2.43102 17.4789 0.761719 13.9062C0.359529 12.9225 0.105622 11.9069 0 10.8594C0 10.2864 0 9.71355 0 9.14062C0.489875 5.22398 2.52113 2.43102 6.09375 0.761719C7.0775 0.359529 8.09313 0.105622 9.14062 0ZM14.6875 5.66406C15.4944 5.67012 15.8786 6.07379 15.8398 6.875C15.7985 6.9968 15.7464 7.11398 15.6836 7.22656C13.4602 9.48906 11.2011 11.7091 8.90625 13.8867C8.54512 14.039 8.20656 14 7.89062 13.7695C6.75781 12.7409 5.625 11.7122 4.49219 10.6836C4.02352 10.1753 4.02352 9.66746 4.49219 9.16016C4.91742 8.86551 5.33406 8.87855 5.74219 9.19922C6.64062 10.0261 7.53906 10.8529 8.4375 11.6797C10.3836 9.75313 12.3237 7.81953 14.2578 5.87891C14.3941 5.78469 14.5374 5.71309 14.6875 5.66406Z"
-                                fill="#04D404"
-                              />
+                                fill="white"
+                              ></path>
                             </svg>
 
                             Решение:
@@ -370,7 +379,7 @@
                           class="hide_on_tablet"
                         />
 
-                        <div class="pain-block__pain">
+                        <div class="pain-block__item">
                           <div class="pain-block__header">
                             <svg
                               width="20"
@@ -395,7 +404,7 @@
                             продажам и упущенным возможностям для бизнеса.
                           </p>
                         </div>
-                        <div class="pain-block__solution">
+                        <div class="pain-block__item pain-block__item--right">
                           <div class="pain-block__header">
                             <svg
                               width="20"
@@ -409,8 +418,8 @@
                                 fill-rule="evenodd"
                                 clip-rule="evenodd"
                                 d="M9.14062 0C9.71355 0 10.2864 0 10.8594 0C14.776 0.489875 17.569 2.52113 19.2383 6.09375C19.6405 7.0775 19.8944 8.09313 20 9.14062C20 9.71355 20 10.2864 20 10.8594C19.5101 14.776 17.4789 17.569 13.9062 19.2383C12.9225 19.6405 11.9069 19.8944 10.8594 20C10.2864 20 9.71355 20 9.14062 20C5.22398 19.5101 2.43102 17.4789 0.761719 13.9062C0.359529 12.9225 0.105622 11.9069 0 10.8594C0 10.2864 0 9.71355 0 9.14062C0.489875 5.22398 2.52113 2.43102 6.09375 0.761719C7.0775 0.359529 8.09313 0.105622 9.14062 0ZM14.6875 5.66406C15.4944 5.67012 15.8786 6.07379 15.8398 6.875C15.7985 6.9968 15.7464 7.11398 15.6836 7.22656C13.4602 9.48906 11.2011 11.7091 8.90625 13.8867C8.54512 14.039 8.20656 14 7.89062 13.7695C6.75781 12.7409 5.625 11.7122 4.49219 10.6836C4.02352 10.1753 4.02352 9.66746 4.49219 9.16016C4.91742 8.86551 5.33406 8.87855 5.74219 9.19922C6.64062 10.0261 7.53906 10.8529 8.4375 11.6797C10.3836 9.75313 12.3237 7.81953 14.2578 5.87891C14.3941 5.78469 14.5374 5.71309 14.6875 5.66406Z"
-                                fill="#04D404"
-                              />
+                                fill="white"
+                              ></path>
                             </svg>
 
                             Решение:
@@ -429,7 +438,7 @@
                           class="hide_on_tablet"
                         />
 
-                        <div class="pain-block__pain">
+                        <div class="pain-block__item">
                           <div class="pain-block__header">
                             <svg
                               width="20"
@@ -454,7 +463,7 @@
                             продажам и упущенным возможностям для бизнеса.
                           </p>
                         </div>
-                        <div class="pain-block__solution">
+                        <div class="pain-block__item pain-block__item--right">
                           <div class="pain-block__header">
                             <svg
                               width="20"
@@ -468,8 +477,8 @@
                                 fill-rule="evenodd"
                                 clip-rule="evenodd"
                                 d="M9.14062 0C9.71355 0 10.2864 0 10.8594 0C14.776 0.489875 17.569 2.52113 19.2383 6.09375C19.6405 7.0775 19.8944 8.09313 20 9.14062C20 9.71355 20 10.2864 20 10.8594C19.5101 14.776 17.4789 17.569 13.9062 19.2383C12.9225 19.6405 11.9069 19.8944 10.8594 20C10.2864 20 9.71355 20 9.14062 20C5.22398 19.5101 2.43102 17.4789 0.761719 13.9062C0.359529 12.9225 0.105622 11.9069 0 10.8594C0 10.2864 0 9.71355 0 9.14062C0.489875 5.22398 2.52113 2.43102 6.09375 0.761719C7.0775 0.359529 8.09313 0.105622 9.14062 0ZM14.6875 5.66406C15.4944 5.67012 15.8786 6.07379 15.8398 6.875C15.7985 6.9968 15.7464 7.11398 15.6836 7.22656C13.4602 9.48906 11.2011 11.7091 8.90625 13.8867C8.54512 14.039 8.20656 14 7.89062 13.7695C6.75781 12.7409 5.625 11.7122 4.49219 10.6836C4.02352 10.1753 4.02352 9.66746 4.49219 9.16016C4.91742 8.86551 5.33406 8.87855 5.74219 9.19922C6.64062 10.0261 7.53906 10.8529 8.4375 11.6797C10.3836 9.75313 12.3237 7.81953 14.2578 5.87891C14.3941 5.78469 14.5374 5.71309 14.6875 5.66406Z"
-                                fill="#04D404"
-                              />
+                                fill="white"
+                              ></path>
                             </svg>
 
                             Решение:
@@ -559,7 +568,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide possibilities-block" data-hash="possibilities">
+              <div class="swiper-slide possibilities-block">
                 <div class="container">
                   <h2>Возможности системы</h2>
                   <div class="swiper" id="possibilitiesBlockSwiper">
@@ -900,85 +909,88 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide implementation-block" data-hash="implementation">
-                <div class="container">
-                  <h2>Внедрение системы без головной боли</h2>
-                  <div class="swiper" id="implementationBlockSwiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide gradient-container">
-                        <div class="gradient-border"></div>
-                        <div class="implementation-block__card">
-                          <div class="implementation-block__number">1</div>
-                          <h3>Анализ и определение</h3>
-                          <p>
-                            Мы проанализируем текущую структуру процессов вашей
-                            компании и определим процент эффективности.
-                          </p>
+              <div class="swiper-slide implementation-block">
+                <div class="gradient-container">
+                  <div class="container">
+                    <h2>Внедрение системы без головной боли</h2>
+                    <div class="swiper" id="implementationBlockSwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide gradient-container">
+                          <div class="gradient-border"></div>
+                          <div class="implementation-block__card">
+                            <div class="implementation-block__number">1</div>
+                            <h3>Анализ и определение</h3>
+                            <p>
+                              Мы проанализируем текущую структуру процессов
+                              вашей компании и определим процент эффективности.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="swiper-slide gradient-container">
+                          <div class="gradient-border"></div>
+                          <div class="implementation-block__card">
+                            <div class="implementation-block__number">2</div>
+                            <h3>Индивидуальное предложение</h3>
+                            <p>
+                              Мы предложим Вам уникальное решение для Вашей
+                              компани. Утверждаем его с вами, назначаем цели и
+                              сроки.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="swiper-slide gradient-container">
+                          <div class="gradient-border"></div>
+
+                          <div class="implementation-block__card">
+                            <div class="implementation-block__number">3</div>
+                            <h3>Разработка</h3>
+                            <p>
+                              Система будет разработана с максимальной точностью
+                              и скоростью. Наш отдел отправит ежедневные отчеты
+                              о проделанной работе.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="swiper-slide gradient-container">
+                          <div class="gradient-border"></div>
+                          <div class="implementation-block__card">
+                            <div class="implementation-block__number">4</div>
+                            <h3>Тестирование и внедрение</h3>
+                            <p>
+                              Мы тестируем весь функционал до мелочей и внедряем
+                              готовый и рабочий продукт.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="swiper-slide gradient-container">
+                          <div class="gradient-border"></div>
+                          <div class="implementation-block__card">
+                            <div class="implementation-block__number">5</div>
+                            <h3>Обучение и обслуживание</h3>
+                            <p>
+                              Мы обучаем руководителей и конечных пользователей
+                              функцоиналом программы нашим авторским методом.
+                            </p>
+                          </div>
                         </div>
                       </div>
-
-                      <div class="swiper-slide gradient-container">
-                        <div class="gradient-border"></div>
-                        <div class="implementation-block__card">
-                          <div class="implementation-block__number">2</div>
-                          <h3>Индивидуальное предложение</h3>
-                          <p>
-                            Мы предложим Вам уникальное решение для Вашей
-                            компани. Утверждаем его с вами, назначаем цели и
-                            сроки.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide gradient-container">
-                        <div class="gradient-border"></div>
-
-                        <div class="implementation-block__card">
-                          <div class="implementation-block__number">3</div>
-                          <h3>Разработка</h3>
-                          <p>
-                            Система будет разработана с максимальной точностью и
-                            скоростью. Наш отдел отправит ежедневные отчеты о
-                            проделанной работе.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide gradient-container">
-                        <div class="gradient-border"></div>
-                        <div class="implementation-block__card">
-                          <div class="implementation-block__number">4</div>
-                          <h3>Тестирование и внедрение</h3>
-                          <p>
-                            Мы тестируем весь функционал до мелочей и внедряем
-                            готовый и рабочий продукт.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div class="swiper-slide gradient-container">
-                        <div class="gradient-border"></div>
-                        <div class="implementation-block__card">
-                          <div class="implementation-block__number">5</div>
-                          <h3>Обучение и обслуживание</h3>
-                          <p>
-                            Мы обучаем руководителей и конечных пользователей
-                            функцоиналом программы нашим авторским методом.
-                          </p>
-                        </div>
-                      </div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="implementation-block__btns">
+                      <button class="open_privacy-policy">
+                        Политика конфиденциальности
+                      </button>
+                      <button class="open_service">Обслуживание</button>
+                    </div>
                   </div>
-                  <div class="implementation-block__btns">
-                    <button class="open_privacy-policy">
-                      Политика конфиденциальности
-                    </button>
-                    <button class="open_service">Обслуживание</button>
-                  </div>
+                  <div class="gradient-border"></div>
                 </div>
               </div>
-              <div class="swiper-slide tarifs-block" data-hash="tarifs">
+              <div class="swiper-slide tarifs-block" id="tarifs-block">
                 <div class="container">
                   <h2>Тарифы</h2>
                   <ul class="tarifs-block__list">
@@ -1317,7 +1329,7 @@
                   <div class="tarifs-block__background"></div>
                 </div>
               </div>
-              <div class="swiper-slide cases-block" data-hash="cases">
+              <div class="swiper-slide cases-block">
                 <div class="container">
                   <h2>Наши кейсы</h2>
                   <div class="swiper" id="casesBlockSwiper">
@@ -1665,7 +1677,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide modules-block" id="last" data-hash="modules">
+              <div class="swiper-slide modules-block" id="last">
                 <div class="gradient-container">
                   <div class="gradient-border"></div>
                   <div class="container">
@@ -1915,9 +1927,9 @@
                         процессы, экономит время и помогает увеличить доход. Мы
                         же создадим систему, которая сделает Ваш бизнес проще и
                         результативней.
-                        <br>
+                        <br />
                       </p>
-                      <br>
+                      <br />
                     </div>
                   </li>
                   <li class="faq__card">
@@ -1935,9 +1947,9 @@
                         процессы, экономит время и помогает увеличить доход. Мы
                         же создадим систему, которая сделает Ваш бизнес проще и
                         результативней.
-                        <br>
+                        <br />
                       </p>
-                      <br>
+                      <br />
                     </div>
                   </li>
                   <li class="faq__card">
@@ -1955,9 +1967,9 @@
                         процессы, экономит время и помогает увеличить доход. Мы
                         же создадим систему, которая сделает Ваш бизнес проще и
                         результативней.
-                        <br>
+                        <br />
                       </p>
-                      <br>
+                      <br />
                     </div>
                   </li>
                   <li class="faq__card">
@@ -1975,9 +1987,9 @@
                         процессы, экономит время и помогает увеличить доход. Мы
                         же создадим систему, которая сделает Ваш бизнес проще и
                         результативней.
-                        <br>
+                        <br />
                       </p>
-                      <br>
+                      <br />
                     </div>
                   </li>
                   <li class="faq__card">
@@ -1995,9 +2007,9 @@
                         процессы, экономит время и помогает увеличить доход. Мы
                         же создадим систему, которая сделает Ваш бизнес проще и
                         результативней.
-                        <br>
+                        <br />
                       </p>
-                      <br>
+                      <br />
                     </div>
                   </li>
                   <li class="faq__card">
@@ -2015,12 +2027,11 @@
                         процессы, экономит время и помогает увеличить доход. Мы
                         же создадим систему, которая сделает Ваш бизнес проще и
                         результативней.
-                        <br>
+                        <br />
                       </p>
-                      <br>
+                      <br />
                     </div>
                   </li>
-
                 </ul>
               </div>
             </div>

@@ -32,8 +32,9 @@
 
 // ЦВЕТА
 $transparent_red: #e8dbdb;
-$black: #0f0f0f;
+$black: #050505;
 $gray: #141414;
+$gray_btn: #181818;
 $border_gray: #292929;
 
 // ВСПОМОГАТЕЛЬНЫЕ ЭЛЕМЕНТЫ
@@ -46,8 +47,8 @@ $grayGradient: linear-gradient(
 );
 
 @mixin grayBtn {
-  background-color: $black;
-  border: 1px solid $gray;
+  background-color: $gray;
+  border: 1px solid $border_gray;
   border-radius: 10px;
 }
 
@@ -62,6 +63,12 @@ $grayGradient: linear-gradient(
   height: 100%;
   padding: 1px;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include pc {
+    height: auto;
+  }
 }
 
 @mixin gradient_border($color) {
@@ -72,8 +79,7 @@ $grayGradient: linear-gradient(
   height: 100%;
   border-radius: 10px;
   background: $color;
-  z-index: 0;
-  transition: 0.3s;
+  z-index: -1;
 }
 
 .gradient-border {
@@ -193,13 +199,12 @@ h1 {
 }
 
 h2 {
+  text-align: center;
   font-size: 3rem;
   @include pc {
     font-size: 2rem;
   }
-  @include tablet() {
-    text-align: center;
-  }
+
   @include mobile() {
     font-size: 1.5rem;
   }
@@ -228,10 +233,12 @@ h3 {
   max-width: 1200px;
   width: 100%;
   height: 100%;
-  // border: 1px solid #0f0f0f;
-  // border-radius: 20px;
+  @include pc {
+    background: none;
+    padding: 100px 20px;
+  }
   @include tablet() {
-    padding: 10px;
+    padding: 50px 10px;
   }
 }
 
@@ -256,7 +263,7 @@ body {
       overflow-y: auto;
     }
     .bordered_slide {
-      padding: 10px;
+      // padding: 10px;
       height: 100dvh;
     }
   }
@@ -266,7 +273,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  border: 1px solid $black;
+  padding: 10px;
   border-radius: 20px;
   @include tablet() {
     height: 100%;
@@ -277,6 +284,9 @@ body {
     display: grid;
     position: relative;
     grid-template-rows: 1fr 1fr;
+    // background-color: $black;
+    border-radius: 10px;
+    z-index: 10;
     @include tablet() {
       height: auto;
     }
@@ -294,7 +304,7 @@ body {
     background: linear-gradient(
       180deg,
       #ffffff 50%,
-      rgba(255, 255, 255, 0) 100%
+      #ffffff10 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -395,8 +405,8 @@ body {
         color: black;
       }
       &--contact-us {
-        background-color: #ffffff0f;
-        border: 1px solid #ffffff29;
+        background-color: $black;
+        border: 1px solid $border_gray;
       }
     }
   }
@@ -405,39 +415,42 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    &__card {
-      position: relative;
-      padding: 2px;
-      border-radius: 10px;
 
-      button {
-        border: none;
-        outline: none;
-        background-color: $black;
-        position: relative;
-        z-index: 1;
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 24px;
-        font-size: 1rem;
-        font-weight: 500;
-        text-align: left;
-        transition: 0.3s;
-        &:active {
-          scale: 0.95;
-        }
-        @include laptop {
-          padding: 15px;
-          gap: 15px;
-        }
-        @include tablet {
-          padding: 10px;
-          gap: 10px;
-        }
+    .gradient-border {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.024) 100%
+      );
+    }
+
+    button {
+      position: relative;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background-color: $black;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      transition: 0.3s;
+      &:active {
+        scale: 0.95;
+      }
+      @include laptop {
+        padding: 15px;
+        gap: 15px;
+      }
+      @include tablet {
+        padding: 10px;
+        gap: 10px;
       }
       img {
         width: 60px;
@@ -690,6 +703,7 @@ body {
     }
   }
 }
+
 .service {
   width: 100%;
   height: 100dvh;
@@ -761,13 +775,21 @@ body {
 
 .hero {
   background-color: black;
+  padding: 10px;
 
   .container {
     display: grid;
-    grid-template: auto 0.4fr / repeat(2, 1fr);
+    grid-template: auto 0.4fr / 1fr auto;
     gap: 20px;
-    column-gap: 50px;
+    column-gap: 150px;
     align-items: center;
+    position: relative;
+    background-color: $black;
+    border-radius: 10px;
+    @include pc {
+      column-gap: 50px;
+      grid-template: auto 0.4fr / 60% auto;
+    }
     @include tablet() {
       display: flex;
       flex-direction: column;
@@ -814,7 +836,7 @@ body {
       justify-content: center;
       gap: 10px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 16px;
       padding: 0 10px;
       @include mobile() {
         padding: 16px 48px;
@@ -833,7 +855,6 @@ body {
     height: auto;
     margin-left: auto;
     @include tablet() {
-      // max-width: 100%;
       margin: auto;
     }
   }
@@ -895,13 +916,23 @@ body {
       }
     }
     &--vertical-line {
-      width: 2px;
-      background-color: #ffffff47;
+      width: 1px;
+      background-color: $border_gray;
       display: block;
       @include mobile() {
         width: 100%;
         height: 1px;
       }
+    }
+  }
+
+  @include pc {
+    padding: 0;
+    .container {
+      background: none;
+    }
+    .gradient-border {
+      display: none;
     }
   }
 }
@@ -911,43 +942,57 @@ body {
   color: black;
 
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     gap: 10px;
+
+    @include pc() {
+      gap: 40px;
+    }
     @include tablet() {
       gap: 20px;
-      padding: 10px 0;
+      padding: 50px 0;
     }
   }
 
   .swiper {
     @include slider();
     height: auto !important;
-    padding: 10px 0;
     @include tablet() {
       padding: 0 10px 20px;
     }
 
     &-wrapper {
-      @media (min-width: 769px) {
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+      // height: 100%;
+      display: grid;
+      grid-template-rows: repeat(3, fit-content);
+      align-items: center;
+
+      @include pc {
+        column-gap: 50px;
+        row-gap: 30px;
       }
+
+      @include tablet() {
+        display: flex;
+        gap: 0;
+      }
+
+      // @media (min-width: 1201px) {
+      //   flex-direction: column;
+      //   gap: 30px;
+      // }
     }
   }
 
   &__card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: auto !important;
-    gap: 50px;
+    height: auto;
     position: relative;
     overflow: hidden !important;
     font-size: 1rem;
+    gap: 50px;
 
     img {
       aspect-ratio: 1 /1;
@@ -971,57 +1016,78 @@ body {
       gap: 20px;
       padding: 0;
       font-size: 16px;
+      height: 100%;
     }
     @include mobile-mid() {
-      display: flex;
-      flex-direction: column;
+      grid-template: 1fr 1fr / 1fr;
+      // display: flex;
+      // flex-direction: column;
     }
   }
-  &__pain {
-    border: 1px solid #ce0000;
+
+  &__item {
+    border: 1px solid #ce000033;
     border-radius: 20px;
-    padding: 1rem;
     font-weight: 500;
     background-color: #ce000010;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    padding: 0 0 1rem 1rem;
+    &--right {
+      background-color: #05a9050a;
+      border: 1px solid #05a90533;
+      .pain-block__header {
+        background-color: #05a905;
+      }
+    }
   }
+
   &__header {
+    display: flex;
+    float: right;
     padding: 12px 24px;
-    border-radius: 12px;
+    border-radius: 0 16px 0 16px;
     color: #f5f5f5;
     width: fit-content;
-    display: flex;
     align-items: center;
     gap: 10px;
     background-color: #ce0000;
+    margin: 0 0 10px 10px;
     @include laptop() {
       padding: 6px 16px !important;
     }
     @include tablet() {
       padding: 12px 24px;
+      float: none;
+      margin-left: auto;
     }
   }
 
-  &__solution {
-    background-color: #05a9050a;
-    border: 1px solid #05a90533;
-    font-weight: 500;
-    padding: 1rem;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    .pain-block__header {
-      border: none;
-      border-bottom: 1px solid #04d404;
-      color: #04d404;
-      background-color: transparent;
-      border-radius: 0;
-      padding: 12px 0;
-    }
-  }
+  // &__pain {
+  //   border: 1px solid #ce0000;
+  //   border-radius: 20px;
+  //   padding: 1rem;
+  //   font-weight: 500;
+  //   background-color: #ce000010;
+
+  // }
+
+  // &__solution {
+  //   background-color: #05a9050a;
+  //   border: 1px solid #05a90533;
+  //   font-weight: 500;
+  //   padding: 1rem;
+  //   border-radius: 20px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: 10px;
+  //   .pain-block__header {
+  //     border: none;
+  //     border-bottom: 1px solid #04d404;
+  //     color: #04d404;
+  //     background-color: transparent;
+  //     border-radius: 0;
+  //     padding: 12px 0;
+  //   }
+  // }
   &__btns {
     display: grid;
     gap: 50px;
@@ -1057,6 +1123,14 @@ body {
         background: $greenGradient;
         color: #eaeaea;
       }
+    }
+  }
+
+  &__main {
+    padding-top: 1rem;
+    padding-right: 1rem;
+    @include tablet() {
+      padding-top: 0;
     }
   }
 }
@@ -1145,9 +1219,13 @@ body {
 
 .implementation-block {
   background-color: black;
+  padding: 10px;
   .container {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    background-color: $black;
+    border-radius: 10px;
+    overflow-x: hidden;
     @include tablet() {
       padding: 10px;
     }
@@ -1191,7 +1269,7 @@ body {
 
   .gradient-container {
     overflow: visible !important;
-    height: 240px;
+    // height: 240px;
 
     @include pc {
       height: 100%;
@@ -1286,7 +1364,7 @@ body {
     height: 3.75rem;
     display: grid;
     place-items: center;
-    background-color: #181818;
+    background-color: $gray_btn;
     border: 1px solid #ffffff29;
     border-radius: 10px;
     font-size: 1.75rem;
