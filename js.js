@@ -1,4 +1,4 @@
-const firstWindwoSize = [window.innerWidth, window.innerHeight];
+const firstWindowSize = [window.innerWidth, window.innerHeight];
 
 const mainInfo = [
   {
@@ -379,27 +379,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // СЛАЙДРЕЫ
   // ГЛАВНЫЙ СЛАЙДЕР
-  const homePageSwiper = new Swiper("#homePageSwiper", {
-    effect: "creative",
-    allowTouchMove: false,
-    speed: 500,
-    // autoHeight: true,
+  // const homePageSwiper = new Swiper("#homePageSwiper", {
+  //   effect: "creative",
+  //   allowTouchMove: false,
+  //   speed: 500,
+  //   // autoHeight: true,
 
-    navigation: {
-      nextEl: ".toMainPage",
-      prevEl: ".toHomePage",
-    },
+  //   navigation: {
+  //     nextEl: ".toMainPage",
+  //     prevEl: ".toHomePage",
+  //   },
 
+  //   creativeEffect: {
+  //     prev: {
+  //       shadow: true,
+  //       translate: ["-20%", 0, -1],
+  //     },
+  //     next: {
+  //       translate: ["100%", 0, 0],
+  //     },
+  //   },
+  // });
 
-    creativeEffect: {
-      prev: {
-        shadow: true,
-        translate: ["-20%", 0, -1],
-      },
-      next: {
-        translate: ["100%", 0, 0],
-      },
-    },
+  const mainSlider = new fullpage("#main", {
+    scrollOverflow: true,
+    scrolloverflowmacstyle: false,
+    autoScrolling: false,
+    controlArrows: false,
+    // fitToSection: true,
   });
 
   // СЛАЙДЕРЫ НА БЛОКЕ МОДУЛЕЙ
@@ -510,21 +517,21 @@ document.addEventListener("DOMContentLoaded", function () {
       possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
         direction: "horizontal",
         slidesPerView: 1,
-        slidesPerGroup: 1,
         spaceBetween: 30,
 
         pagination: {
           el: ".swiper-pagination",
         },
       });
-      implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
-        direction: "horizontal",
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
+      // implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
+      //   direction: "horizontal",
+      //   slidesPerView: 1,
+      //   spaceBetween: 30,
+      //   pagination: {
+      //     el: ".swiper-pagination",
+      //   },
+
+      // });
       casesBlockSwiper = new Swiper("#casesBlockSwiper", {
         direction: "horizontal",
         slidesPerView: 1,
@@ -546,13 +553,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  initSwipersOnPc();
+  // initSwipersOnPc();
   initSwipersOnTablet();
   initSwipersOnMobile();
 
   // Инициализация при изменении размера окна
   window.addEventListener("resize", () => {
-    initSwipersOnPc;
+    // initSwipersOnPc;
     initSwipersOnTablet;
     initSwipersOnMobile;
 
@@ -571,6 +578,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ЛОГИКА ПО ЗАМЕНЕ ТЕКСТА НА САЙТЕ
   const homePage_cards = document.querySelector(".homepage__main");
+  const backToHomePage = document.querySelector(".toHomePage");
   const painsText = document.querySelectorAll(".pain-block__main");
   const possibilitiesHead = document.querySelectorAll(
     ".possibilities-block__head"
@@ -580,18 +588,21 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   // ВКЛЮЧАЕМ ВИДЕО ПРИ ВОЗВАРЩЕНИИ НА ГЛАВНУЮ СТРАНИЦУ
-  homePageSwiper.on('navigationPrev', () => {
-    video.play()
-  });
+  // homePageSwiper.on('navigationPrev', () => {
+  //   video.play()
+  // });
 
   homePage_cards.addEventListener("click", (e) => {
     let btn = e.target.closest(".toMainPage");
     if (btn) {
-      console.log("начало функции");
+      fullpage_api.setAutoScrolling(true);
+      // fullpage_api.setFitToSection(true);
+      document.body.classList.toggle("active");
+
+      fullpage_api.moveTo(1, 1);
       // ОСТАНАВЛИВАЕМ ВИДЕО
       setTimeout(() => {
         video.pause();
-        
       }, 500);
 
       let btnId = btn.getAttribute("data-id");
@@ -609,5 +620,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       console.log(findedInfo);
     }
+  });
+
+  backToHomePage.addEventListener("click", () => {
+    fullpage_api.setAutoScrolling(false);
+    // fullpage_api.setFitToSection(false);
+    document.body.classList.toggle("active");
+    console.log(firstWindowSize);
+    fullpage_api.moveTo(1, 0);
+    video.play();
   });
 });
