@@ -1536,11 +1536,11 @@ video {
 
     @include mobile-mid() {
       width: 100%;
+      align-items: center;
+      flex-direction: column;
       button {
         width: fit-content;
-        align-items: center;
       }
-      flex-direction: column;
     }
   }
 }
@@ -2227,4 +2227,10 @@ video {
 
 body.active {
   overflow: hidden !important;
+  // pointer-events: none;
+}
+
+
+button {
+  // pointer-events: all !important;
 }

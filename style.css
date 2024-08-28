@@ -1548,11 +1548,11 @@ video {
 @media (max-width: 425px) {
   .implementation-block__btns {
     width: 100%;
+    align-items: center;
     flex-direction: column;
   }
   .implementation-block__btns button {
     width: fit-content;
-    align-items: center;
   }
 }
 
