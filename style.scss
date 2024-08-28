@@ -143,6 +143,13 @@ $grayGradient: linear-gradient(
   background-color: $black;
 }
 
+.show_on_tablet {
+  display: none;
+  @include tablet() {
+    display: block;
+  }
+}
+
 // ОБЩИЕ СТИЛИ
 
 * {
@@ -170,6 +177,7 @@ button {
   -webkit-tap-highlight-color: transparent;
   background-color: transparent;
   transition: 0.3s;
+  font-size: 16px;
   &:active {
     scale: 0.95;
     + .gradient-border {
@@ -205,13 +213,14 @@ h1 {
 h2 {
   font-size: 40px;
   text-align: center;
+  display: grid;
+  place-items: center;
 
   @include pc {
     font-size: 28px;
   }
 
   @include tablet() {
-
   }
 
   @include mobile() {
@@ -293,197 +302,8 @@ video {
   }
 }
 
-.homepage {
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  border-radius: 20px;
-  @include tablet() {
-    height: 100%;
-  }
-
-  .container {
-    height: 100%;
-    display: grid;
-    position: relative;
-    grid-template-rows: 1fr 1fr;
-    // background-color: $black;
-    border-radius: 10px;
-    z-index: 10;
-    @include tablet() {
-      height: auto;
-    }
-  }
-
-  &-background-text {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 20px;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 130px;
-    text-align: center;
-    background: linear-gradient(180deg, #ffffff 50%, #ffffff50 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0.04;
-    z-index: 0;
-    @media (max-width: 1200px) {
-      font-size: 96px;
-    }
-    @media (max-width: 850px) {
-      font-size: 80px;
-    }
-
-    @media (max-width: 720px) {
-      font-size: 58px;
-    }
-    @include mobile() {
-      font-size: 46px;
-    }
-    @media (max-width: 425px) {
-      font-size: 40px;
-    }
-    @media (max-width: 375px) {
-      font-size: 34px;
-    }
-  }
-
-  &__header {
-    display: grid;
-    grid-template-rows: 1fr 0.3fr 0.1fr;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    &-logo-wrapper {
-      max-width: 500px;
-      width: 100%;
-      height: 100%;
-      margin: auto;
-      position: relative;
-      img,
-      video {
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        object-fit: contain;
-        aspect-ratio: 1 / 1;
-        mix-blend-mode: screen; /* Применяем режим смешивания */
-      }
-      video {
-        width: 100%;
-      }
-    }
-    h1 {
-      text-align: center;
-    }
-    p {
-      text-align: center;
-      margin-top: 10px;
-    }
-    &-btns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 20px;
-
-      @include mobile() {
-        grid-template: repeat(2, 1fr) / 1fr;
-        gap: 12px;
-      }
-
-      button {
-        padding: 12px;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-weight: 600;
-        font-size: 14px;
-        transition: 0.3s;
-        &:active {
-          scale: 0.95;
-        }
-        @include mobile() {
-          padding: 16px;
-          font-size: 16px;
-        }
-        @media (max-width: 350px) {
-          font-size: 14px;
-          padding: 16px 10px;
-        }
-      }
-      &--free-consultation {
-        background-color: white;
-        border: none;
-        color: black;
-      }
-      &--contact-us {
-        background-color: $black;
-        border: 1px solid $border_gray;
-      }
-    }
-  }
-  &__main {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-
-    .gradient-border {
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0.024) 100%
-      );
-    }
-
-    button {
-      position: relative;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      background-color: $black;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 24px;
-      font-size: 1rem;
-      font-weight: 500;
-      text-align: left;
-      transition: 0.3s;
-      &:active {
-        scale: 0.95;
-      }
-      @include laptop {
-        padding: 15px;
-        gap: 15px;
-      }
-      @include tablet {
-        padding: 10px;
-        gap: 10px;
-      }
-      img {
-        width: 60px;
-        @include mobile() {
-          width: 50px;
-        }
-      }
-    }
-
-    @include tablet {
-      // grid-template-columns: 1fr 1fr 1fr;s
-      gap: 16px;
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+.fp-scroll-mac .fp-overflow::-webkit-scrollbar {
+  width: 5px;
 }
 
 .second-slide {
@@ -525,6 +345,8 @@ video {
     left: -100%;
   }
 }
+
+// БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА
 
 .consultation {
   width: 100%;
@@ -759,6 +581,201 @@ video {
   }
 }
 
+// ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ ОСНОВНОЕ
+
+.homepage {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  border-radius: 20px;
+  @include tablet() {
+    height: 100%;
+  }
+
+  .container {
+    height: 100%;
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr 1fr;
+    // background-color: $black;
+    border-radius: 10px;
+    z-index: 10;
+    @include tablet() {
+      height: auto;
+    }
+  }
+
+  &-background-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 20px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 130px;
+    text-align: center;
+    background: linear-gradient(180deg, #ffffff 50%, #ffffff50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.04;
+    z-index: 0;
+    @media (max-width: 1200px) {
+      font-size: 96px;
+    }
+    @media (max-width: 850px) {
+      font-size: 80px;
+    }
+
+    @media (max-width: 720px) {
+      font-size: 58px;
+    }
+    @include mobile() {
+      font-size: 46px;
+    }
+    @media (max-width: 425px) {
+      font-size: 40px;
+    }
+    @media (max-width: 375px) {
+      font-size: 34px;
+    }
+  }
+
+  &__header {
+    display: grid;
+    grid-template-rows: 1fr 0.3fr 0.1fr;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    &-logo-wrapper {
+      max-width: 500px;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      position: relative;
+      img,
+      video {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: contain;
+        aspect-ratio: 1 / 1;
+        mix-blend-mode: screen; /* Применяем режим смешивания */
+      }
+      video {
+        width: 100%;
+      }
+    }
+    h1 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
+    &-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+
+      @include mobile() {
+        grid-template: repeat(2, 1fr) / 1fr;
+        gap: 12px;
+      }
+
+      button {
+        padding: 12px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: 0.3s;
+        &:active {
+          scale: 0.95;
+        }
+        @include mobile() {
+          padding: 16px;
+          font-size: 16px;
+        }
+        @media (max-width: 350px) {
+          font-size: 14px;
+          padding: 16px 10px;
+        }
+      }
+      &--free-consultation {
+        background-color: white;
+        border: none;
+        color: black;
+      }
+      &--contact-us {
+        background-color: $black;
+        border: 1px solid $border_gray;
+      }
+    }
+  }
+  &__main {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    .gradient-border {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.024) 100%
+      );
+    }
+
+    button {
+      position: relative;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background-color: $black;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      transition: 0.3s;
+      &:active {
+        scale: 0.95;
+      }
+      @include laptop {
+        padding: 15px;
+        gap: 15px;
+      }
+      @include tablet {
+        padding: 10px;
+        gap: 10px;
+      }
+      img {
+        width: 60px;
+        @include mobile() {
+          width: 50px;
+        }
+      }
+    }
+
+    @include tablet {
+      // grid-template-columns: 1fr 1fr 1fr;s
+      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
 .main-block {
   @include pc {
     height: auto !important;
@@ -800,12 +817,21 @@ video {
       flex-direction: column;
       gap: 20px;
     }
+    @include mobile() {
+      gap: 10px;
+    }
+    @media (max-height: 810px) and (max-width: 525px) {
+      padding-top: 50px;
+    }
   }
 
   &__main-info {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @include mobile() {
+      gap: 10px;
+    }
   }
 
   &__back-btn {
@@ -826,6 +852,7 @@ video {
     @include mobile() {
       flex-direction: column;
       height: auto;
+      gap: 10px;
     }
     button {
       height: 100%;
@@ -838,7 +865,7 @@ video {
       font-size: 16px;
       padding: 0 10px;
       @include mobile() {
-        padding: 16px 48px;
+        padding: 16px 10px;
       }
       &:first-child {
         @include greenBtn;
@@ -858,10 +885,10 @@ video {
     }
 
     @include mobile() {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 50%;
+      width: 80%;
+    }
+
+    @media (max-height: 810px) and (max-width: 525px) {
       display: none;
     }
   }
@@ -871,21 +898,31 @@ video {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    br {
+      display: none;
+      @include mobile() {
+        display: block;
+      }
+      @include mobile-min() {
+        display: none;
+      }
+    }
     @include tablet() {
       grid-column-start: auto;
     }
-    @include mobile {
+    @media (min-height: 811px) and (max-width: 525px) {
       display: grid;
       grid-template: 1fr 1fr / 1fr 1fr;
-      gap: 20px;
+      gap: 10px;
       margin-top: auto;
       padding: 0;
     }
 
-    @include mobile-min() {
+    @media (max-height: 810px) and (max-width: 525px) {
       display: flex;
       flex-direction: column;
+      gap: 20px;
     }
     &__card {
       display: flex;
@@ -895,7 +932,8 @@ video {
       @include laptop() {
         align-items: center;
       }
-      @include mobile() {
+
+      @media (min-height: 811px) and (max-width: 525px) {
         text-align: center;
         padding: 0;
         &:nth-child(1) {
@@ -911,16 +949,13 @@ video {
         }
       }
 
-      @include mobile-min() {
+      @media (max-height: 810px) and (max-width: 525px) {
         align-items: flex-start;
       }
 
       span {
         @include laptop() {
           text-align: center;
-        }
-        @include mobile() {
-          // text-align: center;
         }
         &:first-child {
           font-size: 6.25rem;
@@ -1038,7 +1073,6 @@ video {
     }
 
     @include laptop() {
-      padding: 5px;
       font-size: 0.875rem;
       grid-template-columns: 150px 1fr 1fr;
     }
@@ -1104,7 +1138,7 @@ video {
   &__btns {
     display: grid;
     gap: 30px;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 250px 1fr 1fr;
     @include laptop() {
       grid-template-columns: 150px 1fr;
     }
@@ -1242,6 +1276,9 @@ video {
 
   #possibilities__last {
     border-bottom: none;
+    @include mobile() {
+      border: 1px solid #c2c2c2;
+    }
   }
 
   &__header {
@@ -1264,17 +1301,26 @@ video {
   background-color: black;
   .container {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 35px;
     border-radius: 10px;
     overflow-x: hidden;
-    padding-top: 60px;
+    justify-content: space-between;
     @include pc {
+      padding: 60px 20px;
       gap: 60px;
+    }
+
+    @include mobile() {
+      padding: 40px 10px;
+      gap: 40px;
+    }
+
+    @include mobile-mid() {
+      grid-template-rows: auto;
     }
   }
 
   h2 {
-    // margin-bottom: 20px;
     @include tablet() {
       padding: 0;
     }
@@ -1310,10 +1356,6 @@ video {
   .gradient-container {
     overflow: visible !important;
     height: fit-content;
-
-    @include pc {
-      // height: 100%;
-    }
 
     @media (min-width: 1201px) {
       &:nth-child(1) {
@@ -1403,6 +1445,9 @@ video {
 
     @include mobile() {
       width: 100%;
+      .gradient-border {
+        display: none;
+      }
       &::before {
         display: none;
       }
@@ -1421,9 +1466,6 @@ video {
     gap: 10px;
     z-index: 1;
 
-    .gradient-border {
-      // @include gradient_border($grayGradient);
-    }
     @include pc() {
       display: grid;
       grid-template: auto 1fr / 1fr auto;
@@ -1431,6 +1473,7 @@ video {
 
     @include mobile() {
       grid-template: auto 1fr / 1fr auto;
+      border: 1px solid $border_gray;
     }
   }
 
@@ -1470,7 +1513,6 @@ video {
   }
 
   p {
-
     @include tablet() {
       grid-area: 2/1/2/1;
     }
@@ -1485,6 +1527,21 @@ video {
       padding: 10px 0 5px;
       border-bottom: 1px solid #808080;
     }
+
+    @include mobile() {
+      button {
+        font-size: 14px;
+      }
+    }
+
+    @include mobile-mid() {
+      width: 100%;
+      button {
+        width: fit-content;
+        align-items: center;
+      }
+      flex-direction: column;
+    }
   }
 }
 
@@ -1493,12 +1550,17 @@ video {
 
   .container {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 50px;
     position: relative;
     gap: 30px;
-    padding-top: 60px;
+
     @include tablet() {
       gap: 20px;
+      grid-template-rows: 50px 1fr 50px;
+    }
+
+    @include mobile() {
+      padding: 40px 10px;
     }
   }
   ul {
@@ -1624,7 +1686,6 @@ video {
           background-color: $border_gray;
         }
 
-
         &__advantages,
         &__includes {
           span {
@@ -1716,6 +1777,10 @@ video {
       flex-direction: column;
       gap: 20px;
     }
+    @include tablet() {
+      padding: 60px 20px;
+      gap: 60px;
+    }
     @include mobile() {
       padding: 10px 0;
     }
@@ -1723,6 +1788,9 @@ video {
 
   .swiper {
     @include slider();
+
+    
+
     @include mobile() {
       padding: 0 10px 20px;
     }
@@ -1758,7 +1826,6 @@ video {
     gap: 20px;
     align-items: center;
     h3 {
-      font-size: 1.5rem;
       font-weight: 400;
     }
     p {
@@ -1841,14 +1908,13 @@ video {
   background-color: black;
   .gradient-container {
     max-width: 1200px;
-    // margin: auto;
   }
   .container {
     background-color: $black;
     position: relative;
     border-radius: 10px;
     display: grid;
-    grid-template-rows: 50px 80%;
+    grid-template-rows: auto auto;
     gap: 20px;
     justify-content: center;
     height: auto;
@@ -1857,28 +1923,37 @@ video {
       height: auto;
     }
     @include tablet {
+      padding: 60px 20px;
       grid-template-rows: auto 50px 1fr;
+      gap: 60px;
     }
     @include mobile() {
       grid-template-rows: auto 40px 1fr;
+      padding: 40px 10px;
+      gap: 40px;
     }
   }
 
-  #modulesBlockSwiper .gradient-border {
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.024) 100%
-    );
+  #modulesBlockSwiper {
+    padding: 0;
+    .gradient-border {
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.024) 100%
+      );
+    }
   }
+  
 
   #modules-block-pagination {
     top: 0 !important;
   }
 
+
   .swiper {
     @include slider();
-    // height: auto !important;
+    height: fit-content;
     &-pagination {
       display: block !important;
       bottom: 20px !important;
@@ -1887,6 +1962,11 @@ video {
         background: $greenGradient;
       }
     }
+  }
+
+  h2 {
+    display: grid;
+    place-items: center;
   }
 
   .modulesBlockSwiper-navigation {
@@ -1955,12 +2035,9 @@ video {
       h3 {
         font-weight: 500;
       }
-      p {
-        font-size: 16px;
-      }
 
       @include mobile() {
-        grid-template: auto auto / 34px 1fr;
+        grid-template: auto auto / 56px 1fr;
 
         .gradient-container {
           width: 56px;
@@ -2072,21 +2149,7 @@ video {
     margin-bottom: 40px;
   }
   a {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: fit-content;
-    font-size: 2rem;
-    text-decoration: none;
-    color: white;
-    justify-self: center;
-    border: 1px solid $border_gray;
-    border-radius: 10px;
-    padding: 12px 24px;
-    background-color: $gray;
-    @include pc() {
-      display: none;
-    }
+    opacity: 0.05;
   }
 
   &__list {
@@ -2158,11 +2221,7 @@ video {
 
     p {
       padding-left: 48px;
-      font-size: 1rem;
     }
-  }
-  h3 {
-    font-size: 1.2rem;
   }
 }
 

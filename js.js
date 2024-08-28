@@ -406,6 +406,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrolloverflowmacstyle: false,
     autoScrolling: false,
     controlArrows: false,
+    // interlockedSlides: [1, 0]
     // fitToSection: true,
   });
 
