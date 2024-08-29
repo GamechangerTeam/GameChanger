@@ -1113,19 +1113,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const toTarifsBtns = document.querySelectorAll(".to_tarifs-block");
 
   // ДОП. БЛОКИ СЛЕВА
+
+  const leftSection = document.querySelectorAll(".slideIn_left");
+  const openLeftSection = document.querySelectorAll(".open_left_section");
+  const hideLeftSection = document.querySelectorAll(".hide_left_section");
+
   // КОНСУЛЬТАЦИЯ
-  const open_ConsultationPage = document.querySelectorAll(".open_consultation");
   const hide_ConsultationPage = document.querySelectorAll(".hide_consultation");
   const consultation_Page = document.querySelector(".consultation");
 
   // ПОЛИТИКА КОНФ.
-  const hide_PrivacyPolicy = document.querySelectorAll(".hide_privacy-policy");
-  const open_PrivacyPolicy = document.querySelectorAll(".open_privacy-policy");
   const privacyPolicy_Page = document.querySelector(".privacy-policy");
 
   //  ОБСЛУЖИВАНИЕ
-  const hide_service = document.querySelectorAll(".hide_service");
-  const open_service = document.querySelectorAll(".open_service");
   const service_Page = document.querySelector(".service");
 
   // КАРТОЧКИ ТАРИФА
@@ -1149,12 +1149,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ПЕРЕХОД К ТАРИФАМ
   toTarifsBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      console.log(mainSwiper);
-      if (mainSwiper) {
-        mainSwiper.slideTo(4);
-      } else {
-        document.getElementById("tarifs-block").scrollIntoView();
-      }
+      mainSlider.moveTo(5);
     });
   });
 
@@ -1163,6 +1158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { title, subtitle, price, description, advantages, includes },
     number
   ) => {
+    console.log(Array.isArray(price), "asdadsadasd", price);
     const tarifContent = `
       <div class="item__wrapper">
         <div class="item__header">
@@ -1171,8 +1167,19 @@ document.addEventListener("DOMContentLoaded", function () {
             <h3>${title}</h3>
             <p>${subtitle}</p>
           </div>
-          <span class="item__header__price"> ${price}</span>
-          <img class="plus-img" src="https://static.tildacdn.com/tild6237-3361-4132-a138-633931646562/plus.svg" alt="plus icon svg"/>
+          ${
+            Array.isArray(price)
+              ? `<div class=" item__header__price--grid">
+                  <span class="item__header__price"><i> 1 город</i> <br> ${price[0]} </span>
+                  <span class="item__header__price"><i> 2 города</i> <br> ${price[1]} </span>
+                  <span class="item__header__price"><i> 3 города</i> <br> ${price[2]} </span>
+                </div>`
+              : `<span class="item__header__price">${price}</span>`
+          }
+          <div class="plus-icon">
+            <span class="plus-icon--vertical-line"></span>
+            <span class="plus-icon--horizontal-line"></span>
+          </div>
         </div>
         <div class="item__main">
           <span class="item__main--top-line">&nbsp;</span>
@@ -1210,6 +1217,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Поднимаем блок вверх
       item.style.position = "static";
+      item.style.height = `${popup.offsetHeight}px`;
+      popup.style.position = "absolute";
       popup.style.top = `${parentBlockPosition}px`;
 
       setTimeout(() => {
@@ -1233,6 +1242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (tarifs_background.classList.contains("active")) {
       // Сворачиваем блок
       content.style.maxHeight = null;
+      icon.classList.toggle("active");
 
       // Опускаем блок вниз
       setTimeout(() => {
@@ -1247,10 +1257,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Обработчик кликов по элементам
+  let ready = true;
 
   tarifsList.addEventListener("click", (e) => {
     let item = e.target.closest(".item");
-    if (item) {
+    const icon = item.querySelector(".plus-icon");
+    
+    if (item && ready) {
+      icon.classList.toggle("active");
+      ready = false;
       if (window.innerWidth >= 1200) {
         !tarifs_background.classList.contains("active")
           ? openPopup(item)
@@ -1258,78 +1273,58 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         let content = item.querySelector(".item__header").nextElementSibling;
 
-        content.style.maxHeight
-          ? (content.style.maxHeight = null)
-          : (content.style.maxHeight = content.scrollHeight + "px");
+        if (content.style.maxHeight) {
+          content.style.transition = '.7s'
+          content.style.maxHeight = null
+        } else {
+          content.style.transition = '1s'
+          content.style.maxHeight = content.scrollHeight + "px"
+
+        }
       }
+
+      setTimeout(() => {
+        ready = true;
+      }, 500);
     }
   });
 
-  // tarifs_item.forEach((item) => {
-  // });
+  // ДОБАВИТЬ АКТИВНЫЙ КЛАСС ДЛЯ ЛЕВОЙ СЕКЦИИ
+  const addClassToSection = (name) => {
+    switch (name) {
+      case "consultation":
+        consultation_Page.classList.toggle("active");
+        break;
+      case "privacy-policy":
+        privacyPolicy_Page.classList.toggle("active");
+        break;
+      case "service":
+        service_Page.classList.toggle("active");
+        break;
+    }
+  };
 
-  // ОТКРЫТЬ КОНСУЛТАЦИЮ
-  open_ConsultationPage.forEach((btn) => {
+  // ОТКРЫТЬ СЕКЦИЮ
+  openLeftSection.forEach((btn) => {
     btn.addEventListener("click", () => {
+      let sectionName = btn.getAttribute("data-name");
       btn.disabled = true;
       setTimeout(() => {
         btn.disabled = false;
       }, 500);
-
-      consultation_Page.style.visibility = "visible";
-      consultation_Page.style.opacity = "1";
-
-      consultation_Page.classList.toggle("active");
-    });
-  });
-  // СКРЫТЬ КОНСУЛТАЦИЮ
-  hide_ConsultationPage.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      consultation_Page.classList.toggle("active");
+      leftSection.forEach((section) => {
+        section.style.visibility = "visible";
+        section.style.opacity = "1";
+      });
+      addClassToSection(sectionName);
     });
   });
 
-  // ОТКРЫТЬ ПОЛИТИКУ КОНФ.
-  open_PrivacyPolicy.forEach((btn) => {
+  // ЗАКРЫТЬ СЕКЦИЮ
+  hideLeftSection.forEach((btn) => {
     btn.addEventListener("click", () => {
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.disabled = false;
-      }, 500);
-
-      privacyPolicy_Page.style.visibility = "visible";
-      privacyPolicy_Page.style.opacity = "1";
-
-      privacyPolicy_Page.classList.toggle("active");
-    });
-  });
-
-  // ЗАКРФТЬ ПОЛИТИКУ КОНФ.
-  hide_PrivacyPolicy.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      privacyPolicy_Page.classList.toggle("active");
-    });
-  });
-
-  // ОТКРЫТЬ ОБУСЛУЖИВАНИЕ
-  open_service.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.disabled = false;
-      }, 500);
-
-      service_Page.style.visibility = "visible";
-      service_Page.style.opacity = "1";
-
-      service_Page.classList.toggle("active");
-    });
-  });
-
-  // ЗАКРЫТЬ ОБУСЛУЖИВАНИЕ
-  hide_service.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      service_Page.classList.toggle("active");
+      let sectionName = btn.getAttribute("data-name");
+      addClassToSection(sectionName);
     });
   });
 
@@ -1338,7 +1333,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const card = e.target.closest(".faq__card");
     if (card) {
       const main = card.querySelector(".faq__main");
-      const icon = card.querySelector(".faq__icon");
+      const icon = card.querySelector(".plus-icon");
       if (main.style.maxHeight) {
         main.style.maxHeight = null;
         icon.classList.toggle("active");
@@ -1378,6 +1373,19 @@ document.addEventListener("DOMContentLoaded", function () {
     scrolloverflowmacstyle: false,
     autoScrolling: false,
     controlArrows: false,
+    onSlideLeave: function(origin, destination, direction) {
+      const slides = document.querySelectorAll('.section.active .slide');
+  
+      slides.forEach((slide, index) => {
+        slide.classList.remove('fp-prev', 'fp-next');
+        if (index > destination.index) {
+          slide.classList.add('fp-prev');
+        } else if (index < destination.index) {
+          slide.classList.add('fp-next');
+        }
+      });
+    },
+
   });
 
   // СЛАЙДЕРЫ НА БЛОКЕ МОДУЛЕЙ
@@ -1435,26 +1443,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // СЛАЙДЕРЫ КОТОРЫЕ НУЖНО БУДЕТ ВЫРУБИТЬ НА ОПРЕДЕЛЕННОМ РАЗРЕШЕНИИ
-  let mainSwiper;
   let painBlockSwiper;
   let possibilitiesBlockSwiper;
   let implementationBlockSwiper;
   let casesBlockSwiper;
 
-  // 1200PX
-  function initSwipersOnPc() {
-    if (window.innerWidth >= 1200) {
-      mainSwiper = new Swiper("#mainSwiper", {
-        direction: "vertical",
-        speed: 500,
-        mousewheel: true,
-        allowTouchMove: false,
-      });
-    } else if (window.innerWidth < 1200 && mainSwiper) {
-      mainSwiper.destroy(true, true);
-      mainSwiper = undefined;
-    }
-  }
   // 768PX
   function initSwipersOnTablet() {
     if (window.innerWidth <= 768) {
@@ -1591,7 +1584,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       findedInfo.tarifs.forEach((tarif, number) => {
         const tarifCard = getTarifCard(tarif, number + 1);
-        console.log(tarifCard);
       });
 
       console.log(findedInfo);
@@ -1602,7 +1594,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fullpage_api.setAutoScrolling(false);
     // fullpage_api.setFitToSection(false);
     document.body.classList.toggle("active");
-    console.log(firstWindowSize);
     fullpage_api.moveTo(1, 0);
     video.play();
   });

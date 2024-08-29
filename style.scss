@@ -56,6 +56,10 @@ $grayGradient: linear-gradient(
   background-color: $black;
   border: 1px solid $border_gray;
   border-radius: 10px;
+  &:active {
+    background-color: white;
+    color: black;
+  }
 }
 
 @mixin greenBtn {
@@ -86,11 +90,12 @@ $grayGradient: linear-gradient(
   border-radius: 10px;
   background: $color;
   z-index: 0;
+  transition: .1s;
+
 }
 
 .gradient-border {
   @include gradient_border($grayGradient);
-  transition: 0.3s;
 }
 
 .hide_on_mobile {
@@ -150,6 +155,40 @@ $grayGradient: linear-gradient(
   }
 }
 
+.plus-icon {
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.5s;
+  &--vertical-line,
+  &--horizontal-line {
+    position: absolute;
+    background-color: black;
+    left: 50%;
+    top: 50%;
+    transition: 0.5s;
+    transform: translate(-50%, -50%);
+  }
+  &--vertical-line {
+    width: 1px;
+    height: 50%;
+  }
+  &--horizontal-line {
+    width: 50%;
+    height: 1px;
+  }
+  &.active {
+    rotate: 360deg;
+    background: $greenGradient;
+    .plus-icon--vertical-line {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
 // ОБЩИЕ СТИЛИ
 
 * {
@@ -176,12 +215,18 @@ button {
   color: #f5f5f5;
   -webkit-tap-highlight-color: transparent;
   background-color: transparent;
-  transition: 0.3s;
+  transition: 0.1s;
   font-size: 16px;
-  &:active {
-    scale: 0.95;
-    + .gradient-border {
+
+
+
+  @media (min-width: 961px) {
+    &:hover {
       scale: 0.95;
+      + .gradient-border,
+      + .gradient-container {
+        scale: 0.95;
+      }
     }
   }
 }
@@ -213,8 +258,6 @@ h1 {
 h2 {
   font-size: 40px;
   text-align: center;
-  display: grid;
-  place-items: center;
 
   @include pc {
     font-size: 28px;
@@ -256,7 +299,7 @@ p {
 }
 
 .container {
-  padding: 20px;
+  padding: 40px 20px;
   margin: auto;
   max-width: 1200px;
   min-height: 100dvh;
@@ -283,6 +326,21 @@ body {
   .swiper-slide {
     scroll-behavior: smooth;
   }
+}
+
+
+.slide {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform-origin: center;
+}
+
+.fp-prev {
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.3);
+  transform: translateX(-20%) scale(0.9);
+}
+
+.fp-next {
+  transform: translateX(100%);
 }
 
 video {
@@ -312,22 +370,6 @@ video {
   }
 }
 
-.slideIn_left {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  z-index: 10;
-  animation-name: slideOut-left;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-duration: 0.5s;
-  opacity: 0;
-  visibility: visible;
-  &.active {
-    animation-name: slideIn-left;
-  }
-}
-
 @keyframes slideIn-left {
   from {
     left: -100%;
@@ -348,22 +390,59 @@ video {
 
 // БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА
 
-.consultation {
-  width: 100%;
+.slideIn_left {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 10;
+  animation-name: slideOut-left;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  opacity: 0;
+  visibility: visible;
   background-color: black;
   padding: 10px;
-  height: 100dvh;
 
+  width: 100%;
+  height: 100%;
+
+  h1 {
+    font-size: 32px;
+    @include tablet() {
+      font-size: 24px;
+    }
+    @include mobile() {
+      font-size: 20px;
+    }
+  }
+
+  .gradient-container {
+    height: 100% !important;
+  }
+
+  .container {
+    background-color: $black;
+    border-radius: 10px;
+    min-height: auto;
+    overflow: auto;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  &.active {
+    animation-name: slideIn-left;
+  }
+}
+
+.consultation {
   .container {
     display: grid;
     grid-template-columns: 60% auto;
     gap: 50px;
     align-items: center;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    background-color: $black;
+
+    height: 100%;
     @include tablet() {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
@@ -376,6 +455,9 @@ video {
   &__form {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .b24-form {
@@ -442,27 +524,16 @@ video {
 
   &__back-btn {
     @include goBack-btn();
+    width: fit-content;
   }
 }
 
 .privacy-policy {
-  width: 100%;
-  height: 100dvh;
-  position: absolute;
-  z-index: 20;
-  left: 0;
-  top: 0;
-  padding: 10px;
-  background-color: black;
   .container {
     display: grid;
     grid-template-columns: 60% auto;
     align-items: center;
-    overflow: auto;
-    border-radius: 10px;
-    background-color: $black;
-    position: relative;
-    z-index: 1;
+
     @include laptop() {
       grid-template-columns: 1fr;
     }
@@ -490,9 +561,18 @@ video {
     padding-right: 30px;
     border-radius: 100px;
     font-weight: 600;
-    font-size: 20px;
+    span {
+      font-size: 20px;
+    }
     @include mobile() {
-      font-size: 16px;
+      span {
+        font-size: 18px;
+      }
+    }
+    @include mobile() {
+      span {
+        font-size: 16px;
+      }
       gap: 10px;
     }
   }
@@ -500,12 +580,18 @@ video {
   &__number {
     @include greenBtn();
     border-radius: 50%;
-    padding: 10px 20px;
+    height: 62px;
+    width: auto;
+    aspect-ratio: 1/1;
     font-size: 28px;
+    display: grid;
+    place-items: center;
+    @include tablet() {
+      height: 48px;
+    }
     @include mobile() {
+      height: 32px;
       font-size: 16px;
-      padding: 10px 15px;
-      // padding: 5px 10px;
     }
   }
 
@@ -517,8 +603,6 @@ video {
       z-index: -1;
       width: 40%;
     }
-    @include tablet() {
-    }
     @include mobile() {
       position: static;
       height: 100%;
@@ -528,23 +612,10 @@ video {
 }
 
 .service {
-  width: 100%;
-  height: 100dvh;
-  position: absolute;
-  z-index: 20;
-  left: 0;
-  top: 0;
-  padding: 10px;
-  background-color: black;
   .container {
     display: grid;
     grid-template-columns: 60% auto;
     align-items: center;
-    overflow: auto;
-    border-radius: 10px;
-    background-color: $black;
-    position: relative;
-    z-index: 1;
     @include laptop() {
       grid-template-columns: 1fr;
     }
@@ -694,10 +765,6 @@ video {
         gap: 10px;
         font-weight: 600;
         font-size: 14px;
-        transition: 0.3s;
-        &:active {
-          scale: 0.95;
-        }
         @include mobile() {
           padding: 16px;
           font-size: 16px;
@@ -713,8 +780,7 @@ video {
         color: black;
       }
       &--contact-us {
-        background-color: $black;
-        border: 1px solid $border_gray;
+        @include grayBtn();
       }
     }
   }
@@ -735,10 +801,10 @@ video {
     button {
       position: relative;
       border-radius: 10px;
-      border: none;
       outline: none;
       background-color: $black;
       z-index: 1;
+      border: none;
       width: 100%;
       height: 100%;
       display: flex;
@@ -748,10 +814,14 @@ video {
       font-size: 1rem;
       font-weight: 500;
       text-align: left;
-      transition: 0.3s;
       &:active {
-        scale: 0.95;
+        scale: .8;
+        & + .gradient-border {
+        scale: .8;
+
+        }
       }
+
       @include laptop {
         padding: 15px;
         gap: 15px;
@@ -1547,10 +1617,12 @@ video {
 
 .tarifs-block {
   background-color: black;
-
+  .fp-scroll-mac .fp-overflow::-webkit-scrollbar {
+    width: 0;
+  }
   .container {
     display: grid;
-    grid-template-rows: auto auto 50px;
+    grid-template-rows: auto 1fr 50px;
     position: relative;
     gap: 30px;
 
@@ -1566,8 +1638,8 @@ video {
   ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: relative;
+    align-items: center;
     gap: 30px;
     height: 100%;
     list-style-type: none;
@@ -1577,20 +1649,23 @@ video {
     .item {
       width: 100%;
       position: relative;
-      height: 100px;
       @include pc() {
         height: auto;
+      }
+      @include mobile-min() {
+        max-width: 300px;
       }
 
       &__wrapper {
         width: 100%;
+
         border: 1px solid $border_gray;
         border-radius: 20px;
         background-color: $black;
         overflow: hidden;
 
         @media (min-width: 1200px) {
-          position: absolute;
+          // position: absolute;
           top: 0;
           left: 0;
         }
@@ -1607,9 +1682,9 @@ video {
 
       &__header {
         padding: 24px;
-        height: 100px;
+        // height: 100px;
         display: grid;
-        grid-template-columns: 48px auto 1fr 48px;
+        grid-template-columns: 48px 1fr 1fr 48px;
         cursor: pointer;
         align-items: center;
         gap: 20px;
@@ -1617,7 +1692,7 @@ video {
           height: auto;
         }
         @include tablet() {
-          grid-template: 1fr auto auto / 1fr 36px;
+          grid-template: 1fr auto / 1fr 36px;
           gap: 10px;
           padding: 16px;
         }
@@ -1644,24 +1719,90 @@ video {
         }
 
         &__price {
-          margin-left: 100px;
           font-weight: 800;
           font-size: 2rem;
           width: fit-content;
+
           @include pc() {
             margin-left: 0;
           }
           @include tablet() {
             font-size: 1.5rem;
-            grid-area: 3/1;
-            grid-column-start: 2 span;
           }
         }
+
+        &__price--grid {
+          display: flex;
+          .item__header__price {
+            padding: 0 20px;
+            border-right: 1px solid #808080;
+            &:last-child {
+              border: none;
+            }
+          }
+          i {
+            font-style: normal;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          @include pc() {
+            flex-direction: column;
+            .item__header__price {
+              padding: 10px 0;
+              border-right: none;
+              border-bottom: 1px solid #808080;
+            }
+          }
+          @include tablet() {
+            flex-direction: row;
+            width: 100%;
+            .item__header__price {
+              padding: 0 20px;
+              border-bottom: none;
+              border-right: 1px solid #808080;
+            }
+            i {
+              font-size: 10px;
+            }
+          }
+          @include mobile() {
+            gap: 0px;
+            grid-area: 2/1/2/2;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: flex;
+            justify-content: center;
+            .item__header__price {
+              font-size: 14px;
+              position: relative;
+              padding: 0 20px;
+              border-right: 1px solid #808080;
+              &:last-child {
+                border: none;
+              }
+            }
+          }
+        }
+
         .plus-img {
           transition: 0.3s;
           @include tablet() {
             grid-area: 1/2;
           }
+        }
+      }
+
+      .plus-icon {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        background-color: $gray;
+        &--vertical-line,
+        &--horizontal-line {
+          background-color: white;
+        }
+        @include tablet() {
+          grid-area: 1/2;
         }
       }
 
@@ -1688,12 +1829,13 @@ video {
 
         &__advantages,
         &__includes {
-          span {
-            display: flex;
-            gap: 10px;
-            img {
-              width: 20px;
-              aspect-ratio: 1/1;
+          p {
+            padding-left: 30px;
+            position: relative;
+            &::before {
+              content: url("https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg");
+              position: absolute;
+              left: 0;
             }
           }
         }
@@ -1757,7 +1899,7 @@ video {
     }
   }
 
-  .open_consultation {
+  .open_left_section {
     @include greenBtn();
     padding: 12px 24px;
     font-weight: 600;
@@ -1788,8 +1930,6 @@ video {
 
   .swiper {
     @include slider();
-
-    
 
     @include mobile() {
       padding: 0 10px 20px;
@@ -1890,13 +2030,11 @@ video {
     }
     a {
       width: 100%;
+      @include grayBtn();
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: $gray;
-      border: 1px solid $border_gray;
-      border-radius: 10px;
       text-decoration: none;
       color: white;
       padding: 12px 24px;
@@ -1944,12 +2082,10 @@ video {
       );
     }
   }
-  
 
   #modules-block-pagination {
     top: 0 !important;
   }
-
 
   .swiper {
     @include slider();
@@ -2176,40 +2312,6 @@ video {
     }
   }
 
-  &__icon {
-    width: 28px;
-    height: 28px;
-    background-color: white;
-    border-radius: 50%;
-    position: relative;
-    transition: 0.5s;
-    &--vertical-line,
-    &--horizontal-line {
-      position: absolute;
-      background-color: black;
-      left: 50%;
-      top: 50%;
-      transition: 0.5s;
-      transform: translate(-50%, -50%);
-    }
-    &--vertical-line {
-      width: 1px;
-      height: 12px;
-    }
-    &--horizontal-line {
-      width: 12px;
-      height: 1px;
-    }
-    &.active {
-      rotate: 360deg;
-      background: $greenGradient;
-      .faq__icon--vertical-line {
-        width: 0px;
-        height: 0px;
-      }
-    }
-  }
-
   &__main {
     transition: 0.5s;
     height: 100%;
@@ -2227,10 +2329,4 @@ video {
 
 body.active {
   overflow: hidden !important;
-  // pointer-events: none;
-}
-
-
-button {
-  // pointer-events: all !important;
 }
