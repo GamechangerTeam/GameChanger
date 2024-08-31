@@ -1109,6 +1109,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // ВИДЕО
   const video = document.getElementById("video");
   const preloader = document.querySelector("#logo_preloader");
+
+  const contact_us__btn = document.querySelector(".contact_us__btn");
+
+  // contact_us__btn.addEventListener("click", () => {
+  //   contact_us__btn.parentElement.classList.add("active")
+
+  // })
+
   // ТАРИФЫ
   const toTarifsBtns = document.querySelectorAll(".to_tarifs-block");
 
@@ -1117,6 +1125,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const leftSection = document.querySelectorAll(".slideIn_left");
   const openLeftSection = document.querySelectorAll(".open_left_section");
   const hideLeftSection = document.querySelectorAll(".hide_left_section");
+
+  // ПОПАП
+
+  const popup__contact_us = document.querySelector(".popup__contact_us");
+  const open_popup = document.querySelector(".open_popup");
+  const close_popup = document.querySelector(".popup__contact_us--close");
+
+  open_popup.addEventListener("click", () => {
+    popup__contact_us.classList.toggle("active");
+  });
+  console.log("🚀 ~ popup__contact_us:", popup__contact_us);
+
+  popup__contact_us.addEventListener("click", (e) => {
+    let content = e.target.closest(".popup__contact_us__container");
+    let close = e.target.closest(".popup__contact_us--close")
+    if (!content || close) {
+      popup__contact_us.classList.toggle("active");
+      console.log("🚀 ~ popup__contact_us.addEventListener ~ b:", close_popup);
+    }
+  });
 
   // КОНСУЛЬТАЦИЯ
   const hide_ConsultationPage = document.querySelectorAll(".hide_consultation");
@@ -1204,6 +1232,9 @@ document.addEventListener("DOMContentLoaded", function () {
     tarif.innerHTML = tarifContent;
     tarifsList.appendChild(tarif);
   };
+  console.log("🚀 ~ console:", console);
+  console.log("🚀 ~ Array:", Array);
+  console.log("🚀 ~ Array:", Array);
 
   // ОТКРЫТИЕ ТАРИФА КАК ПОПАП
   // Функция для открытия блока
@@ -1242,7 +1273,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (tarifs_background.classList.contains("active")) {
       // Сворачиваем блок
       content.style.maxHeight = null;
-      icon.classList.toggle("active");
 
       // Опускаем блок вниз
       setTimeout(() => {
@@ -1262,7 +1292,7 @@ document.addEventListener("DOMContentLoaded", function () {
   tarifsList.addEventListener("click", (e) => {
     let item = e.target.closest(".item");
     const icon = item.querySelector(".plus-icon");
-    
+
     if (item && ready) {
       icon.classList.toggle("active");
       ready = false;
@@ -1274,12 +1304,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let content = item.querySelector(".item__header").nextElementSibling;
 
         if (content.style.maxHeight) {
-          content.style.transition = '.7s'
-          content.style.maxHeight = null
+          content.style.transition = ".7s";
+          content.style.maxHeight = null;
         } else {
-          content.style.transition = '1s'
-          content.style.maxHeight = content.scrollHeight + "px"
-
+          content.style.transition = "1s";
+          content.style.maxHeight = content.scrollHeight + "px";
         }
       }
 
@@ -1373,19 +1402,18 @@ document.addEventListener("DOMContentLoaded", function () {
     scrolloverflowmacstyle: false,
     autoScrolling: false,
     controlArrows: false,
-    onSlideLeave: function(origin, destination, direction) {
-      const slides = document.querySelectorAll('.section.active .slide');
-  
+    onSlideLeave: function (origin, destination, direction) {
+      const slides = document.querySelectorAll(".section.active .slide");
+
       slides.forEach((slide, index) => {
-        slide.classList.remove('fp-prev', 'fp-next');
+        slide.classList.remove("fp-prev", "fp-next");
         if (index > destination.index) {
-          slide.classList.add('fp-prev');
+          slide.classList.add("fp-prev");
         } else if (index < destination.index) {
-          slide.classList.add('fp-next');
+          slide.classList.add("fp-next");
         }
       });
     },
-
   });
 
   // СЛАЙДЕРЫ НА БЛОКЕ МОДУЛЕЙ
