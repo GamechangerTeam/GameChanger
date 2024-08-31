@@ -580,19 +580,27 @@ video {
   scale: 0;
   transition: 0.5s;
 }
-.popup__contact_us.active {
-  scale: 1;
-}
 .popup__contact_us::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  background-color: black;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0.7;
+  width: 0;
+  height: 0;
   width: 100vw;
   height: 100%;
   z-index: -1;
+}
+.popup__contact_us.active {
+  scale: 1;
+}
+@keyframes showBg {
+  to {
+    width: 100vw;
+    height: 100%;
+  }
 }
 .popup__contact_us div {
   display: flex;
@@ -1005,6 +1013,11 @@ video {
 }
 @media (max-height: 810px) and (max-width: 525px) {
   .hero__graph-img {
+    width: 60%;
+  }
+}
+@media (max-height: 750px) and (max-width: 525px) {
+  .hero__graph-img {
     display: none;
   }
 }
@@ -1034,7 +1047,7 @@ video {
     padding: 0;
   }
 }
-@media (min-height: 811px) and (max-width: 525px) {
+@media (min-height: 751px) and (max-width: 525px) {
   .hero__statistics {
     display: grid;
     grid-template: 1fr 1fr/1fr 1fr;
@@ -1042,7 +1055,7 @@ video {
     margin-top: auto;
   }
 }
-@media (max-height: 810px) and (max-width: 525px) {
+@media (max-height: 750px) and (max-width: 525px) {
   .hero__statistics {
     display: flex;
     flex-direction: column;
@@ -1061,7 +1074,7 @@ video {
     align-items: center;
   }
 }
-@media (min-height: 811px) and (max-width: 525px) {
+@media (min-height: 751px) and (max-width: 525px) {
   .hero__statistics__card {
     text-align: center;
     padding: 0;
@@ -1078,7 +1091,7 @@ video {
     grid-area: 1/1;
   }
 }
-@media (max-height: 810px) and (max-width: 525px) {
+@media (max-height: 750px) and (max-width: 525px) {
   .hero__statistics__card {
     align-items: flex-start;
   }
@@ -1946,6 +1959,11 @@ video {
     border: none;
   }
 }
+@media (max-width: 375px) {
+  .tarifs-block ul .item__header__price--grid .item__header__price {
+    padding: 0 10px;
+  }
+}
 .tarifs-block ul .item__header .plus-img {
   transition: 0.3s;
 }
@@ -2028,7 +2046,6 @@ video {
   }
 }
 .tarifs-block ul .item__main__includes__content {
-  margin-top: 20px;
   display: flex;
   width: 100%;
   gap: 20px;
@@ -2262,7 +2279,7 @@ video {
 }
 @media (max-width: 768px) {
   .modules-block .container {
-    padding: 60px 20px;
+    padding: 60px 0;
     grid-template-rows: auto 50px 1fr;
     gap: 60px;
   }
@@ -2270,7 +2287,7 @@ video {
 @media (max-width: 525px) {
   .modules-block .container {
     grid-template-rows: auto 40px 1fr;
-    padding: 40px 10px;
+    padding: 40px 0;
     gap: 40px;
   }
 }
@@ -2279,6 +2296,16 @@ video {
 }
 .modules-block #modulesBlockSwiper .gradient-border {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.024) 100%);
+}
+@media (max-width: 768px) {
+  .modules-block #modulesBlockSwiper {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 525px) {
+  .modules-block #modulesBlockSwiper {
+    padding: 0 10px;
+  }
 }
 .modules-block #modules-block-pagination {
   top: 0 !important;
@@ -2341,7 +2368,13 @@ video {
 }
 @media (max-width: 768px) {
   .modules-block .modulesBlockSwiper-navigation {
+    width: calc(100% - 40px);
     display: flex;
+  }
+}
+@media (max-width: 525px) {
+  .modules-block .modulesBlockSwiper-navigation {
+    width: calc(100% - 20px);
   }
 }
 .modules-block .modulesBlockSwiper-navigation button {
