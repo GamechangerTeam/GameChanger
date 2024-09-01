@@ -1304,6 +1304,8 @@ video {
     position: relative;
     display: grid;
     grid-template-rows: auto 1fr auto;
+
+
     gap: 60px;
     padding-top: 60px;
     z-index: 2;
@@ -1325,7 +1327,12 @@ video {
 
   .swiper {
     @include slider();
-    height: auto !important;
+    // height: auto !important;
+    touch-action: auto !important;
+
+    // * {
+    //   touch-action: auto !important;
+    // }
     @include tablet() {
       padding: 0 10px 20px;
     }
@@ -1357,7 +1364,7 @@ video {
   &__card {
     display: grid;
     grid-template-columns: 250px 1fr 1fr;
-    height: auto;
+    height: auto !important;
     position: relative;
     overflow: hidden !important;
     gap: 30px;
@@ -1497,6 +1504,7 @@ video {
     &-slide {
       display: grid;
       grid-template-rows: 1fr 1fr;
+      width: 100% !important;
       @include mobile() {
         grid-template-rows: auto;
         gap: 10px;
@@ -2210,6 +2218,7 @@ video {
     border: 1px solid $border_gray;
     border-radius: 20px;
     height: fit-content;
+    width: 100% !important;
   }
 
   &__header {

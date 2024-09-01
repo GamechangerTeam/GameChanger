@@ -4,7 +4,6 @@ const mainInfo = [
   {
     name: "Оптавые продажи",
     header: "Увеличьте продажи. <br> Снижайте затраты.",
-
     pains: [
       "Низкая эффективность управления лидами и сделками приводит к потере потенциальных клиентов, упущенным продажам и упущенным возможностям для бизнеса.",
       "Bitrix24 – это мощная CRM-система, которая автоматизирует процесс управления лидами и сделками, улучшая их отслеживание и повышая конверсии. Используйте Bitrix24, чтобы избежать потерь клиентов и увеличить продажи.",
@@ -121,6 +120,35 @@ const mainInfo = [
           "Подключение марткетплейсов/Instagram/Telegram",
           "Обучение работы с KРI",
           " 1 месяц круглосуточного сопровождения вашей системы",
+        ],
+      },
+    ],
+    cases: [
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild6564-3037-4232-b534-643863313536/gamechanger__53.png",
+          title: "Продажа промышленного оборудования",
+          description:
+            "Мы разработали автоматизирванную систему, направленную на привлечение новых клиентов и обработку входящих заказов. Контакт-центр с интегрированными ;хотами обеспечивает максимальную скорхть работы как с новыми, так и с клиентами. Ежедневно каждому сотруднику рассчитывается ко*фициент",
+        },
+        main: [
+          "Заказы обрабатываются мгновенно",
+          "Запросы поставщикам отправляются автоматически",
+          "Сокращение времени на рутинные задачи на 80%",
+          "Руководство получает гарантированный контроль над процессами",
+        ],
+      },
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild3636-6339-4162-a435-633839393130/gamechanger__72.png",
+          title: "Оптовая продажа металлопроката",
+          description:
+            "Мы оптимизировали систему обработки входящих заказов, внедрив необходимых роботов для повышения Разработали бизнес-процессы для автоматизации и внедрили наију фирменную воронку для холодных звонков. также создали модуль для отслеживания активности клиентов, который автоматически генерирует сделки. В качестве бонуса исправили недочеты предыдущих интеграторов.",
+        },
+        main: [
+          "Отделы продаж стали работать автономно.",
+          "Конверсия увеличилась на 30%, время руководителей сократилось на 40%",
+          "Привлечение новых клиентов возросло на 30%",
         ],
       },
     ],
@@ -246,6 +274,33 @@ const mainInfo = [
         ],
       },
     ],
+    cases: [
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild6530-3033-4366-b432-643236383161/gamechanger__67.png",
+          title: "Службы доставки CM Айболит",
+          description:
+            "Мы разработали систему пассивных продаж на платформе Bitrix24 и создали два каталога — для частных клиентов и оптовиков, которые интегрировали с системой. при сохранении корзины автоматически создается сделка и менеджеру поступает напоминание. процесс управления заказами включает взаимодействие со складом и курьер«ой службой до момента контроля оплат.",
+        },
+        main: [
+          "Процесс оформления заявок значительно упростился: теперь он занимает всего 2 минуты, а сбор заказа – 5 минут",
+          "Вся необходимая информация автоматически передается кладовщику и курьеру, что устранило хаос и сделало доставку более организованной и своевременной",
+        ],
+      },
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild6530-3033-4366-b432-643236383161/gamechanger__67.png",
+          title: "Розничная и оптовая торговля",
+          description:
+            "Мы настроили аналитику и алгоритмы для передачи данных, оптимизировали складские помещения и систему инвентаризации. Мы также провели очистку всех номенклатур, включая товары, контрагентов и поставщиков, с корректировкой наименований на двух языках. Кроме того, мы разработали систему для акционных товаров, включающую обновление прайсов и автогенерацию ценников различных форматов.",
+        },
+        main: [
+          "Ускорение работы кладовщиков и продавцов на 25%",
+          "Улучшение результатов ревизий на 60% на 38 складов",
+          "Ускоренудработы менеджеров и оперэ.рров на 30%",
+        ],
+      },
+    ],
   },
 
   {
@@ -347,6 +402,24 @@ const mainInfo = [
         ],
       },
     ],
+    cases: [
+      {
+        header: {
+          img: "",
+          title: "",
+          description: "",
+        },
+        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+      },
+      {
+        header: {
+          img: "",
+          title: "",
+          description: "",
+        },
+        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+      },
+    ],
   },
 
   {
@@ -443,6 +516,38 @@ const mainInfo = [
           "Запрос сырья",
           "Поломка оборудования",
           "График уборки",
+        ],
+      },
+    ],
+    cases: [
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild6530-3033-4366-b432-643236383161/gamechanger__67.png",
+          title: "Кулинарный цех СМ Айболит",
+          description:
+            "мы внедрили систему калькуляции блюд и автоматизированного производства на платформе Bitrix24. Рецепты сохраняются в отдельном модуле. который также используется для планирования производства и распределения задач. Также была установлена система для выдачи сырья с оптимальной расстановкой оборудования. Склад получает заявки на выдачу материалов, а объемы рассчитываются автоматичеки на основе текущих заявок.",
+        },
+        main: [
+          "После внедрения изменений в кулинарном отделе были утверждены стандартные рецепты, что позволило добиться стабильного качества блюд",
+          "каждый сотрудник имеет kPI и план по изготовлению продукции, что значительно повысило их эффективность",
+          "Складской учет был налажен и находится под строгим контролем",
+        ],
+      },
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild3461-3538-4136-a632-356262353862/gamechanger__66.png",
+          title: "Продажа и производство кондитерских изделий",
+          description:
+            "мы оптимизировали все внутренние системы и внедрили систему выдачи сырья. Разработали полноценную ЕПР-систему для производства на платформе MAccess и оцифровали бизнес на платформе Bitrix24.",
+        },
+        main: [
+          "Снижение себестоимости продукции на 30%",
+          "Ускорение работы кладовщиков на 50%",
+          "Увеличение продаж на 130%",
+          "Увеличение скорости работы управления на 80%",
+          "Уменьшение текучести кадров на 70%",
+          "Сокращение просроченных платежей на 50%",
+          "Повышение лояльности клиентов на 50%",
         ],
       },
     ],
@@ -565,6 +670,24 @@ const mainInfo = [
           "Обучение работы с KРI",
           "1 месяц круглосуточного сопровождения вашей системы",
         ],
+      },
+    ],
+    cases: [
+      {
+        header: {
+          img: "",
+          title: "",
+          description: "",
+        },
+        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+      },
+      {
+        header: {
+          img: "",
+          title: "",
+          description: "",
+        },
+        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
       },
     ],
   },
@@ -801,6 +924,36 @@ const mainInfo = [
           "Управление учебными материалами",
           "CRM-система для управления заявками на обучение",
           "Система внутреннего аудита",
+        ],
+      },
+    ],
+    cases: [
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild6432-3864-4636-b131-313634623534/gamechanger__54.png",
+          title: "Центр онлайн-переводов",
+          description:
+            "Мы создали систему на платфюрме Bitrix24 с интеграцией 1С для бухгалтерии, складским учетом оборудования, автогенерацией коммерческих и договоров, и отчетами по рентабельности каждого проекта.так же был разработан авторский модуль для подсчета символов в файлах разного типа и общей суммы за перевод",
+        },
+        main: [
+          "После внедрения решения время на оформление документов сократилось с 30-150 минут до 3 минут",
+          "Теперь есть четкое понимание занятости переводчиков",
+          "Автоматическая аналитика позволяет вычислять рентабельность каждого проекта",
+          "Процесс согласования. участия в тендерах увеличелся на 20%",
+        ],
+      },
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild6136-6266-4137-b139-313665653331/gamechanger__69.png",
+          title: "It-Hub",
+          description:
+            "Мы разработали на базе Bitrix24 систему для быстрого создания карточек мероприятий на сайте и интеграции с формами для записи клиентов. Настроили автоматические рассылки напоминаний и сбор обратной связи, а также формирование отчетов по мероприятиям.",
+        },
+        main: [
+          "Процесс размещения мероприятий на сайте сократился на 50%",
+          "Все записи и контактные данные надежно хранятся в системе",
+          "Конвеояя увеличилась благодаря напоминаниям",
+          "Удобная фильтрация клиентов позволяет делать точечные рассылки, а отчеты помогают оценивать конверх:ию и принимать обоснованные решения",
         ],
       },
     ],
@@ -1203,6 +1356,37 @@ const mainInfo = [
         ],
       },
     ],
+    cases: [
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild3565-3566-4535-b063-323664663666/gamechanger__55.png",
+          title: "Аренда мест для размещения рекламы",
+          description:
+            "мы разработали систему на платфрме Bitrix24. объединив отдел продаж. бухгалтерию. юридический отдел и руководство. Были разработаны бизнес-процессы для утверждения и передачи задач. также мы интегрировали WhatsApp и телефонию для эффективного контроля работы менеджеров.",
+        },
+        main: [
+          "Система контролирует сроки размещения и оплаты",
+          "НКапоминания на каждом этапе и информации между отделами удвоили скорость работы",
+          "Все документы генерируются автоматически",
+          "Снижение рутинной работы на 40%",
+          "Аналитика предоставляет руководству необходимые показатели",
+        ],
+      },
+      {
+        header: {
+          img: "https://static.tildacdn.pro/tild3539-6263-4332-a138-356437623134/gamechanger__60.png",
+          title: "Аренда тех. оборудования организация мероприятий",
+          description:
+            "Мы создали систему на платформе Bitrix24 с интеграцией с 1С, складским учетом оборудования, автогенерацией коммерческих предложений и договоров, а также отчетами по каждого В этой систеь«е продуман весь сценарий работы менеджеров, склада, инженеров и бухгалтерии.",
+        },
+        main: [
+          "Оформление документов сократилось с 30-150 минут до З минут",
+          "Внедрен учет ресурсов, обеспечивающий понимание их доступности",
+          "Автоматическая аналитика позволяет легко вычислять каждого проекта",
+          "Клиенты получили быстрый доступ к актуальным тендерам",
+        ],
+      },
+    ],
   },
 
   {
@@ -1435,6 +1619,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const tarifs_item = document.querySelectorAll(".item");
   const tarifs_background = document.querySelector(".tarifs-block__background");
 
+  // КЕЙСЫ
+  const casesList = document.querySelectorAll(".cases-block__card");
+
   // ПЕРЕКЛЮЧАТЕЛЬ СЛАЙДОВ НА БЛОКЕ МОДУЛЕЙ
   const toggler = document.querySelector(
     ".modulesBlockSwiper-navigation__toggler"
@@ -1548,7 +1735,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let content = e.target.closest(".popup__contact_us__container");
     let close = e.target.closest(".popup__contact_us--close");
     if ((!content || close) && ready) {
-      console.log('ready', ready)
+      console.log("ready", ready);
       ready = false;
       popup__contact_us.classList.toggle("active");
       setTimeout(() => {
@@ -1664,47 +1851,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // СЛАЙДРЕЫ
-  // ГЛАВНЫЙ СЛАЙДЕР
-  // const homePageSwiper = new Swiper("#homePageSwiper", {
-  //   effect: "creative",
-  //   allowTouchMove: false,
-  //   speed: 500,
-  //   // autoHeight: true,
-
-  //   navigation: {
-  //     nextEl: ".toMainPage",
-  //     prevEl: ".toHomePage",
-  //   },
-
-  //   creativeEffect: {
-  //     prev: {
-  //       shadow: true,
-  //       translate: ["-20%", 0, -1],
-  //     },
-  //     next: {
-  //       translate: ["100%", 0, 0],
-  //     },
-  //   },
-  // });
-
   const mainSlider = new fullpage("#main", {
     scrollOverflow: true,
     scrolloverflowmacstyle: false,
     autoScrolling: false,
     controlArrows: false,
-    // onSlideLeave: function (origin, destination, direction) {
-    //   const slides = document.querySelectorAll(".section.active .slide");
+    onSlideLeave: function (origin, destination, direction) {
+      let activeSlide = destination.index;
+      if (!activeSlide) {
+        document.body.classList.remove("active");
+        fullpage_api.setAutoScrolling(true); // отключаем авто скроллинг
+      } else {
+        document.body.classList.add("active");
+        fullpage_api.setAutoScrolling(false); // включаем авто скроллинг
+      }
+      console.log(destination.index, "asdsaddas");
+    },
 
-    //   slides.forEach((slide, index) => {
-    //     slide.classList.remove("fp-prev", "fp-next");
-    //     if (index > destination.index) {
-    //       slide.classList.add("fp-prev");
-    //     } else if (index < destination.index) {
-    //       slide.classList.add("fp-next");
-    //     }
-    //   });
-    // },
+    onLeave: function () {
+      console.log("aaaaaaaaaaaaaa");
+    },
   });
 
   // СЛАЙДЕРЫ НА БЛОКЕ МОДУЛЕЙ
@@ -1761,101 +1927,49 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // СЛАЙДЕРЫ КОТОРЫЕ НУЖНО БУДЕТ ВЫРУБИТЬ НА ОПРЕДЕЛЕННОМ РАЗРЕШЕНИИ
-  let painBlockSwiper;
-  let possibilitiesBlockSwiper;
-  let implementationBlockSwiper;
-  let casesBlockSwiper;
+  const painBlockSwiper = new Swiper("#painBlockSwiper", {
+    direction: "horizontal",
+    slidesPerView: 1,
+    spaceBetween: 30,
 
-  // 768PX
-  function initSwipersOnTablet() {
-    if (window.innerWidth <= 768) {
-      painBlockSwiper = new Swiper("#painBlockSwiper", {
-        direction: "horizontal",
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      769: {
         slidesPerView: 1,
-        spaceBetween: 30,
+      },
+    },
+  });
 
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        breakpoints: {
-          769: {
-            direction: "vertical",
-            slidesPerView: 3,
-          },
-        },
-      });
-    } else if (
-      window.innerWidth > 768 &&
-      (painBlockSwiper, possibilitiesBlockSwiper)
-    ) {
-      painBlockSwiper.destroy(true, true);
-      painBlockSwiper = undefined;
-    }
-  }
+  const possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
+    direction: "horizontal",
+    slidesPerView: 1,
+    spaceBetween: 30,
 
-  // 525PX
-  function initSwipersOnMobile() {
-    if (window.innerWidth <= 525) {
-      possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
-        direction: "horizontal",
-        slidesPerView: 1,
-        spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      526: {
+        slidesPerView: 2,
+      },
+    },
+  });
 
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
-      // implementationBlockSwiper = new Swiper("#implementationBlockSwiper", {
-      //   direction: "horizontal",
-      //   slidesPerView: 1,
-      //   spaceBetween: 30,
-      //   pagination: {
-      //     el: ".swiper-pagination",
-      //   },
+  const casesBlockSwiper = new Swiper("#casesBlockSwiper", {
+    direction: "horizontal",
+    slidesPerView: 1,
+    spaceBetween: 30,
 
-      // });
-      casesBlockSwiper = new Swiper("#casesBlockSwiper", {
-        direction: "horizontal",
-        slidesPerView: 1,
-        spaceBetween: 30,
-
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
-    } else if (
-      window.innerWidth > 525 &&
-      possibilitiesBlockSwiper &&
-      implementationBlockSwiper
-    ) {
-      possibilitiesBlockSwiper.destroy(true, true);
-      possibilitiesBlockSwiper = undefined;
-      implementationBlockSwiper.destroy(true, true);
-      implementationBlockSwiper = undefined;
-    }
-  }
-
-  // initSwipersOnPc();
-  initSwipersOnTablet();
-  initSwipersOnMobile();
-
-  // Инициализация при изменении размера окна
-  window.addEventListener("resize", () => {
-    // initSwipersOnPc;
-    initSwipersOnTablet;
-    initSwipersOnMobile;
-
-    // alert(`${nice[0]}, ${nice[1]}, ${window.innerWidth}, ${window.innerHeight}`)
-
-    // if (nice[0]  <= window.innerWidth) {
-    //   location.reload();
-
-    // }
-    // if (nice[0]  >= window.innerWidth) {
-    //   location.reload();
-
-    // }
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      526: {
+        slidesPerView: 2,
+      },
+    },
   });
 
   // ЛОГИКА ПО ЗАМЕНЕ ТЕКСТА НА САЙТЕ
@@ -1879,8 +1993,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const hero_header = document.querySelector(".hero__header");
     if (btn) {
       fullpage_api.setAutoScrolling(true);
-      // fullpage_api.setFitToSection(true);
-      document.body.classList.toggle("active");
+      // document.body.classList.toggle("active");
 
       fullpage_api.moveTo(1, 1);
       // ОСТАНАВЛИВАЕМ ВИДЕО
@@ -1907,14 +2020,32 @@ document.addEventListener("DOMContentLoaded", function () {
         getTarifCard(tarif, number + 1);
       });
 
-      console.log(findedInfo.header, hero_header);
+      casesList.forEach((card, i) => {
+        card.querySelector("img").src = findedInfo.cases[i].header.img;
+        card.querySelector("h3").innerText = findedInfo.cases[i].header.title;
+        card.querySelector("p").innerText =
+          findedInfo.cases[i].header.description;
+        findedInfo.cases[i].main.forEach((text) => {
+          let mainInfo = card.querySelector(".cases-block__main");
+          let span = document.createElement("span");
+          span.innerHTML = `
+            <img src="https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg" alt="confirm svg logo">
+            ${text}
+            `;
+          mainInfo.appendChild(span);
+        });
+
+        console.log(card.querySelector("img"), "eto aaaaaaaa");
+      });
+
+      console.log(findedInfo, hero_header);
     }
   });
 
   backToHomePage.addEventListener("click", () => {
     fullpage_api.setAutoScrolling(false);
     // fullpage_api.setFitToSection(false);
-    document.body.classList.toggle("active");
+    // document.body.classList.toggle("active");
     fullpage_api.moveTo(1, 0);
     video.play();
   });
