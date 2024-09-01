@@ -1085,10 +1085,6 @@ video {
 .hero {
   background-color: black;
 
-  @include mobile() {
-    // height: 100dvh;
-  }
-
   .container {
     display: grid;
     grid-template: auto 0.4fr / 1fr auto;
@@ -1170,6 +1166,22 @@ video {
     max-width: 400px;
     height: auto;
     margin-left: auto;
+    position: relative;
+
+    span {
+      position: absolute;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: $gray;
+      rotate: 5deg;
+      left: 10%;
+      top: 5%;
+      border-radius: 100px;
+      font-size: 14px;
+    }
+
     @include tablet() {
       margin: auto;
     }
