@@ -175,6 +175,10 @@
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -1245,9 +1249,6 @@ video {
   .pain-block h2 {
     padding: 0 20px;
   }
-}
-.pain-block .swiper {
-  touch-action: auto !important;
 }
 @media (max-width: 768px) {
   .pain-block .swiper {
@@ -2367,6 +2368,169 @@ video {
 .cases-block__btns a:active {
   background-color: white;
   color: black;
+}
+
+#trustUs_container {
+  display: grid;
+  grid-template-rows: auto 1fr 32px auto;
+  padding: 20px;
+  gap: 20px;
+}
+#trustUs_container .swiper {
+  background-color: #141414;
+  border: 1px solid #292929;
+  border-radius: 20px;
+  padding: 24px 100px;
+}
+@media (max-width: 768px) {
+  #trustUs_container .swiper {
+    padding-bottom: 20px;
+  }
+}
+#trustUs_container .swiper .swiper-pagination {
+  display: none;
+  top: auto;
+  bottom: 0px;
+}
+@media (max-width: 768px) {
+  #trustUs_container .swiper .swiper-pagination {
+    display: block;
+    align-items: center;
+  }
+}
+#trustUs_container .swiper .swiper-pagination-bullet {
+  width: 20px;
+  height: 2px;
+  background-color: #808080;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+#trustUs_container .swiper .swiper-pagination-bullet-active {
+  width: 40px;
+  background-color: black;
+}
+@media (max-width: 1200px) {
+  #trustUs_container .swiper {
+    padding: 24px;
+  }
+}
+#trustUs_container .swiper-wrapper {
+  flex-direction: row;
+  justify-content: unset;
+  gap: 0;
+}
+#trustUs_container .swiper-slide {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+#trustUs_container .swiper-slide:nth-child(even) {
+  margin-top: 0 !important;
+}
+#trustUs_container .trustUs__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#trustUs_container .trustUs__card .gradient-container {
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  height: auto;
+  max-width: 130px;
+  aspect-ratio: 1/1;
+}
+#trustUs_container .trustUs__card .gradient-border {
+  border-radius: 50%;
+  z-index: -1;
+  height: auto;
+  max-width: 130px;
+  aspect-ratio: 1/1;
+}
+#trustUs_container .trustUs__card h3 {
+  margin: 8px 0 8px;
+  color: #2B2D33;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+#trustUs_container .trustUs__card p {
+  color: #555A65;
+}
+#trustUs_container .trustUs__card span {
+  position: absolute;
+  width: calc(100% - 2px);
+  height: auto;
+  aspect-ratio: 1/1;
+  background-color: #050505;
+  left: 1px;
+  top: 1px;
+  max-width: 130px;
+  border-radius: 50%;
+  z-index: 0;
+}
+#trustUs_container .trustUs__card img {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+}
+#trustUs_container .trustUs__navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#trustUs_container .trustUs__navigation .trustUs_container-pagination {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#trustUs_container .trustUs__navigation .swiper-pagination-bullet {
+  width: 20px;
+  border-radius: 20px;
+  height: 2px;
+  background: linear-gradient(to right, #04d404 4.77%, #026e02 94.98%);
+  transition: 0.3s;
+}
+#trustUs_container .trustUs__navigation .swiper-pagination-bullet-active {
+  width: 40px;
+}
+#trustUs_container .trustUs__navigation .trustUs_container-button-prev,
+#trustUs_container .trustUs__navigation .trustUs_container-button-next {
+  position: static;
+  background: linear-gradient(to right, #04d404 4.77%, #026e02 94.98%);
+  border-radius: 50%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-content: center;
+}
+#trustUs_container .trustUs__navigation .trustUs_container-button-prev svg {
+  rotate: 180deg;
+}
+#trustUs_container .trustUs-block__btns {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+#trustUs_container .trustUs-block__btns a {
+  width: 100%;
+  background-color: #050505;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+}
+#trustUs_container .trustUs-block__btns a:active {
+  background-color: white;
+  color: black;
+}
+#trustUs_container .trustUs-block__btns button {
+  width: 100%;
+  border: none;
+  background: linear-gradient(to right, #04d404 4.77%, #026e02 94.98%);
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 500;
 }
 
 .modules-block {

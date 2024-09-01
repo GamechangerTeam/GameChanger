@@ -140,7 +140,7 @@ const mainInfo = [
       },
       {
         header: {
-          img: "https://static.tildacdn.pro/tild3636-6339-4162-a435-633839393262/Frame_10103.png",
+          img: "https://static.tildacdn.com/tild3636-6339-4162-a435-633839393130/gamechanger__72.png",
           title: "Оптовая продажа металлопроката",
           description:
             "Мы оптимизировали систему обработки входящих заказов, внедрив необходимых роботов для повышения эффективности. Разработали бизнес-процессы для автоматизации и внедрили нашу фирменную воронку для холодных звонков. Также создали модуль для отслеживания активности клиентов, который автоматически генерирует сделки. В качестве бонуса исправили недочеты предыдущих интеграторов.",
@@ -404,30 +404,12 @@ const mainInfo = [
         ],
       },
     ],
-    cases: [
-      {
-        header: {
-          img: "",
-          title: "",
-          description: "",
-        },
-        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-      },
-      {
-        header: {
-          img: "",
-          title: "",
-          description: "",
-        },
-        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-      },
-    ],
   },
 
   {
     name: "Производство",
     header: "Увеличьте производительность. <br  > Снижайте себестоимость.",
-    grapgh_header: "Производительность",
+    graph_header: "Производительность",
     pains: [
       " Низкая эффективность управления производственными процессами и недостаток контроля приводят к задержкам и увеличению издержек, что снижает прибыльность компании.",
       " Bitrix24 для производства автоматизирует управление производственными процессами и контроль заказов, что помогает сократить задержки и снизить издержки. Оптимизируйте производство и увеличьте свою прибыльность с помощью Bitrix24 уже сегодня!",
@@ -560,7 +542,7 @@ const mainInfo = [
     name: "Медицина",
     header:
       "Улучшите качество обслуживания. <br  > Снижайте операционные расходы.",
-    grapgh_header: "Контроль",
+    graph_header: "Контроль",
     pains: [
       "Низкая эффективность управления записями пациентов и медицинскими процессами ведет к длительным ожиданиям и неудовлетворенности пациентов, что ухудшает качество медицинского обслуживания и может привести к потере клиентов.",
       "Bitrix24 для медицинских учреждений автоматизирует управление записями и медицинскими процессами, что снижает время ожидания и повышает удовлетворенность пациентов. Оптимизируйте медицинское обслуживание и улучшите пациентский опыт с помощью Bitrix24!",
@@ -676,32 +658,13 @@ const mainInfo = [
         ],
       },
     ],
-
-    cases: [
-      {
-        header: {
-          img: "",
-          title: "",
-          description: "",
-        },
-        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-      },
-      {
-        header: {
-          img: "",
-          title: "",
-          description: "",
-        },
-        main: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-      },
-    ],
   },
 
   {
     name: "Продажа недвижимости",
     header:
       "Увеличьте количество сделок.  <br  > Снижайте расходы на продвижение.",
-    grapgh_header: "Продажи",
+    graph_header: "Продажи",
 
     pains: [
       "Высокая конкуренция на рынке и необходимость переключения между различными каналами замедляют процесс поиска клиентов, что негативно сказывается на связи между покупателями и агентами.",
@@ -827,7 +790,7 @@ const mainInfo = [
     name: "Образование",
     header:
       "Увеличьте успеваемость студентов.   <br  > Снижайте административные затраты.",
-    grapgh_header: "Прибыль",
+    graph_header: "Прибыль",
 
     pains: [
       "Низкая эффективность управления учебными процессами и расписаниями приводит к путанице и потере времени в образовательных учреждениях.",
@@ -970,7 +933,7 @@ const mainInfo = [
   {
     name: "Автосервисы",
     header: "Увеличьте качество обслуживания. <br  > Контролируйте расходы.",
-    grapgh_header: "Контроль",
+    graph_header: "Контроль",
     pains: [
       "Низкая эффективность управления заказами и записями в автосервисе приводит к длительному времени ожидания и потере клиентов, что значительно снижает прибыльность бизнеса.",
       "Bitrix24 для автосервисов автоматизирует управление заказами и записями, что помогает минимизировать время ожидания и предотвращает потерю клиентов. Оптимизируйте бизнес-процессы и увеличьте прибыльность вашего автосервиса с Bitrix24 уже сейчас!",
@@ -1088,7 +1051,7 @@ const mainInfo = [
     name: "Маркетинг",
     header:
       "Увеличьте конверсию кампаний.   <br  > Снижайте затраты на рекламу.",
-    grapgh_header: "Прибыль",
+    graph_header: "Прибыль",
 
     pains: [
       "Неэффективное управление рекламными кампаниями и трудности в отслеживании их результатов приводят к упущенным возможностям и перерасходу рекламного бюджета.",
@@ -1197,7 +1160,7 @@ const mainInfo = [
   {
     name: "Аренда",
     header: "Увеличьте доход от аренды.  <br  > Снижайте риски и просрочки.",
-    grapgh_header: "Прибыль",
+    graph_header: "Прибыль",
 
     pains: [
       "Отсутствие централизованной системы управления арендой объектов затрудняет отслеживание арендных платежей, сроков аренды и статуса объектов. Результат: Потеря контроля над арендными контрактами, пропущенные платежи и неэффективное управление недвижимостью.",
@@ -1405,7 +1368,7 @@ const mainInfo = [
     name: "HR",
     header:
       "Увеличьте эффективность найма.    <br  > Снижайте затраты на персонал.",
-    grapgh_header: "Контроль",
+    graph_header: "Контроль",
 
     pains: [
       "Трудности с подбором квалифицированных кандидатов из-за огромного объема резюме, которые нужно вручную просматривать и оценивать.",
@@ -1502,7 +1465,7 @@ const mainInfo = [
     name: "Управление",
     header:
       "Увеличьте контроль над проектами.  <br  > Снижайте административные издержки.",
-    grapgh_header: "Контроль",
+    graph_header: "Контроль",
 
     pains: [
       "Отсутствие четкой координации между отделами и сотрудниками затрудняет выполнение проектов в срок и снижает общую продуктивность.",
@@ -1605,6 +1568,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ТАРИФЫ
   const toTarifsBtns = document.querySelectorAll(".to_tarifs-block");
+  // КЕЙСЫ
+  const casesBlock = document.querySelector(".cases-block");
+  const cases_container = document.querySelector("#cases_container");
+  // НАМ ДОВЕРЯЮТ
+  const trustUs_container = document.querySelector("#trustUs_container");
 
   // ДОП. БЛОКИ СЛЕВА
 
@@ -1870,6 +1838,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrolloverflowmacstyle: false,
     autoScrolling: false,
     controlArrows: false,
+    scrollBar: false,
     onSlideLeave: function (origin, destination, direction) {
       let activeSlide = destination.index;
       if (!activeSlide) {
@@ -1944,16 +1913,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const painBlockSwiper = new Swiper("#painBlockSwiper", {
     direction: "horizontal",
     slidesPerView: 1,
-    spaceBetween: 30,
 
     pagination: {
       el: ".swiper-pagination",
     },
-    breakpoints: {
-      769: {
-        slidesPerView: 1,
-      },
-    },
+    // breakpoints: {
+    //   769: {
+    //     slidesPerView: 0,
+    //   },
+    // },
   });
 
   const possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {
@@ -1983,6 +1951,39 @@ document.addEventListener("DOMContentLoaded", function () {
       526: {
         slidesPerView: 2,
       },
+    },
+  });
+
+  const trustUs = new Swiper("#trustUs", {
+    direction: "horizontal",
+    spaceBetween: 20,
+    slidesPerView: 2,
+    slidesPerGroup: 2,
+    pagination: {
+      el: ".trustUs_container-pagination",
+    },
+
+    navigation: {
+      nextEl: ".trustUs_container-button-next",
+      prevEl: ".trustUs_container-button-prev",
+    },
+    grid: {
+      rows: 2,
+    },
+
+    breakpoints: {
+      1200: {
+        slidesPerView: 4,
+      },
+      769: {
+        slidesPerView: 3,
+      },
+
+      525: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+
+      }
     },
   });
 
@@ -2023,7 +2024,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hero_header.innerHTML = findedInfo.header;
 
       graph.innerHTML = `
-      ${findedInfo.grapgh_header}
+      ${findedInfo.graph_header}
                 <svg
                   width="22"
                   height="23"
@@ -2088,32 +2089,41 @@ document.addEventListener("DOMContentLoaded", function () {
         getTarifCard(tarif, number + 1);
       });
 
-      casesList.forEach((card, i) => {
-        card.querySelector("img").src = findedInfo.cases[i].header.img;
-        card.querySelector("h3").innerText = findedInfo.cases[i].header.title;
-        card.querySelector("p").innerText =
-          findedInfo.cases[i].header.description;
-        findedInfo.cases[i].main.forEach((text) => {
-          let mainInfo = card.querySelector(".cases-block__main");
-          let span = document.createElement("span");
-          span.innerHTML = `
-            <img src="https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg" alt="confirm svg logo">
-            ${text}
-            `;
-          mainInfo.appendChild(span);
+      if (findedInfo.cases) {
+        cases_container.classList.remove("hidden");
+        trustUs_container.classList.add("hidden");
+
+        casesList.forEach((card, i) => {
+          card.querySelector("img").src = findedInfo.cases[i].header.img;
+          card.querySelector("h3").innerText = findedInfo.cases[i].header.title;
+          card.querySelector("p").innerText =
+            findedInfo.cases[i].header.description;
+          findedInfo.cases[i].main.forEach((text) => {
+            let mainInfo = card.querySelector(".cases-block__main");
+            let span = document.createElement("span");
+            span.innerHTML = `
+              <img src="https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg" alt="confirm svg logo">
+              ${text}
+              `;
+            mainInfo.appendChild(span);
+          });
+
+          console.log(card.querySelector("img"), "eto aaaaaaaa");
         });
+      } else {
+        console.log(casesBlock, "1111");
+        cases_container.classList.add("hidden");
+        trustUs_container.classList.remove("hidden");
+      }
 
-        console.log(card.querySelector("img"), "eto aaaaaaaa");
-      });
-
-      console.log(findedInfo, hero_header);
+      console.log(findedInfo);
     }
   });
 
   backToHomePage.addEventListener("click", () => {
     fullpage_api.setAutoScrolling(false);
-    // fullpage_api.setFitToSection(false);
-    // document.body.classList.toggle("active");
+    fullpage_api.setFitToSection(false);
+    document.body.classList.toggle("active");
     fullpage_api.moveTo(1, 0);
     video.play();
   });
