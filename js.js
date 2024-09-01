@@ -1700,6 +1700,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const tarif = document.createElement("li");
     tarif.classList.add("item");
+    tarif.innerHTML = ""
     tarif.innerHTML = tarifContent;
     tarifsList.appendChild(tarif);
   };
