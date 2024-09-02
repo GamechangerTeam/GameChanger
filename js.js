@@ -1917,15 +1917,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const painBlockSwiper = new Swiper("#painBlockSwiper", {
     direction: "horizontal",
     slidesPerView: 1,
+    spaceBetween: 30,
 
     pagination: {
       el: ".swiper-pagination",
     },
-    // breakpoints: {
-    //   769: {
-    //     slidesPerView: 0,
-    //   },
-    // },
+    breakpoints: {
+      769: {
+        spaceBetween: 0
+      },
+    },
   });
 
   const possibilitiesBlockSwiper = new Swiper("#possibilitiesBlockSwiper", {

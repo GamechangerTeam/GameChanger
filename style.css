@@ -1277,6 +1277,7 @@ video {
 @media (max-width: 768px) {
   .pain-block .container {
     gap: 20px;
+    padding: 60px 0px;
   }
 }
 @media (max-width: 768px) {
@@ -1643,8 +1644,16 @@ video {
     height: 40px;
   }
 }
+.possibilities-block .ears-container {
+  height: 50px;
+  background-color: red;
+}
 .possibilities-block .ears {
   border-radius: 0 0 50px 50px;
+  height: 100%;
+}
+.possibilities-block .ears-bg {
+  height: 100%;
 }
 @media (max-width: 768px) {
   .possibilities-block .ears {
@@ -1655,9 +1664,6 @@ video {
   .possibilities-block .ears {
     border-radius: 0 0 30px 30px;
   }
-}
-.possibilities-block .ears-bg {
-  bottom: -100px;
 }
 
 .implementation-block {

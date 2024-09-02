@@ -1422,7 +1422,7 @@ video {
     }
     @include tablet() {
       gap: 20px;
-      // padding: 20px 0px;
+      padding: 60px 0px;
     }
   }
 
@@ -1741,8 +1741,18 @@ video {
     }
   }
 
+  .ears-container {
+    height: 50px;
+    background-color: red;
+  }
+
   .ears {
     border-radius: 0 0 50px 50px;
+    height: 100%;
+  }
+
+  .ears-bg {
+    height: 100%;
   }
 
   @include tablet() {
@@ -1757,9 +1767,6 @@ video {
     }
   }
 
-  .ears-bg {
-    bottom: -100px;
-  }
 }
 
 .implementation-block {
