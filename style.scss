@@ -940,8 +940,9 @@ video {
     height: auto !important;
   }
 
-  .gradient-border {
-    // height: auto !important;
+
+  button {
+    width: fit-content;
   }
 
   button {
@@ -1421,7 +1422,7 @@ video {
     }
     @include tablet() {
       gap: 20px;
-      padding: 20px 0px;
+      // padding: 20px 0px;
     }
   }
 
@@ -2454,7 +2455,7 @@ video {
 
 #trustUs_container {
   display: grid;
-  grid-template-rows: 50px fit-content 32px 45px;
+  grid-template-rows: 50px auto 32px 45px;
   justify-content: space-between;
   padding: 20px;
   gap: 20px;
@@ -2591,7 +2592,8 @@ video {
     height: fit-content;
     width: 100%;
     gap: 20px;
-    a {
+
+    button:nth-child(1) {
       padding: 12px 24px;
       width: 100%;
       @include grayBtn();
@@ -2600,7 +2602,7 @@ video {
       display: grid;
       place-items: center;
     }
-    button {
+    button:nth-child(2) {
       width: 100%;
       @include greenBtn();
       padding: 12px 24px;
@@ -2619,7 +2621,6 @@ video {
     max-width: 1200px;
   }
   .container {
-    background-color: $black;
     position: relative;
     border-radius: 10px;
     display: grid;
@@ -2741,7 +2742,7 @@ video {
     border-radius: 10px;
 
     &__card {
-      padding: 1.5rem;
+      padding: 1.5rem 1.5rem 2.5rem;
       display: grid;
       grid-template-rows: auto 1fr 200px;
       gap: 20px;
@@ -2864,7 +2865,6 @@ video {
   }
 
   .container {
-    background-color: $black;
     position: relative;
     border-radius: 10px;
     @media (min-width: 1200px) {

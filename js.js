@@ -1570,6 +1570,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const toTarifsBtns = document.querySelectorAll(".to_tarifs-block");
   // КЕЙСЫ
   const casesBlock = document.querySelector(".cases-block");
+  const casesList = casesBlock.querySelectorAll(".cases-block__card");
+
   const cases_container = document.querySelector("#cases_container");
   // НАМ ДОВЕРЯЮТ
   const trustUs_container = document.querySelector("#trustUs_container");
@@ -1602,8 +1604,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tarifs_item = document.querySelectorAll(".item");
   const tarifs_background = document.querySelector(".tarifs-block__background");
 
-  // КЕЙСЫ
-  const casesList = document.querySelectorAll(".cases-block__card");
+
 
   // ПЕРЕКЛЮЧАТЕЛЬ СЛАЙДОВ НА БЛОКЕ МОДУЛЕЙ
   const toggler = document.querySelector(
@@ -1791,9 +1792,8 @@ document.addEventListener("DOMContentLoaded", function () {
       case "service":
         service_Page.classList.toggle("active");
         break;
-      case "casesAll": 
-        cases_all.classList.toggle("active")
-      
+      case "casesAll":
+        cases_all.classList.toggle("active");
     }
   };
 
@@ -1982,7 +1982,6 @@ document.addEventListener("DOMContentLoaded", function () {
           rows: 2,
         },
       },
-
     },
     pagination: {
       el: ".trustUs_container-pagination",
@@ -2014,6 +2013,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let btn = e.target.closest(".toMainPage");
     const hero_header = document.querySelector(".hero__header");
     const graph = document.querySelector(".hero__graph-img--text");
+
     if (btn) {
       fullpage_api.setAutoScrolling(true);
 
@@ -2105,20 +2105,18 @@ document.addEventListener("DOMContentLoaded", function () {
           card.querySelector("h3").innerText = findedInfo.cases[i].header.title;
           card.querySelector("p").innerText =
             findedInfo.cases[i].header.description;
+          let casesBlock_mainInfo = card.querySelector(".cases-block__main");
+          casesBlock_mainInfo.innerHTML = ""
           findedInfo.cases[i].main.forEach((text) => {
-            let mainInfo = card.querySelector(".cases-block__main");
             let span = document.createElement("span");
             span.innerHTML = `
               <img src="https://static.tildacdn.com/tild3431-3932-4361-a535-306435343332/confirm.svg" alt="confirm svg logo">
               ${text}
               `;
-            mainInfo.appendChild(span);
+            casesBlock_mainInfo.appendChild(span);
           });
-
-          console.log(card.querySelector("img"), "eto aaaaaaaa");
         });
       } else {
-        console.log(casesBlock, "1111");
         cases_container.classList.add("hidden");
         trustUs_container.classList.remove("hidden");
       }
