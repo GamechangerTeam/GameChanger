@@ -1579,6 +1579,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const leftSection = document.querySelectorAll(".slideIn_left");
   const openLeftSection = document.querySelectorAll(".open_left_section");
   const hideLeftSection = document.querySelectorAll(".hide_left_section");
+  const cases_all = document.querySelector(".cases_all");
 
   // ПОПАП
 
@@ -1790,6 +1791,9 @@ document.addEventListener("DOMContentLoaded", function () {
       case "service":
         service_Page.classList.toggle("active");
         break;
+      case "casesAll": 
+        cases_all.classList.toggle("active")
+      
     }
   };
 
@@ -1959,6 +1963,27 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 20,
     slidesPerView: 2,
     slidesPerGroup: 2,
+    grid: {
+      rows: 3,
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 4,
+        slidesPerGroup: 2,
+        grid: {
+          rows: 2,
+        },
+      },
+
+      525: {
+        slidesPerView: 3,
+        slidesPerGroup: 2,
+        grid: {
+          rows: 2,
+        },
+      },
+
+    },
     pagination: {
       el: ".trustUs_container-pagination",
     },
@@ -1966,24 +1991,6 @@ document.addEventListener("DOMContentLoaded", function () {
     navigation: {
       nextEl: ".trustUs_container-button-next",
       prevEl: ".trustUs_container-button-prev",
-    },
-    grid: {
-      rows: 2,
-    },
-
-    breakpoints: {
-      1200: {
-        slidesPerView: 4,
-      },
-      769: {
-        slidesPerView: 3,
-      },
-
-      525: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-
-      }
     },
   });
 
