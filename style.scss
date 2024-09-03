@@ -415,15 +415,15 @@ button {
   transition: 0.1s;
   font-size: 16px;
 
-  @media (min-width: 961px) {
-    &:hover {
-      scale: 0.95;
-      + .gradient-border,
-      + .gradient-container {
-        scale: 0.95;
-      }
-    }
-  }
+  // @media (min-width: 961px) {
+  //   &:hover {
+  //     scale: 0.95;
+  //     + .gradient-border,
+  //     + .gradient-container {
+  //       scale: 0.95;
+  //     }
+  //   }
+  // }
 }
 
 img {
@@ -939,7 +939,6 @@ video {
   .gradient-container {
     height: auto !important;
   }
-
 
   button {
     width: fit-content;
@@ -1766,7 +1765,6 @@ video {
       border-radius: 0 0 30px 30px;
     }
   }
-
 }
 
 .implementation-block {
@@ -2140,8 +2138,12 @@ video {
           .item__header__price {
             padding: 0 20px;
             border-right: 1px solid #808080;
+            &:nth-child(1) {
+              padding-left: 0;
+            }
             &:last-child {
               border: none;
+              padding-right: 0;
             }
           }
           i {
@@ -2205,6 +2207,7 @@ video {
       .plus-icon {
         width: 100%;
         height: auto;
+        max-width: 48px;
         aspect-ratio: 1/1;
         background-color: $gray;
         &--vertical-line,
@@ -2237,8 +2240,34 @@ video {
           background-color: $border_gray;
         }
 
-        &__advantages,
-        &__includes {
+        &__content {
+          display: flex;
+          width: 100%;
+          gap: 20px;
+          padding: 20px;
+          border: 1px solid $border_gray;
+          border-radius: 20px;
+          flex-wrap: wrap;
+          &--functions {
+            background-color: rgba(5, 169, 5, 0.0392156863);
+            border: 1px solid rgba(5, 169, 5, 0.2);
+          }
+
+          &--restrictions {
+            border: 1px solid rgba(206, 0, 0, 0.2);
+            background-color: rgba(206, 0, 0, 0.062745098);
+            p {
+              &:before {
+                content: url("https://static.tildacdn.com/tild3034-3962-4266-b235-353266616564/cross.svg") !important;
+              }
+            }
+          }
+          @include tablet() {
+            padding: 16px;
+          }
+          @include mobile() {
+            flex-direction: column;
+          }
           p {
             padding-left: 30px;
             position: relative;
@@ -2249,44 +2278,90 @@ video {
             }
           }
         }
+      }
+    }
+    #licenses {
+      .item__header {
+        grid-template-columns: 1fr 48px;
+      }
 
-        &__advantages {
-          display: flex;
-          width: 100%;
-          gap: 20px;
-          padding: 20px;
-          border: 1px solid $border_gray;
-          border-radius: 20px;
-          flex-wrap: wrap;
+      .licenses__top-btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        .change-licenses-tarif {
+          border-radius: 10px;
+          border: 1px solid #04d404;
+          padding: 6px 12px;
+          font-weight: 500;
+          background-color: #04d404;
+          font-size: 1rem;
+          position: relative;
+          transition: 0.3s;
+
+          &.active {
+            scale: 0.95;
+            background-color: transparent;
+          }
+        }
+      }
+
+      .licenses__settings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        @media (max-width: 570px) {
+          flex-direction: column;
+        }
+        @include tablet() {
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 26px;
+          font-weight: 600;
           @include tablet() {
-            padding: 16px;
+            text-align: center !important;
           }
-          @include mobile() {
+          &:nth-child(1) {
+            text-align: right;
+          }
+          &:nth-child(3) {
+            text-align: center;
+            display: flex;
             flex-direction: column;
+            span {
+              font-size: 12px;
+              font-weight: 400;
+            }
           }
-        }
 
-        &__includes {
-          padding: 20px;
-          border: 1px solid $border_gray;
-          border-radius: 20px;
+          &:nth-child(5) {
+            text-align: left;
+          }
+
           @include tablet() {
-            padding: 16px;
+            font-size: 20px;
           }
         }
 
-        &__includes__content {
-          display: flex;
-          width: 100%;
-          gap: 20px;
-          flex-wrap: wrap;
-          @include mobile() {
-            flex-direction: column;
+        .vertical-line {
+          width: 1px;
+          height: 100px;
+          background-color: $border_gray;
+          @media (max-width: 570px) {
+            width: 100%;
+            height: 1px;
           }
         }
+      }
 
-        &__includes {
-        }
+      h3 {
+        margin: 10px 0;
       }
     }
   }
@@ -2441,12 +2516,7 @@ video {
       padding: 0 10px;
       flex-direction: column;
     }
-    button {
-      width: 100%;
-      @include greenBtn();
-      padding: 12px 24px;
-    }
-    a {
+    button:nth-child(1) {
       width: 100%;
       @include grayBtn();
       height: 100%;
@@ -2455,6 +2525,11 @@ video {
       justify-content: center;
       text-decoration: none;
       color: white;
+      padding: 12px 24px;
+    }
+    button:nth-child(2) {
+      width: 100%;
+      @include greenBtn();
       padding: 12px 24px;
     }
   }
@@ -2472,7 +2547,7 @@ video {
     background-color: $gray;
     border: 1px solid $border_gray;
     border-radius: 20px;
-    height: fit-content ;
+    height: fit-content;
     padding: 24px;
     align-self: center;
     @include mobile() {
@@ -2619,7 +2694,6 @@ video {
       flex-direction: column;
     }
   }
-  
 }
 
 .modules-block {
@@ -2755,8 +2829,7 @@ video {
       gap: 20px;
       max-height: 600px;
       @include mobile() {
-      grid-template-rows: auto 1fr auto;
-
+        grid-template-rows: auto 1fr auto;
       }
     }
 
@@ -2783,7 +2856,6 @@ video {
       grid-row-start: 2 span;
     }
 
-
     &__number {
       display: grid;
       place-items: center;
@@ -2800,7 +2872,6 @@ video {
         width: 56px;
       }
     }
-
 
     &__price {
       font-size: 3rem;
@@ -2904,7 +2975,8 @@ video {
 
   &__header {
     padding: 20px 24px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 28px 1fr;
     gap: 20px;
     align-items: center;
     @include tablet() {

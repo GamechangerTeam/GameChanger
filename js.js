@@ -1558,6 +1558,381 @@ const mainInfo = [
   },
 ];
 
+const licensesInfo = [
+  {
+    name: "Бесплатный",
+    content: `
+                  <div class="licenses-wrapper">
+                  <div class="licenses__settings">
+                    <p>Тариф доступен всем пользователям</p>
+                    <span class="vertical-line"></span>
+                    <p>
+                      Диск 5 ГБ
+                      <span class="little-text">
+                        Без общего диска для компаний
+                      </span>
+                    </p>
+                    <span class="vertical-line"></span>
+                    <p>Бесплатно за всех пользователей</p>
+                  </div>
+
+                  <h3>Кому подойдет такой тариф?</h3>
+                  <div class="item__main__content item__main__content--whoNeed">
+                    <p>Стартапам</p>
+                    <p>Начинающим отделам продаж</p>
+                    <p>Управлениям персоналом</p>
+                    <p>
+                      Можно интегрировать с: Google Docs, Office 365, Microsoft
+                      Office , Telegram, VK
+                    </p>
+                  </div>
+                  <h3>Функции</h3>
+                  <div class="item__main__content item__main__content--functions">
+                    <p>
+                      Новостная лента в стиле Facebook для внутренних
+                      коммуникаций.
+                    </p>
+                    <p>База знаний компании</p>
+                    <p>Внутренний мессенджер - с функциями WhatsApp</p>
+                    <p>Внутренний ИИ</p>
+                    <p>
+                      Контакт-центр - интегрирующий все каналы заказов в единую
+                      систему управления.
+                    </p>
+                    <p>Каталог товаров</p>
+                    <p>
+                      Календарь для каждого сотрудника для планирования
+                      мероприятий
+                    </p>
+                    <p>Чек-ин на работе с геопозицией</p>
+                    <p>Виртуальный отдел управления персоналом</p>
+                    <p>Конструктор сайтов с бесплатным хостингом</p>
+                    <p>Организационная структура компании</p>
+                    <p>Автоматизация продаж через CRM</p>
+                    <p>Работа с виртуальными задачами</p>
+                  </div>
+                  <h3>Ограничения</h3>
+                  <div class="item__main__content item__main__content--restrictions">
+                    <p>
+                      Отсутствует возможность “Важных сообщений” и генерации
+                      опросов
+                    </p>
+                    <p>Отсутствует редактирование документов</p>
+                    <p>Невозможно подключить электронную почту</p>
+                    <p>Число опубликованных сайтов - 1</p>
+                    <p>
+                      Ограничение на одну базу знаний, без ограничения прав
+                      доступа
+                    </p>
+                    <p>Отсутствие учета рабочего времени сотрудников</p>
+                    <p>Отсутствие запуска рабочего дня</p>
+                    <p>Количество доступных воронок - 1</p>
+                    <p>Максимальное количество роботов - 5</p>
+                    <p>
+                      Максимум 100 товаров могут быть опубликованы на лендингах
+                    </p>
+                    <p>Отсутствует чек-лист в задачах</p>
+                    <p>Невозможно назначить наблюдателя и соисполнителя</p>
+                    <p>Невозможно генерировать под-задачи</p>
+                  </div>
+                  </div>
+                  <br />
+    `,
+  },
+  {
+    name: "Базовый",
+    content: `
+     <div class="licenses-wrapper">
+    <div class="licenses__settings">
+      <p>До 5 чел. </p>
+      <span class="vertical-line"></span>
+      <p>
+        Диск 24 ГБ
+        <span class="little-text">
+          Без общего диска для компаний
+        </span>
+      </p>
+      <span class="vertical-line"></span>
+      <p>9 600₸/мес</p>
+    </div>
+
+    <h3>Кому подойдет такой тариф?</h3>
+    <div class="item__main__content item__main__content--whoNeed">
+      <p>Стартапам</p>
+      <p>Онлайн- образованию</p>
+      <p>Отделам продаж</p>
+      <p>Автосервисам</p>
+      <p>Управлению персоналом</p>
+      <p>Сферам услуг</p>
+      <p>
+        Можно интегрировать с: Google Docs, Office 365, Microsoft Office , Telegram, VK
+Телефоний, WhatsApp, E-mail ( 1 ящик )
+      </p>
+    </div>
+    <h3>Функции</h3>
+    <div class="item__main__content item__main__content--functions">
+     <p>Новостная лента в стиле Facebook  для внутренних коммуникаций.</p>
+     <p>Внутренний ИИ</p>
+     <p>Внутренний мессенджер - с функциями  WhatsApp</p>
+     <p>Демонстрация экрана</p>
+     <p>Конструктор сайтов с бесплатным хостингом</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления.</p>
+     <p>Календарь для каждого сотрудника для планирования мероприятий</p>
+     <p>Виртуальный отдел управления персоналом</p>
+     <p>Организационная структура компании</p>
+     <p>База знаний компании</p>
+     <p>Чек-ин на работе с геопозицией</p>
+     <p>Автоматизация продаж через CRM</p>
+     <p>Автогенерация счетов на оплату</p>
+     <p>Автоматизация рабочих процессов через CRM</p>
+     <p>Каталог товаров</p>
+     <p>Каталог товаров</p>
+     <p>Работа с виртуальными задачами</p>
+     <p>Интеграция с почтой (7 дней)</p>
+     <p>Складской учет</p>
+
+     
+    </div>
+    <h3>Ограничения</h3>
+    <div class="item__main__content item__main__content--restrictions">
+     <p>Отсутствует возможность  “Важных сообщений” и генерации опросов</p>
+     <p>Отсутствует редактирование документов</p>
+     <p>Число опубликованных сайтов - 10</p>
+     <p>Невозможно подключить электронную почту</p>
+     <p>Ограничение на три базу знаний, без ограничения прав доступа</p>
+     <p>Отсутствие учета рабочего времени сотрудников</p>
+     <p>Отсутствие запуска рабочего дня</p>
+     <p>Доступное количество воронок - 5</p>
+     <p>Максимум 1000 товаров могут быть опубликованы на лендингах</p>
+     <p>Товаров в каталоге 3000</p>
+     <p>Отсутствует чек-лист в задачах</p>
+     <p>Невозможно назначить наблюдателя и соисполнителя</p>
+     <p>Невозможно генерировать под-задачи</p>
+    </div>
+    </div>
+    <br />
+`,
+  },
+  {
+    name: "Стандартный",
+    content: `
+     <div class="licenses-wrapper">
+    <div class="licenses__settings">
+      <p>До 50 чел.</p>
+      <span class="vertical-line"></span>
+      <p>
+        Диск 100 ГБ
+      </p>
+      <span class="vertical-line"></span>
+      <p>24 600₸/мес</p>
+    </div>
+
+    <h3>Кому подойдет такой тариф?</h3>
+    <div class="item__main__content item__main__content--whoNeed">
+      <p>Розничная торговля</p>
+      <p>Автосервисам</p>
+      <p>Клиники</p>
+      <p>Управлениям персоналом</p>
+      <p>Сферам услуг</p>
+      <p>Строительство</p>
+      <p>Продажа-недвижимости</p>
+      <p>Производствам</p>
+      <p>Онлайн-образованию</p>
+      <p>Оптовая торговля</p>
+      <p>
+        Можно интегрировать с: Google Docs, Office 365, Microsoft Office , Telegram, VK, Телефоний, WhatsApp, E-mail ( 5 ящиков ), Внешние диски
+      </p>
+    </div>
+    <h3>Функции</h3>
+    <div class="item__main__content item__main__content--functions">
+     <p>Новостная лента в стиле Facebook  для внутренних коммуникаций.</p>
+     <p>Внутренний ИИ</p>
+     <p>Внутренний мессенджер - с функциями WhatsApp и редактированием документов</p>
+     <p>Демонстрация экрана</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления.</p>
+     <p>Конструктор сайтов  с бесплатным  хостингом</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления.</p>
+     <p>Календарь для каждого сотрудника для планирования мероприятий</p>
+     <p>Виртуальный отдел управления персоналом</p>
+     <p>Организационная структура компании</p>
+     <p>База знаний компании, с возможность ограничить права доступа</p>
+     <p>Чек-ин на работе с геопозицией</p>
+     <p>Автоматизация продаж через CRM</p>
+     <p>Автоматизация рабочих процессов через CRM</p>
+     <p>Автогенерация счетов на оплату и КП</p>
+     <p>Каталог товаров</p>
+     <p>Работа с виртуальными задачами</p>
+     <p>Интеграция с почтой (7 дней)</p>
+     <p>Складской учет</p>
+     <p>Возможность пригласить внешних пользователей в рабочие группы ( Экстра-нет )</p>
+     <p>Коэффициент полезности каждого сотрудника</p>
+     <p>Работа с виртуальными проектами</p>
+     <p>Bi-Конструктор</p>
+     <p>Маркетинговый кабинет</p>
+    </div>
+    <h3>Ограничения</h3>
+    <div class="item__main__content item__main__content--restrictions">
+     <p>Невозможно подключить электронную почту</p>
+     <p>Число опубликованных - 10</p>
+     <p>Ограничение на пять базу знаний</p>
+     <p>Отсутствие учета рабочего времени сотрудников</p>
+     <p>Отсутствие запуска рабочего дня</p>
+     <p>Доступное количество воронок - 10</p>
+     <p>Максимум 3000 товаров могут быть опубликованы на лендингах</p>
+     <p>Товаров в каталоге 5000</p>
+     
+    </div>
+    </div>
+    <br />
+`,
+  },
+  {
+    name: "Профессиональный",
+    content: `
+ <div class="licenses-wrapper">
+    <div class="licenses__settings">
+      <p>До 100 чел.</p>
+      <span class="vertical-line"></span>
+      <p>
+        Диск 1 ТБ
+      </p>
+      <span class="vertical-line"></span>
+      <p>50 00₸/мес</p>
+    </div>
+
+    <h3>Кому подойдет такой тариф?</h3>
+    <div class="item__main__content item__main__content--whoNeed">
+      <p>Розничная торговля</p>
+      <p>Автосервисам</p>
+      <p>Клиники</p>
+      <p>Управлениям персоналом</p>
+      <p>Сферам услуг</p>
+      <p>Строительство</p>
+      <p>Продажа-недвижимости</p>
+      <p>Производствам</p>
+      <p>Онлайн-образованию</p>
+      <p>Оптовая торговля</p>
+      <p>
+        Можно интегрировать с:  Google Docs, Office 365, Microsoft Office , Telegram, VK, Телефоний, WhatsApp, E-mail ( 10 ящиков ), Внешние диски, 1C
+      </p>
+    </div>
+    <h3>Функции</h3>
+    <div class="item__main__content item__main__content--functions">
+     <p>Новостная лента в стиле Facebook  для внутренних коммуникаций</p>
+     <p>Внутренний мессенджер - с функциями WhatsApp и редактированием документов</p>
+     <p>Внутренний ИИ</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления</p>
+     <p>Демонстрация экрана</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления</p>
+     <p>Конструктор сайтов  с бесплатным  хостингом</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления</p>
+     <p>Календарь для каждого сотрудника для планирования мероприятий</p>
+     <p>Виртуальный отдел управления персоналом</p>
+     <p>Организационная структура компании</p>
+     <p>База знаний компании, с возможность ограничить права доступа</p>
+     <p>Чек-ин на работе с геопозицией</p>
+     <p>Учет рабочего времени</p>
+     <p>Автоматизация продаж через CRM</p>
+     <p>Автоматизация рабочих процессов через CRM</p>
+     <p>Автогенерация счетов на оплату и КП</p>
+     <p>Каталог товаров</p>
+     <p>Виртуальные задачи с учетом времени делергированием и пользовательскими полями</p>
+     <p>Интеграция с почтой (7 дней)</p>
+     <p>Складской учет</p>
+     <p>Возможность пригласить внешних пользователей в рабочие группы ( Экстра-нет )</p>
+     <p>Коэффициент полезности каждого сотрудника</p>
+     <p>Работа с виртуальными проектами</p>
+     <p>Bi-Конструктор и конструктор отчетов</p>
+     <p>Задачи по подразделениям</p>
+     <p>Гибкие методологии управления командами ( Скрам )</p>
+     <p>Бизнес-процессы и смарт-процессы</p>
+     <p>Маркетинговый кабинет</p>
+     <p>Сквозная аналитика</p>
+    </div>
+    <h3>Ограничения</h3>
+    <div class="item__main__content item__main__content--restrictions">
+     <p>Число опубликованных сайтов не ограничено</p>
+     <p>Доступное количество воронок - 20</p>
+     <p>Максимум 5000 товаров могут быть опубликованы на лендингах</p>
+     <p>Товаров в каталоге 500 000</p>
+     <p>Число команд - 10</p>
+     
+    </div>
+    </div>
+    <br />
+`,
+  },
+
+  {
+    name: "Энтерпрайз",
+    content: `
+ <div class="licenses-wrapper">
+    <div class="licenses__settings">
+      <p>До 250 чел.</p>
+      <span class="vertical-line"></span>
+      <p>
+        Диск 3 ТБ
+      </p>
+      <span class="vertical-line"></span>
+      <p>136 000₸/мес</p>
+    </div>
+
+    <h3>Кому подойдет такой тариф?</h3>
+    <div class="item__main__content item__main__content--whoNeed">
+      <p>Розничная торговля</p>
+      <p>Автосервисам</p>
+      <p>Клиники</p>
+      <p>Управлениям персоналом</p>
+      <p>Сферам услуг</p>
+      <p>Строительство</p>
+      <p>Продажа-недвижимости</p>
+      <p>Производствам</p>
+      <p>Онлайн-образованию</p>
+      <p>Оптовая торговля</p>
+      <p>
+        Можно интегрировать с: Google Docs, Office 365, Microsoft Office , Telegram, VK, Телефоний, WhatsApp, E-mail ( 5 ящиков ), Внешние диски
+      </p>
+    </div>
+    <h3>Функции</h3>
+    <div class="item__main__content item__main__content--functions">
+     <p>Новостная лента в стиле Facebook  для внутренних коммуникаций</p>
+     <p>Внутренний мессенджер - с функциями WhatsApp и редактированием документов</p>
+     <p>Внутренний ИИ</p>
+     <p>Демонстрация экрана</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления.</p>
+     <p>Конструктор сайтов  с бесплатным  хостингом</p>
+     <p>Контакт-центр - интегрирующий все каналы заказов в единую систему управления.</p>
+     <p>Календарь для каждого сотрудника для планирования мероприятий</p>
+     <p>Виртуальный отдел управления персоналом</p>
+     <p>Организационная структура компании</p>
+     <p>База знаний компании, с возможность ограничить права доступа</p>
+     <p>Чек-ин на работе с геопозицией</p>
+     <p>Учет рабочего времени</p>
+     <p>Автоматизация продаж через CRM</p>
+     <p>Автоматизация рабочих процессов через CRM</p>
+     <p>Автогенерация счетов на оплату и КП</p>
+     <p>Каталог товаров ( 5000 товаров )</p>
+     <p>Виртуальные задачи с учетом времени делегированием и пользовательскими полями</p>
+     <p>Интеграция с почтой (7 дней)</p>
+     <p>Складской учет</p>
+     <p>Возможность пригласить внешних пользователей в рабочие группы ( Экстра-нет )</p>
+     <p>Коэффициент полезности каждого сотрудника</p>
+     <p>Работа с виртуальными проектами</p>
+     <p>Bi-Конструктор и конструктор отчетов</p>
+     <p>Задачи по подразделениям</p>
+     <p>Гибкие методологии управления командами ( Скрам ) 20 команд</p>
+     <p>Бизнес-процессы и смарт-процессы</p>
+     <p>Маркетинговый кабинет</p>
+     <p>Сквозная аналитика</p>
+     <p>Создание и управление филиалами</p>
+     <p>Интерпрайз-кластер - ускорение до 10-ти раз</p> 
+    </div>
+    </div>
+    <br />
+`,
+  },
+];
+
 document.addEventListener("DOMContentLoaded", function () {
   //  ЭЛЕМЕНТ ДЛЯ ЗАДЕРЖКИ МЕЖДУ НАЖАТИЕМ КНОПОК
   let ready = true;
@@ -1603,8 +1978,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const tarifsList = document.querySelector(".tarifs-block__list");
   const tarifs_item = document.querySelectorAll(".item");
   const tarifs_background = document.querySelector(".tarifs-block__background");
-
-
 
   // ПЕРЕКЛЮЧАТЕЛЬ СЛАЙДОВ НА БЛОКЕ МОДУЛЕЙ
   const toggler = document.querySelector(
@@ -1656,14 +2029,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="item__main">
           <span class="item__main--top-line">&nbsp;</span>
           <p>${description}</p>
-          <div class="item__main__advantages">
+          <div class="item__main__content">
             ${advantages.map((text) => `<p>${text}</p>`).join("")}
           </div>
           <h3>В него входит</h3>
-          <div class="item__main__includes">
-            <div class="item__main__includes__content">
+          <div class="item__main__content">
               ${includes.map((text) => `<p>${text}</p>`).join("")}
-            </div>
           </div>
           <br />
         </div>
@@ -1753,9 +2124,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   tarifsList.addEventListener("click", (e) => {
     let item = e.target.closest(".item");
+    let licensesBtn = e.target.closest(".change-licenses-tarif");
     const icon = item.querySelector(".plus-icon");
 
-    if (item && ready) {
+    if (licensesBtn) {
+      document
+        .querySelector(".change-licenses-tarif.active")
+        .classList.remove("active");
+      let licensesWrapper = item.querySelector(".licenses-wrapper");
+      let itemMain = item.querySelector(".item__main");
+      let dataInfo = licensesBtn.getAttribute("data-name");
+      licensesBtn.classList.add("active");
+      const findedLicenses = licensesInfo.find((x) => x.name === dataInfo);
+      licensesWrapper.innerHTML = "";
+      licensesWrapper.innerHTML = findedLicenses.content;
+      licensesWrapper.style.maxHeight = licensesWrapper.scrollHeight + "px";
+      itemMain.style.maxHeight = itemMain.scrollHeight + "px";
+
+
+    } else if (item && ready) {
       icon.classList.toggle("active");
       ready = false;
       if (window.innerWidth >= 1200) {
@@ -1924,7 +2311,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     breakpoints: {
       769: {
-        spaceBetween: 0
+        spaceBetween: 0,
       },
     },
   });
@@ -2014,10 +2401,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let btn = e.target.closest(".toMainPage");
     const hero_header = document.querySelector(".hero__header");
     const graph = document.querySelector(".hero__graph-img--text");
+    const licenses = document.getElementById("licenses");
 
     if (btn) {
       fullpage_api.setAutoScrolling(true);
-
+      copyOfLicenses = licenses.cloneNode(true);
       tarifsList.innerHTML = "";
 
       fullpage_api.moveTo(1, 1);
@@ -2097,6 +2485,8 @@ document.addEventListener("DOMContentLoaded", function () {
         getTarifCard(tarif, number + 1);
       });
 
+      tarifsList.appendChild(copyOfLicenses);
+
       if (findedInfo.cases) {
         cases_container.classList.remove("hidden");
         trustUs_container.classList.add("hidden");
@@ -2107,7 +2497,7 @@ document.addEventListener("DOMContentLoaded", function () {
           card.querySelector("p").innerText =
             findedInfo.cases[i].header.description;
           let casesBlock_mainInfo = card.querySelector(".cases-block__main");
-          casesBlock_mainInfo.innerHTML = ""
+          casesBlock_mainInfo.innerHTML = "";
           findedInfo.cases[i].main.forEach((text) => {
             let span = document.createElement("span");
             span.innerHTML = `
