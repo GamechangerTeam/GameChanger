@@ -2191,12 +2191,22 @@ video {
 .tarifs-block ul #licenses .item__header {
   grid-template-columns: 1fr 48px;
 }
+@media (max-width: 768px) {
+  .tarifs-block ul #licenses .item__header {
+    grid-template-columns: 1fr 36px;
+  }
+}
 .tarifs-block ul #licenses .licenses__top-btns {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  .tarifs-block ul #licenses .licenses__top-btns {
+    gap: 10px;
+  }
 }
 .tarifs-block ul #licenses .licenses__top-btns .change-licenses-tarif {
   border-radius: 10px;

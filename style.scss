@@ -2283,6 +2283,10 @@ video {
     #licenses {
       .item__header {
         grid-template-columns: 1fr 48px;
+        @include tablet() {
+        grid-template-columns: 1fr 36px;
+
+        }
       }
 
       .licenses__top-btns {
@@ -2291,6 +2295,9 @@ video {
         justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
+        @include tablet() {
+          gap: 10px;
+        }
         .change-licenses-tarif {
           border-radius: 10px;
           border: 1px solid #04d404;
