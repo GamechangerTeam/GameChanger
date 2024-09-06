@@ -737,41 +737,43 @@ document.addEventListener("DOMContentLoaded", function () {
       prevEl: ".trustUs_container-button-prev",
     },
   });
+
+  function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    const duration = 500; // Длительность анимации в миллисекундах
+  
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const format = counter.getAttribute('data-format');
+        const startTime = performance.now();
+  
+        function updateCounter(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1); 
+            let currentNumber = Math.floor(progress * target);
+            
+            if (format === 'million') {
+              currentNumber = currentNumber + ' млн';
+  
+            } else if (format === 'percent') {
+                currentNumber = currentNumber + '%';
+            }
+  
+            counter.textContent = currentNumber;
+  
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        }
+  
+        requestAnimationFrame(updateCounter);
+    });
+  }
+  
+  animateCounters();
+  
+  
 });
 
 
-
-function animateCounters() {
-  const counters = document.querySelectorAll('.counter');
-  const duration = 500; // Длительность анимации в миллисекундах
-
-  counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      const format = counter.getAttribute('data-format');
-      const startTime = performance.now();
-
-      function updateCounter(currentTime) {
-          const elapsedTime = currentTime - startTime;
-          const progress = Math.min(elapsedTime / duration, 1); 
-          let currentNumber = Math.floor(progress * target);
-          
-          if (format === 'million') {
-            currentNumber = currentNumber + ' млн';
-
-          } else if (format === 'percent') {
-              currentNumber = currentNumber + '%';
-          }
-
-          counter.textContent = currentNumber;
-
-          if (progress < 1) {
-              requestAnimationFrame(updateCounter);
-          }
-      }
-
-      requestAnimationFrame(updateCounter);
-  });
-}
-
-animateCounters();
 

@@ -983,7 +983,6 @@ video {
     // height: auto !important;
   }
 
-
   &.active {
     button {
       left: calc(50% - 590px);
@@ -1003,11 +1002,8 @@ video {
     top: 20px;
     left: -100%;
     z-index: 2;
-    transition: .5s ease-out;
-    
+    transition: 0.5s ease-out;
   }
-
-  
 
   ul {
     display: flex;
@@ -2075,20 +2071,6 @@ video {
           border: 1px solid $border_gray;
           border-radius: 20px;
           flex-wrap: wrap;
-          &--functions {
-            background-color: rgba(5, 169, 5, 0.0392156863);
-            border: 1px solid rgba(5, 169, 5, 0.2);
-          }
-
-          &--restrictions {
-            border: 1px solid rgba(206, 0, 0, 0.2);
-            background-color: rgba(206, 0, 0, 0.062745098);
-            p {
-              &:before {
-                content: url("https://static.tildacdn.com/tild3034-3962-4266-b235-353266616564/cross.svg") !important;
-              }
-            }
-          }
           @include tablet() {
             padding: 16px;
           }
@@ -2115,28 +2097,53 @@ video {
         }
       }
 
+      .licenses-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h3 {
+          font-weight: 400;
+          text-align: center;
+          color: #04d404;
+          margin: 0;
+        }
+        @media (max-width: 570px) {
+          h3 {
+            text-align: left;
+
+          }
+        }
+      }
+
       .licenses__top-btns {
         width: 100%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
-        @include tablet() {
-          gap: 10px;
-        }
+
         .change-licenses-tarif {
           border-radius: 10px;
           border: 1px solid #04d404;
           padding: 6px 12px;
           font-weight: 500;
-          background-color: #04d404;
           font-size: 1rem;
           position: relative;
           transition: 0.3s;
+          background-color: transparent;
 
           &.active {
-            scale: 0.95;
-            background-color: transparent;
+          background-color: #04d404;
+          scale: 0.95;
+          }
+        }
+        @include tablet() {
+          gap: 10px;
+        }
+
+        @include mobile() {
+          .change-licenses-tarif {
+            font-size: 12px;
           }
         }
       }
@@ -2147,18 +2154,11 @@ video {
         align-items: center;
         gap: 20px;
 
-        @media (max-width: 570px) {
-          flex-direction: column;
-        }
-        @include tablet() {
-          margin-bottom: 20px;
-        }
-
+        
         p {
           font-size: 26px;
           font-weight: 600;
           @include tablet() {
-            text-align: center !important;
           }
           &:nth-child(1) {
             text-align: right;
@@ -2182,6 +2182,39 @@ video {
           }
         }
 
+
+        @media (max-width: 570px) {
+          display: grid;
+          grid-template: auto auto / 1fr 1px 1fr;
+          gap: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #292929;
+          .vertical-line {
+            height: 100% !important;
+            &:nth-child(4) {
+              display: none;
+            }
+          }
+          p {
+            font-size: 16px !important;
+            &:nth-child(3) {
+              grid-area: 2/1;
+              grid-column-start: 3 span;
+            }
+            &:nth-child(5) {
+              grid-area: 1/3;
+            }
+          }
+
+        }
+
+        @include mobile-mid() {
+          p {
+            font-size: 14px !important;
+          }
+        }
+
+
         .vertical-line {
           width: 1px;
           height: 100px;
@@ -2189,6 +2222,51 @@ video {
           @media (max-width: 570px) {
             width: 100%;
             height: 1px;
+          }
+        }
+      }
+
+      .item__main__content {
+        text-align: center;
+        border: none;
+        padding: 0;
+        @media (max-width: 570px) {
+          justify-content: flex-start;
+          text-align: left;
+        }
+        justify-content: center;
+        @include mobile() {
+          flex-direction: row;
+        }
+
+      }
+
+      #licenses-functions {
+        width: fit-content;
+        border: 1px solid $border_gray;
+        align-self: center;
+        padding: 1rem;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        p {
+            font-weight: 300;
+            width: fit-content;
+            padding: 0;
+          span {
+            color: white;
+            opacity: .5;
+            font-weight: 100;
+          }
+          &::before {
+            display: none;
+          }
+        }
+
+        @include mobile() {
+          align-items: flex-start;
+          p {
+            text-align: left;
           }
         }
       }
@@ -2247,7 +2325,6 @@ video {
     }
     @include mobile() {
       padding: 40px 0;
-
     }
   }
 
@@ -2786,7 +2863,6 @@ video {
     }
     @include mobile() {
       padding: 40px 10px;
-      
     }
   }
 

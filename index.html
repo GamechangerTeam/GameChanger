@@ -24,7 +24,7 @@
     <!-- FONT -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap"
     />
     <link rel="stylesheet" href="style.css" />
     <script src="js.js" defer></script>
@@ -150,13 +150,17 @@
           </div>
           <div class="hero__statistics">
             <div class="hero__statistics__card">
-              <span class="counter" data-target="35" data-format="percent">0%</span>
+              <span class="counter" data-target="35" data-format="percent"
+                >0%</span
+              >
               <span>компаний по СНГ</span>
             </div>
             <span class="hero__statistics--vertical-line"></span>
 
             <div class="hero__statistics__card">
-              <span class="counter" data-target="10" data-format="million">0</span>
+              <span class="counter" data-target="10" data-format="million"
+                >0</span
+              >
               <span
                 >организаций <br />
                 всего мира</span
@@ -164,7 +168,9 @@
             </div>
             <span class="hero__statistics--vertical-line"></span>
             <div class="hero__statistics__card">
-              <span class="counter" data-target="100" data-format="percent">0%</span>
+              <span class="counter" data-target="100" data-format="percent"
+                >0%</span
+              >
               <span>увеличение эффективности</span>
             </div>
           </div>
@@ -1158,73 +1164,86 @@
                       <p>Бесплатно за всех пользователей</p>
                     </div>
                     <h3>Кому подойдет такой тариф?</h3>
-                    <div
-                      class="item__main__content item__main__content--whoNeed"
-                    >
+                    <div class="item__main__content" >
                       <p>Стартапам</p>
                       <p>Начинающим отделам продаж</p>
                       <p>Управлениям персоналом</p>
-                      <p>
-                        Можно интегрировать с: Google Docs, Office 365,
-                        Microsoft Office , Telegram, VK
-                      </p>
+                      <div>
+                        <span class="green_text"> Можно интегрировать с: </span>
+                        Google Docs, Office 365, Microsoft Office , Telegram, VK
+                      </div>
                     </div>
-                    <h3>Функции</h3>
-                    <div
-                      class="item__main__content item__main__content--functions"
-                    >
-                      <p>
-                        Новостная лента в стиле Facebook для внутренних
-                        коммуникаций.
-                      </p>
-                      <p>База знаний компании</p>
-                      <p>Внутренний мессенджер - с функциями WhatsApp</p>
-                      <p>Внутренний ИИ</p>
-                      <p>
-                        Контакт-центр - интегрирующий все каналы заказов в
-                        единую систему управления.
-                      </p>
-                      <p>Каталог товаров</p>
+                    <div class="item__main__content" id="licenses-functions">
+                      <p>Внутренний ИИ </p>
                       <p>
                         Календарь для каждого сотрудника для планирования
                         мероприятий
                       </p>
-                      <p>Чек-ин на работе с геопозицией</p>
-                      <p>Виртуальный отдел управления персоналом</p>
-                      <p>Конструктор сайтов с бесплатным хостингом</p>
                       <p>Организационная структура компании</p>
-                      <p>Автоматизация продаж через CRM</p>
-                      <p>Работа с виртуальными задачами</p>
-                    </div>
-                    <h3>Ограничения</h3>
-                    <div
-                      class="item__main__content item__main__content--restrictions"
-                    >
+                      <p>Виртуальный отдел управления персоналом</p>
                       <p>
-                        Отсутствует возможность “Важных сообщений” и генерации
-                        опросов
+                        Новостная лента в стиле Facebook для внутренних
+                        коммуникаций. <br />
+                        <span
+                          >Отсутствует возможность “Важных сообщений” и
+                          генерации опросов</span
+                        >
                       </p>
-                      <p>Отсутствует редактирование документов</p>
-                      <p>Невозможно подключить электронную почту</p>
-                      <p>Число опубликованных сайтов - 1</p>
                       <p>
-                        Ограничение на одну базу знаний, без ограничения прав
-                        доступа
+                        Внутренний мессенджер - с функциями WhatsApp <br />
+                        <span
+                          >Отсутствует возможность редактирования
+                          документов</span
+                        >
                       </p>
-                      <p>Отсутствие учета рабочего времени сотрудников</p>
-                      <p>Отсутствие запуска рабочего дня</p>
-                      <p>Количество доступных воронок - 1</p>
-                      <p>Максимальное количество роботов - 5</p>
                       <p>
-                        Максимум 100 товаров могут быть опубликованы на
-                        лендингах
+                        Контакт-центр - интегрирующий все каналы заказов в
+                        единую систему управления. <br />
+                        <span>Невозможно подключить электронную почту</span>
                       </p>
-                      <p>Отсутствует чек-лист в задачах</p>
-                      <p>Невозможно назначить наблюдателя и соисполнителя</p>
-                      <p>Невозможно генерировать под-задачи</p>
+                      <p>
+                        Конструктор сайтов с бесплатным хостингом <br />
+                        <span> Число опубликованных сайтов - 1</span>
+                      </p>
+                      <p>
+                        База знаний компании <br />
+                        <span
+                          >Ограничение на одну базу знаний, без ограничения прав
+                          доступа</span
+                        >
+                      </p>
+                      <p>
+                        Каталог товаров <br />
+                        <span
+                          >Максимум 100 товаров могут быть опубликованы на
+                          лендингах</span
+                        >
+                      </p>
+                      <p>
+                        Автоматизация продаж через CRM <br />
+                        <span>Количество доступных воронок - 1</span> <br />
+                        <span>Максимальное количество роботов - 5</span>
+                      </p>
+                      <p>
+                        Чек-ин на работе с геопозицией <br />
+                        <span
+                          >Отсутствие учета рабочего времени сотрудников</span
+                        >
+                        <br />
+                        <span>Отсутствие запуска рабочего дня</span>
+                      </p>
+                      <p>
+                        Работа с виртуальными задачами <br />
+                        <span>Отсутствует чек-лист в задачах</span> <br />
+                        <span
+                          >Невозможно назначить наблюдателя и
+                          соисполнителя</span
+                        >
+                        <br />
+                        <span>Невозможно генерировать под-задачи</span>
+                      </p>
                     </div>
                   </div>
-
                   <br />
                 </div>
               </div>

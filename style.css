@@ -1956,17 +1956,6 @@ video {
   border-radius: 20px;
   flex-wrap: wrap;
 }
-.tarifs-block ul .item__main__content--functions {
-  background-color: rgba(5, 169, 5, 0.0392156863);
-  border: 1px solid rgba(5, 169, 5, 0.2);
-}
-.tarifs-block ul .item__main__content--restrictions {
-  border: 1px solid rgba(206, 0, 0, 0.2);
-  background-color: rgba(206, 0, 0, 0.062745098);
-}
-.tarifs-block ul .item__main__content--restrictions p:before {
-  content: url("https://static.tildacdn.com/tild3034-3962-4266-b235-353266616564/cross.svg") !important;
-}
 @media (max-width: 768px) {
   .tarifs-block ul .item__main__content {
     padding: 16px;
@@ -1994,6 +1983,22 @@ video {
     grid-template-columns: 1fr 36px;
   }
 }
+.tarifs-block ul #licenses .licenses-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.tarifs-block ul #licenses .licenses-wrapper h3 {
+  font-weight: 400;
+  text-align: center;
+  color: #04d404;
+  margin: 0;
+}
+@media (max-width: 570px) {
+  .tarifs-block ul #licenses .licenses-wrapper h3 {
+    text-align: left;
+  }
+}
 .tarifs-block ul #licenses .licenses__top-btns {
   width: 100%;
   display: flex;
@@ -2001,24 +2006,29 @@ video {
   flex-wrap: wrap;
   gap: 20px;
 }
-@media (max-width: 768px) {
-  .tarifs-block ul #licenses .licenses__top-btns {
-    gap: 10px;
-  }
-}
 .tarifs-block ul #licenses .licenses__top-btns .change-licenses-tarif {
   border-radius: 10px;
   border: 1px solid #04d404;
   padding: 6px 12px;
   font-weight: 500;
-  background-color: #04d404;
   font-size: 1rem;
   position: relative;
   transition: 0.3s;
+  background-color: transparent;
 }
 .tarifs-block ul #licenses .licenses__top-btns .change-licenses-tarif.active {
+  background-color: #04d404;
   scale: 0.95;
-  background-color: transparent;
+}
+@media (max-width: 768px) {
+  .tarifs-block ul #licenses .licenses__top-btns {
+    gap: 10px;
+  }
+}
+@media (max-width: 525px) {
+  .tarifs-block ul #licenses .licenses__top-btns .change-licenses-tarif {
+    font-size: 12px;
+  }
 }
 .tarifs-block ul #licenses .licenses__settings {
   display: flex;
@@ -2026,24 +2036,9 @@ video {
   align-items: center;
   gap: 20px;
 }
-@media (max-width: 570px) {
-  .tarifs-block ul #licenses .licenses__settings {
-    flex-direction: column;
-  }
-}
-@media (max-width: 768px) {
-  .tarifs-block ul #licenses .licenses__settings {
-    margin-bottom: 20px;
-  }
-}
 .tarifs-block ul #licenses .licenses__settings p {
   font-size: 26px;
   font-weight: 600;
-}
-@media (max-width: 768px) {
-  .tarifs-block ul #licenses .licenses__settings p {
-    text-align: center !important;
-  }
 }
 .tarifs-block ul #licenses .licenses__settings p:nth-child(1) {
   text-align: right;
@@ -2065,6 +2060,36 @@ video {
     font-size: 20px;
   }
 }
+@media (max-width: 570px) {
+  .tarifs-block ul #licenses .licenses__settings {
+    display: grid;
+    grid-template: auto auto/1fr 1px 1fr;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #292929;
+  }
+  .tarifs-block ul #licenses .licenses__settings .vertical-line {
+    height: 100% !important;
+  }
+  .tarifs-block ul #licenses .licenses__settings .vertical-line:nth-child(4) {
+    display: none;
+  }
+  .tarifs-block ul #licenses .licenses__settings p {
+    font-size: 16px !important;
+  }
+  .tarifs-block ul #licenses .licenses__settings p:nth-child(3) {
+    grid-area: 2/1;
+    grid-column-start: 3 span;
+  }
+  .tarifs-block ul #licenses .licenses__settings p:nth-child(5) {
+    grid-area: 1/3;
+  }
+}
+@media (max-width: 425px) {
+  .tarifs-block ul #licenses .licenses__settings p {
+    font-size: 14px !important;
+  }
+}
 .tarifs-block ul #licenses .licenses__settings .vertical-line {
   width: 1px;
   height: 100px;
@@ -2074,6 +2099,55 @@ video {
   .tarifs-block ul #licenses .licenses__settings .vertical-line {
     width: 100%;
     height: 1px;
+  }
+}
+.tarifs-block ul #licenses .item__main__content {
+  text-align: center;
+  border: none;
+  padding: 0;
+  justify-content: center;
+}
+@media (max-width: 570px) {
+  .tarifs-block ul #licenses .item__main__content {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+@media (max-width: 525px) {
+  .tarifs-block ul #licenses .item__main__content {
+    flex-direction: row;
+  }
+}
+.tarifs-block ul #licenses #licenses-functions {
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid #292929;
+  align-self: center;
+  padding: 1rem;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
+.tarifs-block ul #licenses #licenses-functions p {
+  font-weight: 300;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+}
+.tarifs-block ul #licenses #licenses-functions p span {
+  color: white;
+  opacity: 0.5;
+  font-weight: 100;
+}
+.tarifs-block ul #licenses #licenses-functions p::before {
+  display: none;
+}
+@media (max-width: 525px) {
+  .tarifs-block ul #licenses #licenses-functions {
+    align-items: flex-start;
+  }
+  .tarifs-block ul #licenses #licenses-functions p {
+    text-align: left;
   }
 }
 .tarifs-block ul #licenses h3 {
