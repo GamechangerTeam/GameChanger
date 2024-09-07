@@ -1942,7 +1942,7 @@ video {
   }
 }
 .tarifs-block ul .item__main--top-line {
-  height: 2px;
+  height: 1px;
   width: 100%;
   display: block;
   background-color: #292929;
@@ -2071,18 +2071,24 @@ video {
   .tarifs-block ul #licenses .licenses__settings .vertical-line {
     height: 100% !important;
   }
-  .tarifs-block ul #licenses .licenses__settings .vertical-line:nth-child(4) {
-    display: none;
-  }
-  .tarifs-block ul #licenses .licenses__settings p {
+  .tarifs-block ul #licenses .licenses__settings--item {
     font-size: 16px !important;
   }
-  .tarifs-block ul #licenses .licenses__settings p:nth-child(3) {
+  .tarifs-block ul #licenses .licenses__settings--item:nth-child(1) {
+    background-color: red;
+  }
+  .tarifs-block ul #licenses .licenses__settings--item:nth-child(3) {
     grid-area: 2/1;
     grid-column-start: 3 span;
+    background-color: #04d404;
   }
-  .tarifs-block ul #licenses .licenses__settings p:nth-child(5) {
+  .tarifs-block ul #licenses .licenses__settings--item:nth-child(4) {
+    display: none;
+    background-color: yellow;
+  }
+  .tarifs-block ul #licenses .licenses__settings--item:nth-child(5) {
     grid-area: 1/3;
+    background-color: purple;
   }
 }
 @media (max-width: 425px) {
@@ -2877,6 +2883,7 @@ video {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
+  list-style-type: none;
 }
 .faq__header {
   padding: 20px 24px;
