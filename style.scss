@@ -2090,6 +2090,7 @@ video {
       }
     }
     #licenses {
+
       .item__header {
         grid-template-columns: 1fr 48px;
         @include tablet() {
@@ -2154,6 +2155,7 @@ video {
         align-items: center;
         gap: 20px;
 
+
         
         p {
           font-size: 26px;
@@ -2189,45 +2191,27 @@ video {
           gap: 10px;
           padding-bottom: 10px;
           border-bottom: 1px solid #292929;
-          .vertical-line {
-            height: 100% !important;
-          }
+          justify-content: center;
+          align-items: center;
 
           p {
             font-size: 16px !important;
-            &:nth-child(3) {
-              grid-area: 2/1;
-              grid-column-start: 3 span;
-              background-color: #04d404;
-            }
-            &:nth-child(4) {
-              display: none;
-                background-color: yellow;
-            }
-            &:nth-child(5) {
-              grid-area: 1/3;
-              background-color: purple;
-              
-            }
-            
           }
 
-          &-item1 {
-
+          &--item2 {
+            height: 60px !important;
           }
 
-          &-item3 {
+          &--item3 {
             grid-area: 2/1;
             grid-column-start: 3 span;
-            background-color: #04d404;
           }
-          &-item4 {
+          &--item4 {
             display: none;
           }
 
-          &-item5 {
+          &--item5 {
             grid-area: 1/3;
-            background-color: purple;
           }
 
         }
@@ -2913,6 +2897,7 @@ video {
     overflow: hidden;
     cursor: pointer;
     list-style-type: none;
+    position: relative;
   }
 
   &__header {
