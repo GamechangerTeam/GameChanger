@@ -8,5 +8,5 @@ burgerBtn.addEventListener("click", (e) => {
 });
 
 copy_number.addEventListener("click", () => {
-  navigator.clipboard.writeText(copyText.value);
+  navigator.clipboard.writeText(copy_number.innerText);
 });

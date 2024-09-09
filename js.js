@@ -663,8 +663,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-const playButton = document.querySelector('.play_btn');
-
-playButton.addEventListener('click', function(e) {
-  playButton.classList.toggle('is--playing');
-});

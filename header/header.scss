@@ -59,6 +59,10 @@ $border_gray: #292929;
   gap: 10px;
   box-sizing: border-box !important;
 
+  .copy_number {
+    cursor: pointer;
+  }
+
   * {
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box !important;
