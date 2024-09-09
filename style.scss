@@ -720,9 +720,6 @@ video {
   .b24-form {
     position: relative;
     z-index: 1;
-    // background-color: transparent !important;
-    #b24-75507792590586735961147281279562 {
-    }
     * {
       background-color: transparent !important;
       font-family: "Montserrat", sans-serif;
@@ -936,9 +933,6 @@ video {
 
   &.active {
     scale: 1;
-    &::before {
-      // animation: showBg 0.3s ease forwards;
-    }
 
     @keyframes showBg {
       to {
@@ -1019,10 +1013,6 @@ video {
     gap: 40px;
     padding-top: 70px;
     position: relative;
-  }
-
-  .gradient-container {
-    // height: auto !important;
   }
 
   &.active {
@@ -2552,8 +2542,6 @@ video {
     align-self: flex-start;
     gap: 10px;
 
-
-
     .gradient-container {
       border-radius: 50%;
       display: grid;
@@ -2564,7 +2552,6 @@ video {
       @include tablet() {
         max-width: 100px;
       }
-
 
       .case_with_review {
         border-radius: 50%;
@@ -2941,9 +2928,6 @@ video {
     @include mobile() {
       padding: 40px 10px;
     }
-  }
-
-  h2 {
   }
 
   .fp-watermark {
