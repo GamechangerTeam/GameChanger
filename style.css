@@ -1463,6 +1463,7 @@ video {
   border-radius: 10px;
   overflow-x: hidden;
   justify-content: space-between;
+  gap: 60px;
 }
 @media (max-width: 1200px) {
   .implementation-block .container {
@@ -2150,7 +2151,7 @@ video {
   display: grid;
   grid-template-rows: auto 1fr auto;
   justify-content: space-between;
-  gap: 10px;
+  gap: 60px;
 }
 @media (max-width: 1200px) {
   .cases-block .container {
@@ -2292,7 +2293,7 @@ video {
   display: flex;
   gap: 10px;
 }
-@media (max-width: 525px) {
+@media (max-width: 768px) {
   .cases-block__btns {
     padding: 0 10px;
     flex-direction: column;
@@ -2537,7 +2538,6 @@ video {
   gap: 20px;
   justify-content: center;
   height: auto;
-  height: calc(100dvh - 30px);
 }
 @media (max-width: 1200px) {
   .modules-block .container {

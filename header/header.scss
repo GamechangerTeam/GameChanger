@@ -77,9 +77,6 @@ $border_gray: #292929;
       position: relative;
       top: -100vw;
       transition: 0.5s;
-      &.open {
-        top: 0;
-      }
       a {
         transition: 0.3s;
       }
@@ -121,9 +118,6 @@ $border_gray: #292929;
       gap: 10px;
       transition: 0.5s;
       padding-right: 60px;
-      &.open {
-        top: 0;
-      }
       p {
         color: #eaeaea; /* Базовый цвет текста */
         mix-blend-mode: difference;
@@ -139,10 +133,21 @@ $border_gray: #292929;
       width: 100vw;
       z-index: -1;
       transition: 0.5s;
-      &.open {
-        top: 0;
-      }
     }
+
+
+      &.open {
+        .header__list {
+            top: 0;
+        }
+        .header--background {
+            top: 0;
+   
+        }
+      }
+  
+
+
   
     @media (max-width: 880px) {
       align-items: flex-start;
@@ -150,20 +155,26 @@ $border_gray: #292929;
     @include tablet() {
       grid-template: 1fr auto / 1fr;
       overflow: auto;
+      top: -100vw;
+      transition: .5s;
+      &.open {
+        top: 0;
+      }
   
       &__list {
         flex-direction: column;
         justify-content: flex-start;
         align-self: flex-start;
+        top: 0;
       }
       .contact-wrapper {
         justify-content: center;
         padding: 0;
         position: relative;
-        top: -100vw;
-        &.open {
-          top: 0;
-        }
+        top: 0;
+      }
+      &--background {
+        top: 0;
       }
       #header__segments--links {
         position: relative;
@@ -183,6 +194,10 @@ $border_gray: #292929;
           }
         }
       }
+
+
+
+
     }
   }
   

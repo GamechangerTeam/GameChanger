@@ -1597,6 +1597,7 @@ video {
     border-radius: 10px;
     overflow-x: hidden;
     justify-content: space-between;
+    gap: 60px;
     @include pc {
       padding: 60px 20px;
       gap: 60px;
@@ -2321,7 +2322,7 @@ video {
     display: grid;
     grid-template-rows: auto 1fr auto;
     justify-content: space-between;
-    gap: 10px;
+    gap: 60px;
     @include pc {
       display: flex;
       flex-direction: column;
@@ -2431,7 +2432,7 @@ video {
   &__btns {
     display: flex;
     gap: 10px;
-    @include mobile() {
+    @include tablet() {
       padding: 0 10px;
       flex-direction: column;
     }
@@ -2630,7 +2631,6 @@ video {
     gap: 20px;
     justify-content: center;
     height: auto;
-    height: calc(100dvh - 30px);
     @include pc {
       height: auto;
     }
