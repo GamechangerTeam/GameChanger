@@ -661,43 +661,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 const burgerBtn  = document.querySelector(".burgerBtn")
-const contactWrapper  = document.querySelector(".contact-wrapper")
 const header__list  = document.querySelector(".header__list")
 const headerBackground  = document.querySelector(".header--background")
-
-
-const header  = document.querySelector(".header")
-
-const header__segments__links  = document.getElementById("header__segments--links")
-
-
-// header.addEventListener("click" , (e) => {
-//   const header__segments  = e.target.closest(".open_segments")
-//   if (header__segments) {
-//     console.log('asasaaa');
-    
-//     header__segments__links.style.maxHeight = header__segments__links.scrollHeight + "px";
-
-//   } else {
-//     console.log('22222');
-//     header__segments__links.style.maxHeight = null;
-
-//   }
-        
-// })
+const contactWrapper  = document.querySelector(".contact-wrapper")
 
 burgerBtn.addEventListener("click", (e) => {
   burgerBtn.classList.toggle("open")
   header__list.classList.toggle("open")
-  // contactWrapper.classList.toggle("open")
   headerBackground.classList.toggle("open")
+  contactWrapper.classList.toggle("open")
 })
 
-const hearight_navigationder  = document.querySelector(".right_navigation")
-hearight_navigationder.addEventListener("click", (e) => {
-  let btn = e.target.closest("button")
-  if (btn) {
-    let slide = btn.getAttribute("data-slideTo")
 
-  }
-})
+
+const playButton = document.querySelector('.play_btn');
+
+playButton.addEventListener('click', function(e) {
+  playButton.classList.toggle('is--playing');
+});
