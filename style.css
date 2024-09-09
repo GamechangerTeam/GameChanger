@@ -357,6 +357,40 @@ video {
     left: -100%;
   }
 }
+.case_with_review {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: shadow 1s infinite linear;
+  background-color: #141414;
+  border-radius: 20px;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.case_with_review svg {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+}
+.case_with_review:hover svg {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 10px 0px #292929, 0 0 10px 0px #292929;
+  }
+  100% {
+    box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0), 0 0 4px 30px rgba(255, 48, 26, 0);
+  }
+}
 .slideIn_left {
   position: fixed;
   top: 0;
@@ -786,7 +820,7 @@ video {
           backdrop-filter: blur(20px);
   top: 20px;
   left: -100%;
-  z-index: 2;
+  z-index: 5;
   transition: 0.5s ease-out;
 }
 .cases_all button:active {
@@ -2271,6 +2305,14 @@ video {
   padding: 14px;
   border-radius: 20px;
   background-color: #141414;
+  position: relative;
+}
+.cases-block__logo img {
+  position: relative;
+  z-index: 2;
+}
+.cases-block__logo:hover .case_with_review {
+  z-index: 2;
 }
 .cases-block__gray-line {
   height: 1px;
@@ -2411,6 +2453,13 @@ video {
   #trustUs_container .trustUs__card .gradient-container {
     max-width: 100px;
   }
+}
+#trustUs_container .trustUs__card .gradient-container .case_with_review {
+  border-radius: 50%;
+  background-color: #050505;
+}
+#trustUs_container .trustUs__card .gradient-container:hover .case_with_review {
+  z-index: 2;
 }
 #trustUs_container .trustUs__card .gradient-border {
   border-radius: 50%;

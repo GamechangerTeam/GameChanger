@@ -571,6 +571,48 @@ video {
 
 // #endregion
 
+.case_with_review {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // z-index: -1;
+
+  width: 100%;
+  height: 100%;
+  animation: shadow 1s infinite linear;
+  background-color: $gray;
+  border-radius: 20px;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+
+  svg {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3;
+  }
+  &:hover {
+    svg {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 10px 0px $border_gray, 0 0 10px 0px $border_gray;
+  }
+
+  100% {
+    box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0),
+      0 0 4px 30px rgba(255, 48, 26, 0);
+  }
+}
+
 // БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА БЛОКИ СЛЕВА
 
 .slideIn_left {
@@ -1001,7 +1043,7 @@ video {
     backdrop-filter: blur(20px);
     top: 20px;
     left: -100%;
-    z-index: 2;
+    z-index: 5;
     transition: 0.5s ease-out;
   }
 
@@ -2409,6 +2451,17 @@ video {
     padding: 14px;
     border-radius: 20px;
     background-color: $gray;
+    position: relative;
+
+    img {
+      position: relative;
+      z-index: 2;
+    }
+    &:hover {
+      .case_with_review {
+        z-index: 2;
+      }
+    }
   }
 
   &__gray-line {
@@ -2499,6 +2552,8 @@ video {
     align-self: flex-start;
     gap: 10px;
 
+
+
     .gradient-container {
       border-radius: 50%;
       display: grid;
@@ -2508,6 +2563,17 @@ video {
       max-width: 130px;
       @include tablet() {
         max-width: 100px;
+      }
+
+
+      .case_with_review {
+        border-radius: 50%;
+        background-color: $black;
+      }
+      &:hover {
+        .case_with_review {
+          z-index: 2;
+        }
       }
     }
 
