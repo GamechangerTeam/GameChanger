@@ -46,7 +46,7 @@ const licensesInfo = [
                       <p>Чек-ин на работе с геопозицией</p>
                       <p>Работа с виртуальными задачами</p>
                     </div>
-                  `
+                  `,
   },
   {
     name: "Базовый",
@@ -92,7 +92,7 @@ const licensesInfo = [
                      <p>Каталог товаров</p>
                      <p>Работа с виртуальными задачами</p>
                     </div>
-                  `
+                  `,
   },
   {
     name: "Стандартный",
@@ -143,7 +143,7 @@ const licensesInfo = [
                     <p>Автоматизация продаж через CRM</p>
                     <p>Каталог товаров</p>
                     </div>
-                  `
+                  `,
   },
   {
     name: "Профессиональный",
@@ -195,7 +195,7 @@ const licensesInfo = [
                     <p>Каталог товаров</p>
                     <p>Гибкие методологии и управления командами ( Скрам )</p>
                     </div>
-                  `
+                  `,
   },
   {
     name: "Энтерпрайз",
@@ -250,7 +250,7 @@ const licensesInfo = [
                       <p>Создание и управление филиалами</p>
                       <p>Интерпрайз-кластер  с ускорением до 10-ти раз</p>
                     </div>
-              `
+              `,
   },
 ];
 
@@ -418,18 +418,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const addClassToSection = (name) => {
     switch (name) {
       case "consultation":
-        loadImages(consultation_Page)
+        loadImages(consultation_Page);
         consultation_Page.classList.toggle("active");
         break;
       case "privacy-policy":
         privacyPolicy_Page.classList.toggle("active");
         break;
       case "service":
-        loadImages(service_Page)
+        loadImages(service_Page);
         service_Page.classList.toggle("active");
         break;
       case "casesAll":
-        loadImages(cases_all)
+        loadImages(cases_all);
         cases_all.classList.toggle("active");
         break;
     }
@@ -481,9 +481,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // autoScrolling: true,
     controlArrows: false,
     // scrollBar: false,
-    menu: '#menu',
-    anchors: ['1', '2', '3', '4', '5', '6', '7', '8'],
-
+    menu: "#menu",
+    anchors: ["1", "2", "3", "4", "5", "6", "7", "8"],
   });
 
   // СЛАЙДЕРЫ НА БЛОКЕ МОДУЛЕЙ
@@ -551,8 +550,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     breakpoints: {
       769: {
-    allowTouchMove: false,
-    spaceBetween: 0,
+        allowTouchMove: false,
+        spaceBetween: 0,
       },
     },
   });
@@ -623,43 +622,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function animateCounters() {
-    const counters = document.querySelectorAll('.counter');
+    const counters = document.querySelectorAll(".counter");
     const duration = 500; // Длительность анимации в миллисекундах
-  
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const format = counter.getAttribute('data-format');
-        const startTime = performance.now();
-  
-        function updateCounter(currentTime) {
-            const elapsedTime = currentTime - startTime;
-            const progress = Math.min(elapsedTime / duration, 1); 
-            let currentNumber = Math.floor(progress * target);
-            
-            if (format === 'million') {
-              currentNumber = currentNumber + ' млн';
-  
-            } else if (format === 'percent') {
-                currentNumber = currentNumber + '%';
-            }
-  
-            counter.textContent = currentNumber;
-  
-            if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-            }
+
+    counters.forEach((counter) => {
+      const target = +counter.getAttribute("data-target");
+      const format = counter.getAttribute("data-format");
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        let currentNumber = Math.floor(progress * target);
+
+        if (format === "million") {
+          currentNumber = currentNumber + " млн";
+        } else if (format === "percent") {
+          currentNumber = currentNumber + "%";
         }
-  
-        requestAnimationFrame(updateCounter);
+
+        counter.textContent = currentNumber;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
     });
   }
-  
+
   animateCounters();
-  
-  
 });
-
-
-
 
 
