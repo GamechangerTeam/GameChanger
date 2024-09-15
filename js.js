@@ -516,6 +516,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modulesCardSwiper = new Swiper("#modules-card-swiper1", {
     speed: 500,
     grabCursor: true,
+    mousewheel: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -529,6 +530,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modulesCardSwiper2 = new Swiper("#modules-card-swiper2", {
     speed: 500,
     grabCursor: true,
+    mousewheel: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -591,6 +593,7 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 20,
     slidesPerView: 2,
     slidesPerGroup: 2,
+    mousewheel: true,
     grid: {
       rows: 3,
     },
