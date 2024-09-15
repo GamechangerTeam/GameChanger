@@ -1203,9 +1203,7 @@ video {
       }
 
       span {
-        @include laptop() {
-          text-align: center;
-        }
+
         &:first-child {
           font-size: 6.25rem;
           font-weight: 600;
@@ -1218,9 +1216,6 @@ video {
           @include tablet() {
             font-size: 3rem;
           }
-          // @media (max-width: 525px) and (min-height: ) {
-
-          // }
 
           @include mobile() {
             font-size: 54px;
@@ -1235,6 +1230,12 @@ video {
           color: white;
           font-size: 1.25rem;
           font-weight: 400;
+        }
+        @include laptop() {
+          text-align: center;
+        }
+        @include mobile() {
+          text-align: left;
         }
       }
     }
