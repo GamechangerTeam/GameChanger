@@ -150,7 +150,7 @@ const licensesInfo = [
     content: `
                     <div class="licenses__settings">
                       <p class="licenses__settings--item1">
-                        Тариф доступен всем пользователям
+                        До 100 пользователей
                       </p>
                       <span
                         class="vertical-line licenses__settings--item2"
