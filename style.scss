@@ -2557,6 +2557,20 @@ video {
         max-width: 100px;
       }
 
+      
+      button {
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .pause_button {
+          opacity: 0;
+        }
+      }
+
       .case_with_review {
         border-radius: 50%;
         background-color: $black;

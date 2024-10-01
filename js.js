@@ -657,7 +657,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   animateCounters();
   const play_sound = document.querySelectorAll("button.case_with_review");
-
+  
   play_sound.forEach((btn) => {
     btn.addEventListener("click", function () {
       let name = btn.getAttribute("data-name");
@@ -667,7 +667,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       let playBtn = btn.querySelector(".play_button");
       let pauseBtn = btn.querySelector(".pause_button");
-
       if (thisPLayer.paused) {
         audioPlayers.forEach((x) => {
           x.pause();
