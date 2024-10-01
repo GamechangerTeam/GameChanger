@@ -679,7 +679,11 @@ play_sound.forEach((btn) => {
     );
     let playBtn = btn.querySelector(".play_button");
     let pauseBtn = btn.querySelector(".pause_button");
+    console.log('ну работай');
+    
     if (thisPLayer.paused) {
+    console.log('стоп');
+
       audioPlayers.forEach((x) => {
         x.pause();
         play_sound.forEach((btn) => {
@@ -694,6 +698,8 @@ play_sound.forEach((btn) => {
       thisPLayer.pause();
       playBtn.style.opacity = 1;
       pauseBtn.style.opacity = 0;
+    console.log('лдох');
+
     }
   });
 });
