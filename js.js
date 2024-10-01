@@ -658,4 +658,43 @@ document.addEventListener("DOMContentLoaded", function () {
   animateCounters();
 });
 
+const play_sound = document.querySelectorAll("button.case_with_review");
+const audio = [
+  {
+    name: "marten",
+    src: "https://dl.dropbox.com/scl/fi/uo6l39zoas1dpemyu2kyt/martinstal.ogg?rlkey=fgnfqellg787dvuhsylbrwm2a&st=mv2r1qo6&dl=0",
+  },
+  {
+    name: "aibolit",
+    src: "https://dl.dropbox.com/scl/fi/0v16dzup0ri5nu05b62sk/Aibolit.ogg?rlkey=hdcuvg2ncotid53nd3yxpssnz&st=r8fgvsyx&dl=0",
+  },
+];
+
+play_sound.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    let name = btn.getAttribute("data-name");
+    const audioPlayers = document.querySelectorAll("audio");
+    const thisPLayer = Array.from(audioPlayers).find(
+      (player) => player.getAttribute("data-name") === name
+    );
+    let playBtn = btn.querySelector(".play_button");
+    let pauseBtn = btn.querySelector(".pause_button");
+    if (thisPLayer.paused) {
+      audioPlayers.forEach((x) => {
+        x.pause();
+        play_sound.forEach((btn) => {
+          btn.querySelector(".play_button").style.opacity = 1;
+          btn.querySelector(".pause_button").style.opacity = 0;
+        });
+      });
+      thisPLayer.play();
+      playBtn.style.opacity = 0;
+      pauseBtn.style.opacity = 1;
+    } else {
+      thisPLayer.pause();
+      playBtn.style.opacity = 1;
+      pauseBtn.style.opacity = 0;
+    }
+  });
+});
 
