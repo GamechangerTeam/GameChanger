@@ -976,7 +976,7 @@ video {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 .hero__statistics br {
   display: none;
@@ -1016,11 +1016,6 @@ video {
     align-items: flex-start;
   }
 }
-@media (max-width: 960px) {
-  .hero__statistics__card span {
-    text-align: center;
-  }
-}
 .hero__statistics__card span:first-child {
   font-size: 6.25rem;
   font-weight: 600;
@@ -1055,6 +1050,16 @@ video {
   color: white;
   font-size: 1.25rem;
   font-weight: 400;
+}
+@media (max-width: 960px) {
+  .hero__statistics__card span {
+    text-align: center;
+  }
+}
+@media (max-width: 525px) {
+  .hero__statistics__card span {
+    text-align: left;
+  }
 }
 .hero__statistics--vertical-line {
   width: 1px;
